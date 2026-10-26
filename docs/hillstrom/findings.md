@@ -27,9 +27,9 @@ Binary differences are **percentage points**, not percent changes. Spend is USD 
 
 ## Targeting: frozen training rule and held-out check
 
-The Word guide's 36 theoretical cells combine merchandise history (both / men's only / women's only), newbie 0/1, recency 1–3 / 4–8 / 9–12 months, and prior spend **at least $200** / below $200. Only **30 cells occur**; the six both-lines/low-spend combinations are absent. We do not invent observations for empty cells. With seed 7, a random half trains cell spend lifts versus no email; each cell is ranked by its better training email. The other half evaluates frozen selections. No holdout outcome or assignment chooses a cell, version or tie break. Baseline cell counts from the full population only determine quota sizes.
+The 36 theoretical cells combine merchandise history (both / men's only / women's only), newbie 0/1, recency 1–3 / 4–8 / 9–12 months, and prior spend **at least $200** / below $200. Only **30 cells occur**; the six both-lines/low-spend combinations are absent. We do not invent observations for empty cells. With seed 7, a random half trains cell spend lifts versus no email; each cell is ranked by its better training email. The other half evaluates frozen selections. No holdout outcome or assignment chooses a cell, version or tie break. Baseline cell counts from the full population only determine quota sizes.
 
-The guide's whole-cell rule selects **8,486**, not exactly 10,000, and suppresses **9,420**. We retain that result separately as `guide_whole_cells`. To answer the exact-capacity question, a seeded outcome-free tie break fills the boundary cell, giving **10,000 target**, **10,000 suppress**, and **44,000 other**, with no overlap. The primary exact target rule is:
+A whole-cell rule selects **8,486**, not exactly 10,000, and suppresses **9,420**. We retain that result separately as `guide_whole_cells`. To answer the exact-capacity question, a seeded outcome-free tie break fills the boundary cell, giving **10,000 target**, **10,000 suppress**, and **44,000 other**, with no overlap. The primary exact target rule is:
 
 | Pre-treatment cell | Cell population | Selected | Training suggestion |
 | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ Suppression here means a forced capacity/budget scenario based on the lowest tra
 | 8 | suppress | 1676 | 1675 | $0.55 [-0.51, 1.64] | 1.0 |
 | 8 | other | 7443 | 7338 | $0.67 [0.27, 1.09] | 0.079 |
 
-Seed 7's whole-cell Men's lift is **$1.60** versus **$0.70** for its complement, matching the guide's rough point estimates. Its exact 10,000 target yields **$1.62** versus **$0.66** among the other 44,000. With the additional seed 8, exact target lift falls to **$0.73** versus **$0.67** for other customers, and the target interval crosses zero. **The strong targeting gain does not survive this sensitivity check.** The table's intervals are pointwise; its p values are Holm-adjusted over all 72 held-out fixed-arm comparisons. Seed 7 target-spend p after that adjustment is about .161. Splits overlap within one experiment and are not independent replications; the second seed was not used to optimize the chosen rule. A difference between subgroup point estimates alone is not a formal test of targeting gain.
+Seed 7's whole-cell Men's lift is **$1.60** versus **$0.70** for its complement. Its exact 10,000 target yields **$1.62** versus **$0.66** among the other 44,000. With the additional seed 8, exact target lift falls to **$0.73** versus **$0.67** for other customers, and the target interval crosses zero. **The strong targeting gain does not survive this sensitivity check.** The table's intervals are pointwise; its p values are Holm-adjusted over all 72 held-out fixed-arm comparisons. Seed 7 target-spend p after that adjustment is about .161. Splits overlap within one experiment and are not independent replications; the second seed was not used to optimize the chosen rule. A difference between subgroup point estimates alone is not a formal test of targeting gain.
 
 ![Targeting sensitivity](../../charts/hillstrom_targeting_validation.png)
 
@@ -104,4 +104,4 @@ Random assignment supports a causal comparison of these email versions within th
 
 ## Reproduce and inspect
 
-Word guide steps 1.6.1–1.6.5 are covered. Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for numbered DBeaver queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for statistics. The run passed **27 database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic. The existing reporting database is protected from overwrite. The Excel workbook and recommendation memo are complete in the local handoff. The final four-page Power BI PBIX and PDF are saved and verified in the local handoff. See START_HERE.md for current publication status.
+Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for short inspection queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for the statistics. The run passed **27 database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic.

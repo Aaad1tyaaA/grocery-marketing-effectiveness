@@ -67,7 +67,7 @@ def main():
         ax.xaxis.set_major_formatter(PercentFormatter(1))
         ax.set_xlim(0,max(segments.value_share)*1.2)
         ax.set_xlabel('Share of annual grocery spend')
-        ax.set_title('Customer value | five guide-defined segments',fontweight='bold')
+        ax.set_title('Customer value | five segments',fontweight='bold')
         ax.spines[['top','right']].set_visible(False)
         fig.savefig(ROOT/'charts/customer_segments.png',dpi=160)
         plt.close(fig)
@@ -139,14 +139,14 @@ def main():
         without_demo=demographics[~demographics.has_demographics].iloc[0]
         seg_rows='\n'.join(f'| {r.segment[2:]} | {r.households:,} | ${r.spend:,.2f} | {r.value_share:.1%} |' for r in segments.itertuples())
         trend_rows='\n'.join(f'| {r.trajectory} | {r.households:,} | {r.household_share:.1%} | ${r.spend_h1:,.2f} | ${r.spend_h2:,.2f} |' for r in trajectories.itertuples())
-        findings=f'''# Customer value and retention — Word guide Module 3
+        findings=f'''# Customer value and retention
 
 Completed Steps **1.3.1–1.3.5**. These segments describe observed behaviour; they are not validated predictions of future value or proof of marketing effects.
 
 ## Three findings
 
 1. **{int(champion.households):,} Champions generate {champion.value_share:.1%} of grocery spend.** The top 20% by spend (rounded up to {int(report['concentration']['top_20pct_households'])} households) account for **{report['concentration']['top_20pct_value_share']:.1%}**. This identifies a concentrated customer base for service and retention investigation; it does not establish future lifetime value.
-2. **{int(decline.households):,} households have declining spend**, using the guide's 20% decline threshold. Their spend moves from **${decline.spend_h1:,.2f}** in H1 to **${decline.spend_h2:,.2f}** in H2, an observed reduction of **${-decline.spend_change:,.2f}**. This is not a forecast of revenue that a retention campaign can recover.
+2. **{int(decline.households):,} households have declining spend**, using a 20% decline threshold. Their spend moves from **${decline.spend_h1:,.2f}** in H1 to **${decline.spend_h2:,.2f}** in H2, an observed reduction of **${-decline.spend_change:,.2f}**. This is not a forecast of revenue that a retention campaign can recover.
 3. Households with demographics have median annual grocery spend of **${with_demo.median_spend:,.2f}**, versus **${without_demo.median_spend:,.2f}** without demographics. Income comparisons therefore describe a selective subset and should not be generalized to all households or treated as causal effects.
 
 ## Value segments
@@ -165,17 +165,17 @@ H1 uses source weeks 2–27; H2 uses weeks 28–53. Partial week 1 is excluded f
 
 ## Retention and demographics
 
-The cohort model follows the guide's **all-clean-purchase** scope: 2,469 households, including two non-grocery-only households. Segments use **grocery purchases**: {len(data['hh_metrics']):,} households. Do not mix those denominators.
+The cohort model uses the **all-clean-purchase** scope: 2,469 households, including two non-grocery-only households. Segments use **grocery purchases**: {len(data['hh_metrics']):,} households. Do not mix those denominators.
 
 January is the first observed month for **{int(cohorts[cohorts.months_since_first==0].sort_values('cohort').iloc[0].cohort_size):,} households**. This panel starts in January; first observation does not prove those shoppers were newly acquired. Elapsed months without purchases are zero retention; future months are omitted/masked, never zero-filled. Monthly activity is nonconsecutive retention, so a household may return after a missed month.
 
-Income-band comparisons include household counts and a small-group flag (<30). The flag is a descriptive caution, not a formal significance threshold. Missing attributes are not imputed. The deal-driven flag uses the guide's rounded discount-share upper quartile; ties mean it need not identify exactly 25% of households.
+Income-band comparisons include household counts and a small-group flag (<30). The flag is a descriptive caution, not a formal significance threshold. Missing attributes are not imputed. The deal-driven flag uses a rounded discount-share upper quartile; ties mean it need not identify exactly 25% of households.
 
 ## Verification and files
 
 **{len(checks)} full-data checks passed**, plus source fingerprint/model checks. The main outputs are `exports/customers/`, four chart PNGs, `03_customers.ipynb`, and `sql/03_customers.sql`. Exported retention rates retain full precision; the guide rounds them to three decimals. Segment/trajectory counts are computed from the actual data rather than forced to match the guide.
 
-The reporting database `grocery_customers.duckdb` contains customer tables and checks, not raw purchases. Existing databases and DBeaver scripts were not modified. Next guide section: **Module 4, promotion lift**.
+The reporting database `grocery_customers.duckdb` contains customer tables and checks, not raw purchases.
 '''
         (DOCS/'findings.md').write_text(findings,encoding='utf-8')
     os.rename(staging,target)

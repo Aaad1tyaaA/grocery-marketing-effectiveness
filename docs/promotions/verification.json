@@ -376,9 +376,9 @@
     }
   ],
   "build_inputs_sha256": {
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
-    "scripts/run_promotions.py": "3866256032737e236c7110359e4caeb21044df54532003706ea6dbb4832809a6",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
+    "scripts/run_promotions.py": "a3128c7e3d6c80ea36242d56cd821da579ec5400b298ef1d4259c6897a6fb30e",
     "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
     "sql/04_promo.sql": "a11322530f9235efc1fcf17ba4c92656d79db1f0f0e98bb130a20615f05a7bc0"
   }

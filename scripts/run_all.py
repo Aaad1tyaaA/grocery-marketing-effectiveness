@@ -51,7 +51,7 @@ def main():
     if args.through>=6:
         run('scripts/write_hillstrom_deliverables.py')
     run('scripts/verify_modules.py','--through',str(args.through))
-    print(f'Analysis modules 1-{args.through} verified. See README and separate Excel/Power BI verification for the presentation handoff.')
+    print(f'Analysis modules 1-{args.through} verified. See README for the Excel and Power BI deliverables.')
 
 
 if __name__=='__main__':

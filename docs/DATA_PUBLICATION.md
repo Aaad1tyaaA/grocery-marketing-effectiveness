@@ -1,7 +1,9 @@
-# Public data scope
+# What's published
 
-This repository contains original analysis code, editable report definitions, charts and small aggregate exports. It excludes original RDS/RDA/CSV/Parquet inputs, databases, transaction- and household-level exports, embedded-data PBIX caches, the household lookup workbook and the private build guide. Notebook outputs are cleared in the public copy. Source attribution and checksum-pinned download locations remain in the provenance manifests.
+This repository contains the analysis code, SQL, notebooks with aggregate outputs, charts, small aggregate exports, the Excel ROI specification, the Power BI project source and its PDF export.
 
-Source datasets remain subject to their owners' terms. No blanket license is asserted over third-party datasets. Rebuild locally using the documented ingestion scripts. Public CI tests synthetic cases and the included aggregate preview; it does not independently rebuild excluded datasets.
+Raw source files (RDS/RDA/CSV/Parquet), DuckDB databases, household-level exports, source-row candidate lists, the Excel workbook with household lookup data, embedded-data PBIX files and private documents stay local. The analysis can be rebuilt with `python scripts/run_all.py` from checksum-pinned sources.
 
-Git commits use Aditya Patil's identity only. AI assistance is documented factually in `ai_log.md`; no assistant is added as a contributor, collaborator or commit co-author.
+Before publication, run `python scripts/prepare_publication.py`. It removes notebook outputs containing household, basket or source-row identifiers while preserving aggregate outputs, execution counts and original input hashes. Tests check that the tracked notebooks remain sanitized. The public checkout does not contain enough inputs to revalidate every historical notebook or database result; raw-data-dependent CI checks explicitly skip.
+
+The grocery data comes from the [`completejourney`](https://github.com/bradleyboehmke/completejourney) R package, released under CC0. The email experiment comes from Kevin Hillstrom's public MineThatData challenge. Source URLs and checksums are in `source_manifest.json` and `hillstrom_source.json`.

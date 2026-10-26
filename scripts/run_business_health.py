@@ -88,7 +88,7 @@ def main():
             con.execute(f'CREATE TABLE reporting.main.{table} AS SELECT * FROM main.{table}')
         con.execute('DETACH reporting')
         report={'guide':'Two_Analytics_Projects_Complete_Guide.docx','guide_steps':'1.2.1–1.2.4',
-                'source':'Verified Parquet; reused first two statements of sql/01_model.sql because DBeaver holds the phase-1 file',
+                'source':'Verified Parquet; reused first two statements of sql/01_model.sql so the module builds independently of the phase-1 database',
                 'clean_sales_rows':n,'all_department_sales':sales,'comparable_weeks':len(weekly),
                 'eligible_categories':len(category),'summary':summary,'weekly_sales_discount_correlation':corr,
                 'average_week':dict(zip(['households','sales','aov','visits_per_hh','discount_depth'],average)),
@@ -98,7 +98,7 @@ def main():
         report['build_inputs_sha256']=build_inputs(ROOT,['scripts/run_business_health.py','sql/01_model.sql','sql/02_health.sql'])
         (DOCS/'verification.json').write_text(json.dumps(report,indent=2,default=str),encoding='utf-8')
         biggest=report['largest_week'];smallest=report['smallest_week'];leading=category.iloc[0]
-        findings=f'''# Business health — Word guide Module 2
+        findings=f'''# Business health
 
 Completed Steps 1.2.1–1.2.4 using the verified grocery model. These are descriptive results, not estimates of what would happen if discounts were removed.
 
@@ -113,18 +113,17 @@ Completed Steps 1.2.1–1.2.4 using the verified grocery model. These are descri
 - Weekly trends use source weeks **2–53**, excluding partial week 1: **${summary['comparable_week_sales']:,.2f}** sales over {len(weekly)} weeks.
 - Week labels are the actual Monday calendar starts. The first recorded purchase date is exported separately; week 53 starts 25 December even though its first observed purchase is 26 December.
 - Annual/category analysis includes all source weeks: **${summary['annual_grocery_sales']:,.2f}** sales. Partial week 1 contributes **${summary['partial_week_1_sales']:,.2f}**, explaining the difference.
-- As in the guide, the grocery filter excludes explicitly flagged non-grocery products. It still contains **${summary['unclassified_product_sales']:,.2f}** of UNKNOWN-product sales; their actual categories are unknown.
+- The grocery filter excludes explicitly flagged non-grocery products. It still contains **${summary['unclassified_product_sales']:,.2f}** of UNKNOWN-product sales; their actual categories are unknown.
 - Manufacturer coupon amounts are excluded from retailer-funded discount cost.
 - Category discount share weights shelf value, not units or purchase lines. Categories below $10,000 are excluded only from the ranking.
 - Ratios have exported base amounts so Power BI can recompute weighted totals. Do not sum weekly household counts to report annual distinct households or average category percentages without weighting.
-- The supplied guide rounds category sales to whole dollars and category ratios to three decimals. These outputs retain cents and more ratio precision; the underlying definitions and sales floor are the same.
 - **{len(checks)} business-health checks passed**, plus source fingerprint and clean-model reconciliation checks. No existing database was modified.
 
 ## Files to inspect
 
 `exports/business_health/weekly_kpis.csv`, `category_discount.csv`, `business_health_summary.csv`, and `business_health_checks.csv`; `charts/weekly_health.png`; `charts/category_discount_dependency.png`; `02_business_health.ipynb`; and `sql/02_health.sql`.
 
-Next in the Word guide: Module 3, customer value and segments. The CSVs are also ready to import into Power BI. The final dashboard remains a later guide step.
+The CSVs in `exports/business_health/` feed the Power BI report.
 '''
         (DOCS/'findings.md').write_text(findings,encoding='utf-8')
     os.rename(staging,final)

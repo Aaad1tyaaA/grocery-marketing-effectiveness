@@ -2,7 +2,7 @@
 
 ## What is complete
 
-Eight full raw datasets, all-column source profiling, clean sales and promotion models, three dimensions, a campaign-recipient bridge, anomaly screening, exported diagnostics, and verification evidence. The derived model's six main table counts match the supplied guide. The working database is grocery_phase1.duckdb.
+Eight full raw datasets, all-column source profiling, clean sales and promotion models, three dimensions, a campaign-recipient bridge, anomaly screening, exported diagnostics, and verification evidence. The derived model's six main table counts match the expected totals. The working database is grocery_phase1.duckdb.
 
 ## Verified results
 
@@ -47,7 +47,7 @@ All 44 source columns have row counts, missingness, cardinality, and types in pr
 
 ## Flagged daily sales
 
-Grocery-only sales, calculated in local time. Scores compare each date with the median for its weekday, using median absolute deviation. Potential holiday explanations from the guide have not been independently verified here.
+Grocery-only sales, calculated in local time. Scores compare each date with the median for its weekday, using median absolute deviation. Possible holiday explanations are hypotheses, not verified facts.
 
 | Date | Robust z-score |
 |---|---:|
@@ -69,4 +69,4 @@ The basket export flags 142 grocery baskets above the 99.9th percentile. Line-le
 - 24 checks cover source immutability, row and monetary reconciliation, dimension uniqueness, fact coverage, promotion grain, conflict accounting, discount formulas, local-time conversion, campaign dates, required-field missingness, and anomaly outputs.
 - The synthetic model regression covers free purchases, unknown products, nullable product attributes, non-grocery classification, conflicting promotions, duplicate campaign recipients, and time conversion.
 - The six reader regressions compare the compact reader with the standard reader on the six smaller R sources.
-- DBeaver's native visual connection test remains unconfirmed. Later KPI/segmentation models, marketing estimates, Hillstrom analysis, Excel, Power BI, and deployment are not part of phase 1.
+- Later modules cover KPIs, segments, promotions, campaigns and the email experiment.

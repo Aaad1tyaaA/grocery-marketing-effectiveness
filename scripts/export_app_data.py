@@ -33,8 +33,8 @@ sum(retailer_funded_disc) AS retailer_discounts FROM fact_sales WHERE NOT is_non
             (out/name).unlink(missing_ok=True)
     status={'completed_modules':list(range(1,7 if benchmark.exists() else 6)),
             'hillstrom_available':benchmark.exists(),
-            'app_status':'summary app; local Power BI, Excel and memo available' if benchmark.exists() and (ROOT/'docs/memo.md').exists()
-                         else 'analysis preview; final handoff not yet prepared' if benchmark.exists()
+            'app_status':'summary app; Power BI, Excel and memo available' if benchmark.exists() and (ROOT/'docs/memo.md').exists()
+                         else 'analysis preview' if benchmark.exists()
                          else 'preview; Modules 6-7 remain pending'}
     (out/'status.json').write_text(json.dumps(status,indent=2),encoding='utf-8')
     print(f'Exported {len(list(out.glob("*.csv")))} summary CSVs; Hillstrom available: {benchmark.exists()}')

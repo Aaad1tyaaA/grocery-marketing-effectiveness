@@ -1,5 +1,5 @@
 {
-  "built_at_utc": "2026-10-25T11:48:56.400283+00:00",
+  "built_at_utc": "2026-10-26T17:57:35.093165+00:00",
   "duckdb_version": "1.5.5",
   "database": "grocery_phase1.duckdb",
   "raw_integrity": {
@@ -1695,12 +1695,12 @@
     ]
   },
   "build_inputs_sha256": {
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
     "scripts/build_phase1.py": "e75a084212170d197c982edaa35914635d81619961eb31acec81db2527117b3f",
-    "scripts/write_phase1_docs.py": "7b508ffedd32d96c671959f85728d9f084fc72125d035e4bdaf876b11a37879a",
+    "scripts/write_phase1_docs.py": "a0c6f7f9c0aa7c52ae6d1fe37f221a4d0cefa6363070ea27e79c5cf5a7d9c26c",
     "sql/00_profile.sql": "d312e69c0a2dc471fce52a1bc46f8364a1696719afcc788a4b4d6e09689c8f04",
-    "sql/00a_profile_columns.sql": "6ae9266e3a79a7ea5cf2bc946d8c8e189f925cc3156c5521b89faca4d23f7764",
+    "sql/00a_profile_columns.sql": "2a943fa5389a534c5f946dfafb1a1ebb2f12903105d521a4794e71fe0a2ba3f3",
     "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
     "sql/01b_anomalies.sql": "1d1f05361cc64205f2ebd1227c683ac68b088ea73496223fc66302e5ea37893e",
     "sql/01c_verify.sql": "9beb31d065787ca4b74db234cfd1068390036c01d034a9633167a60409f3fc19"

@@ -1,6 +1,6 @@
 # Phase 1 model
 
-The output is **grocery_phase1.duckdb**. It contains the same eight verified raw tables, plus the following derived tables. The original grocery.duckdb was open in DBeaver and was not modified.
+The output is **grocery_phase1.duckdb**. It contains the same eight verified raw tables, plus the following derived tables.
 
 | Table | Grain | Purpose |
 |---|---|---|
@@ -28,7 +28,7 @@ The output is **grocery_phase1.duckdb**. It contains the same eight verified raw
 
 The model keeps the same core names and formulas. It also retains source UTC time, an explicit unknown-product flag, and a distinct recipient bridge. Nullable product attributes do not produce a null non-grocery flag. Promotion code conflicts use MULTIPLE instead of independently selecting maximum codes, which could imply a display/mailer combination never observed together. Later placement-specific analyses must handle MULTIPLE separately.
 
-The guide's statement that a missing Christmas date means stores were closed is not established by purchase records alone. Missing dates and anomaly flags are reported as observed facts; their causes require separate evidence.
+A missing Christmas date doesn't by itself prove the stores were closed. Missing dates and anomaly flags are reported as observed facts; their causes require separate evidence.
 
 ## Files and rebuild order
 

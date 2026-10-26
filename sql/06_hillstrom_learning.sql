@@ -30,7 +30,7 @@ FROM main.email_head_to_head ORDER BY metric;
 SELECT level, arm, metric, n_treatment, n_control, estimate, ci_low, ci_high, p_holm
 FROM main.segment_effects WHERE cut='buyer' ORDER BY level, metric, arm;
 
--- 7. Exact quotas versus the Word guide's whole-cell rule.
+-- 7. Exact quotas versus the whole-cell rule.
 -- Why: whole cells select 8,486 with seed 7; boundary tie breaks fill exactly 10,000.
 SELECT * FROM main.policy_audience_counts ORDER BY seed, scope, audience;
 

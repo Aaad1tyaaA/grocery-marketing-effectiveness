@@ -1,4 +1,4 @@
-# Business health — Word guide Module 2
+# Business health
 
 Completed Steps 1.2.1–1.2.4 using the verified grocery model. These are descriptive results, not estimates of what would happen if discounts were removed.
 
@@ -13,15 +13,14 @@ Completed Steps 1.2.1–1.2.4 using the verified grocery model. These are descri
 - Weekly trends use source weeks **2–53**, excluding partial week 1: **$4,174,948.79** sales over 52 weeks.
 - Week labels are the actual Monday calendar starts. The first recorded purchase date is exported separately; week 53 starts 25 December even though its first observed purchase is 26 December.
 - Annual/category analysis includes all source weeks: **$4,185,055.64** sales. Partial week 1 contributes **$10,106.85**, explaining the difference.
-- As in the guide, the grocery filter excludes explicitly flagged non-grocery products. It still contains **$172.57** of UNKNOWN-product sales; their actual categories are unknown.
+- The grocery filter excludes explicitly flagged non-grocery products. It still contains **$172.57** of UNKNOWN-product sales; their actual categories are unknown.
 - Manufacturer coupon amounts are excluded from retailer-funded discount cost.
 - Category discount share weights shelf value, not units or purchase lines. Categories below $10,000 are excluded only from the ranking.
 - Ratios have exported base amounts so Power BI can recompute weighted totals. Do not sum weekly household counts to report annual distinct households or average category percentages without weighting.
-- The supplied guide rounds category sales to whole dollars and category ratios to three decimals. These outputs retain cents and more ratio precision; the underlying definitions and sales floor are the same.
 - **11 business-health checks passed**, plus source fingerprint and clean-model reconciliation checks. No existing database was modified.
 
 ## Files to inspect
 
 `exports/business_health/weekly_kpis.csv`, `category_discount.csv`, `business_health_summary.csv`, and `business_health_checks.csv`; `charts/weekly_health.png`; `charts/category_discount_dependency.png`; `02_business_health.ipynb`; and `sql/02_health.sql`.
 
-Next in the Word guide: Module 3, customer value and segments. The CSVs are also ready to import into Power BI. The final dashboard remains a later guide step.
+The CSVs in `exports/business_health/` feed the Power BI report.

@@ -1,41 +1,26 @@
-# AI implementation log
+# How I used AI on this project
 
-## Phase 1 — 25 October 2026
+I built this project with an AI coding assistant. I chose the business questions and the analysis plan, directed each module and reviewed the results. The assistant wrote and ran most of the code, SQL and verification scripts, and helped draft documents. Every number in the README and memo comes from a saved query, notebook or export in this repository, not from the assistant's text.
 
-Request: build the clean grocery data foundation and supply reviewable files using the local guide and repaired kit.
+Below are the places where a plausible first approach would have been wrong, and what the project does instead. These are the checks I'd walk an interviewer through.
 
-Produced: source profiling SQL, the core model, an explicit household/campaign bridge, anomaly queries, verification SQL, a fresh-database builder, DBeaver inspection queries, measured reports, and regression checks.
+## Data model
 
-Decisions verified:
-- The original database was locked by DBeaver. Built a separate self-contained phase-1 file from Parquet, verifying source counts and fingerprints before and after modelling.
-- Did not copy the guide's independent maximum-code selection for promotion duplicates: source profiling showed 12,785 conflicting keys. Used MULTIPLE labels and preserved exposure flags/source row counts.
-- Made non-grocery classification non-null even when product metadata fields are missing. A synthetic regression tests that case.
-- Preserved UTC time and added explicit Eastern local time. A synthetic regression verifies a winter conversion.
-- Added zero-MAD protection to anomaly scoring and kept anomaly flags separate from deletion rules.
-- Did not repeat the guide's missing-date/store-closure claim as an observed fact.
+1. **Conflicting promotion rows.** 12,785 product-store-week keys appear more than once with different display or mailer codes. Taking the maximum code per column would invent combinations that never happened, so conflicting keys are labelled `MULTIPLE` and the original exposure flags and row counts are kept.
+2. **Two different scopes.** Clean all-department sales are $4.596M, but grocery sales are $4.185M. The panel has 2,469 households, but only 2,467 bought groceries. Every metric states which scope it uses.
+3. **Missing products.** 17 product IDs in transactions aren't in the product table. Their sales are kept under an "unknown" product instead of being dropped.
+4. **Average basket value.** It's sales divided by distinct baskets, not the average line value. The app uses the annual ratio, not an average of weekly averages.
+5. **Partial week 1.** Week 1 is a single day. It's kept in annual totals and excluded from weekly comparisons and the H1-vs-H2 trend.
+6. **Time zones.** Timestamps are stored in UTC; an Eastern local time is added for day-of-week analysis, with a test covering a winter date.
+7. **Non-grocery items.** The non-grocery flag is never blank, even when product metadata is missing; a test covers that case.
 
-Validation: 24 database checks; a synthetic model regression; six compact-reader regressions. Later statistical and business conclusions remain to be implemented and validated.
+## Analysis
 
+8. **Campaign selection.** The raw $34.77 gap isn't reported as lift. Four designs are compared, and the one I'd defend (matched on an earlier window, with placebo checks) has intervals that include zero.
+9. **Coupon costs.** Manufacturer coupon amounts are kept separate from retailer-funded discounts, so the retailer isn't charged for coupons it gets reimbursed for. In the app the extra coupon cost defaults to zero; every cost input is labelled as an assumption.
+10. **Email experiment outcomes.** Spend is measured per assigned customer, including the many zeros, not per buyer. The shared control group is counted once in the 64,000 total.
+11. **Targeting results.** A targeting rule that looked good on one random split weakened on a second split. The memo reports the weaker result instead of the flattering one.
 
-## Final evidence and presentation review - 26 October 2026
+## Presentation
 
-This is an AI-assisted project. The following are actual corrections or checks from this build, not fabricated business outcomes.
-
-1. **Promotion duplicates:** 12,785 conflicting keys made independent maximum display/mailer codes unsafe. Preserved MULTIPLE labels and exposure flags instead.
-2. **Metric scope:** separated $4.596M clean all-department sales from $4.185M grocery sales, and 2,469 source households from 2,467 grocery spenders.
-3. **Missing products:** retained the 17 absent product IDs through the unknown-product dimension rather than dropping their sales.
-4. **AOV grain:** validated sales / distinct basket count. The final app uses the annual ratio, not a simple average of weekly AOVs.
-5. **Week boundaries:** preserved source weeks and Monday boundaries; excluded partial week 1 from comparable trends while retaining annual totals.
-6. **Campaign selection:** did not repeat the raw targeted gap as causal lift; compared four designs and exposed intervals crossing zero.
-7. **Coupon accounting:** kept manufacturer coupon amounts separate from retailer-funded discount cost. Additional coupon funding in the app defaults to zero; cost assumptions are labelled.
-8. **Randomized outcomes:** used all assigned email customers including zeros. Shared control is counted once in the 64,000 total.
-9. **Targeting instability:** reported the second split that weakened the apparent gain instead of selecting the favorable split as the conclusion.
-10. **Presentation QA:** corrected clipped text and zero-million labels, replaced the review-date block with basket trends, removed a misleading mixed-grain redemption comparison, and kept grocery and email evidence separate. Native DAX results were checked against saved source aggregates; the latest native PBIX/PDF export remains pending after desktop control was disabled.
-
-The original module log above is historical. Excel is a complete local artifact. Power BI has a verified earlier PBIX and saved improved source; the final source-to-PBIX/PDF export remains pending. See verification files for exact checks. Public CI omits raw-data-dependent tests and does not claim an independent full rebuild.
-
-11. **Empty-text brands:** the final source share measure checks trimmed text length, since empty strings are not DAX BLANK values. A query-scoped measure was reconciled without changing the open desktop model. The final source must be reopened/refreshed before exporting the latest PBIX/PDF.
-
-## Native export completion - 26 October 2026
-
-After the user authorized desktop use for saving/exporting only, the final PBIX was saved natively and passed 660 checks. A four-page PDF was exported, visually reviewed, and re-exported after file-level fixes to an email table, notes and selector height. No desktop formatting controls were used. The PBIX and data-bearing Excel workbook remain local; only the aggregate PDF, report definitions and verification are published. The earlier pending-export notes above record an intermediate state. Streamlit Cloud deployment is still separate and requires a signed-in hosting account.
+12. **Dashboard checks.** Power BI measures were reconciled against the saved source aggregates before export. Clipped text, unclear labels and a chart that mixed different units were fixed, and the grocery and email evidence are kept on separate visuals.

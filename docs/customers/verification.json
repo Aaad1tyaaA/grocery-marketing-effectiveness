@@ -248,9 +248,9 @@
     }
   ],
   "build_inputs_sha256": {
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
-    "scripts/run_customers.py": "3868f2d7b1931bddb928d2aad23e888eac5f34071d30b99f7ae43e3cfaf08a58",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
+    "scripts/run_customers.py": "0c692c3370794645f9471ca09be57bd209af6877212f52f68addb757e03fcd52",
     "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
     "sql/03_customers.sql": "eec72b204f9d73c7e048ba0994d66f60f3c4a55309bafb41fd380bdd4744012e"
   }

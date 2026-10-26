@@ -42,7 +42,7 @@ def create_phase1():
     md=nbformat.v4.new_markdown_cell;code=nbformat.v4.new_code_cell
     nb.cells=[md('''# Module 1 — Data model and quality
 
-Word guide Steps 1.1.1–1.1.7. Source conversions are in `scripts/get_data.py`; the model is `sql/01_model.sql`; the builder is `scripts/build_phase1.py`. This notebook reads their saved results so DBeaver can remain open. Raw inputs are preserved. Monetary values are USD.'''),
+Source conversions are in `scripts/get_data.py`; the model is `sql/01_model.sql`; the builder is `scripts/build_phase1.py`. This notebook reads their saved results. Raw inputs are preserved. Monetary values are USD.'''),
         code('''from pathlib import Path
 import json
 import pandas as pd
@@ -77,7 +77,7 @@ display(load('profile_missing_days'))
 display(load('profile_campaign_windows'))'''),
         md('''## 4. Reconcile the model
 
-Every check must pass. In DBeaver connect to `grocery_phase1.duckdb` and inspect `sql/01d_inspect.sql`; use Ctrl+Enter for one query at a time. The builder reproduces the module in a fresh project copy.'''),
+Every check must pass. To explore in SQL, open `grocery_phase1.duckdb` in any SQL client and run `sql/01d_inspect.sql`; use Ctrl+Enter for one query at a time. The builder reproduces the module in a fresh project copy.'''),
         code('''checks = load('phase1_checks')
 assert checks.passed.astype(str).str.lower().eq('true').all()
 print(f'{len(checks)} model checks passed')

@@ -1,5 +1,5 @@
 -- Module 5: Campaign incrementality results (run each statement with Ctrl+Enter)
--- Connect DBeaver to grocery_campaigns.duckdb first. These are compact reporting tables.
+-- Open grocery_campaigns.duckdb in any SQL client first. These are compact reporting tables.
 
 -- 1. List the Module 5 tables.
 SHOW TABLES;
@@ -16,7 +16,7 @@ SELECT campaign_id, start_week, end_week, weeks, households,
 FROM main.campaign_roi_inputs
 ORDER BY start_week;
 
--- 4. Compare all four designs on the same matched support, as in the Word guide.
+-- 4. Compare all four designs on the same matched support.
 -- Estimates are dollars per household per week; intervals crossing zero are uncertain.
 SELECT campaign_id, method, n_treated, n_control,
        round(estimate, 2) AS estimate,

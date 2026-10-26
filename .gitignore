@@ -15,3 +15,8 @@
 .env.*
 *.log
 .ipynb_checkpoints/
+
+# Local-only helpers
+*_START_HERE.md
+*.cmd
+/exports/

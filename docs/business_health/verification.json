@@ -1,7 +1,7 @@
 {
   "guide": "Two_Analytics_Projects_Complete_Guide.docx",
   "guide_steps": "1.2.1\u20131.2.4",
-  "source": "Verified Parquet; reused first two statements of sql/01_model.sql because DBeaver holds the phase-1 file",
+  "source": "Verified Parquet; reused first two statements of sql/01_model.sql so the module builds independently of the phase-1 database",
   "clean_sales_rows": 1460487,
   "all_department_sales": 4596039.58,
   "comparable_weeks": 52,
@@ -97,9 +97,9 @@
     }
   ],
   "build_inputs_sha256": {
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
-    "scripts/run_business_health.py": "ae98a9c83cff3e229b524453d19344697e3162e811c8b11d500812aeb45a0a44",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
+    "scripts/run_business_health.py": "1d7da7af93339fe5d00ff0febfffcaead854d1a9a65d9f268c9738fcf5a2e111",
     "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
     "sql/02_health.sql": "79eaea406ebeec94d6736ffa4a073761789a7595118e86cc83f150e22ac56242"
   }

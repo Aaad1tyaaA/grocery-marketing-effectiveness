@@ -132,9 +132,9 @@ Binary differences are **percentage points**, not percent changes. Spend is USD 
 
 ## Targeting: frozen training rule and held-out check
 
-The Word guide's 36 theoretical cells combine merchandise history (both / men's only / women's only), newbie 0/1, recency 1–3 / 4–8 / 9–12 months, and prior spend **at least $200** / below $200. Only **30 cells occur**; the six both-lines/low-spend combinations are absent. We do not invent observations for empty cells. With seed 7, a random half trains cell spend lifts versus no email; each cell is ranked by its better training email. The other half evaluates frozen selections. No holdout outcome or assignment chooses a cell, version or tie break. Baseline cell counts from the full population only determine quota sizes.
+The 36 theoretical cells combine merchandise history (both / men's only / women's only), newbie 0/1, recency 1–3 / 4–8 / 9–12 months, and prior spend **at least $200** / below $200. Only **30 cells occur**; the six both-lines/low-spend combinations are absent. We do not invent observations for empty cells. With seed 7, a random half trains cell spend lifts versus no email; each cell is ranked by its better training email. The other half evaluates frozen selections. No holdout outcome or assignment chooses a cell, version or tie break. Baseline cell counts from the full population only determine quota sizes.
 
-The guide's whole-cell rule selects **8,486**, not exactly 10,000, and suppresses **9,420**. We retain that result separately as `guide_whole_cells`. To answer the exact-capacity question, a seeded outcome-free tie break fills the boundary cell, giving **10,000 target**, **10,000 suppress**, and **44,000 other**, with no overlap. The primary exact target rule is:
+A whole-cell rule selects **8,486**, not exactly 10,000, and suppresses **9,420**. We retain that result separately as `guide_whole_cells`. To answer the exact-capacity question, a seeded outcome-free tie break fills the boundary cell, giving **10,000 target**, **10,000 suppress**, and **44,000 other**, with no overlap. The primary exact target rule is:
 
 {target_table}
 Read cells as `merchandise history | newbie | months since purchase | prior-spend band`. Newbie 1 denotes a new customer in the source definition. For example, `both|0|1-3|high` is an existing customer who bought both merchandise lines, purchased within three months, and spent at least $200 previously. Selection within a partly selected cell is random and fixed, not a claim that its selected individuals have higher uplift. Complete training means, counts, both seeds and decisions are in `policy_rules.csv` and `policy_assignments.csv`.
@@ -145,7 +145,7 @@ The exact suppression rule is:
 Suppression here means a forced capacity/budget scenario based on the lowest training scores. It does **not** show these customers are harmed by email, unprofitable, or should unsubscribe. The held-out suppression spend intervals include zero. Choosing cells that look poor on both training and validation would reuse validation to fit the rule; that was avoided.
 
 {sensitivity_table}
-Seed 7's whole-cell Men's lift is **$1.60** versus **$0.70** for its complement, matching the guide's rough point estimates. Its exact 10,000 target yields **$1.62** versus **$0.66** among the other 44,000. With the additional seed 8, exact target lift falls to **$0.73** versus **$0.67** for other customers, and the target interval crosses zero. **The strong targeting gain does not survive this sensitivity check.** The table's intervals are pointwise; its p values are Holm-adjusted over all 72 held-out fixed-arm comparisons. Seed 7 target-spend p after that adjustment is about .161. Splits overlap within one experiment and are not independent replications; the second seed was not used to optimize the chosen rule. A difference between subgroup point estimates alone is not a formal test of targeting gain.
+Seed 7's whole-cell Men's lift is **$1.60** versus **$0.70** for its complement. Its exact 10,000 target yields **$1.62** versus **$0.66** among the other 44,000. With the additional seed 8, exact target lift falls to **$0.73** versus **$0.67** for other customers, and the target interval crosses zero. **The strong targeting gain does not survive this sensitivity check.** The table's intervals are pointwise; its p values are Holm-adjusted over all 72 held-out fixed-arm comparisons. Seed 7 target-spend p after that adjustment is about .161. Splits overlap within one experiment and are not independent replications; the second seed was not used to optimize the chosen rule. A difference between subgroup point estimates alone is not a formal test of targeting gain.
 
 ![Targeting sensitivity](../charts/hillstrom_targeting_validation.png)
 
@@ -177,7 +177,7 @@ Random assignment supports a causal comparison of these email versions within th
 
 ## Reproduce and inspect
 
-Word guide steps 1.6.1–1.6.5 are covered. Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for numbered DBeaver queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for statistics. The run passed **{len(checks)} database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic. The existing reporting database is protected from overwrite. The Excel workbook and recommendation memo are complete in the local handoff. The final four-page Power BI PBIX and PDF are saved and verified in the local handoff. See START_HERE.md for current publication status.
+Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for short inspection queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for the statistics. The run passed **{len(checks)} database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic.
 '''
     (ROOT/'docs/experiment_readout.md').write_text(readout,encoding='utf-8')
     (DOCS/'findings.md').write_text(readout.replace('(../charts/','(../../charts/'),encoding='utf-8')
@@ -214,7 +214,7 @@ FROM main.email_head_to_head ORDER BY metric;
 SELECT level, arm, metric, n_treatment, n_control, estimate, ci_low, ci_high, p_holm
 FROM main.segment_effects WHERE cut='buyer' ORDER BY level, metric, arm;
 
--- 7. Exact quotas versus the Word guide's whole-cell rule.
+-- 7. Exact quotas versus the whole-cell rule.
 -- Why: whole cells select 8,486 with seed 7; boundary tie breaks fill exactly 10,000.
 SELECT * FROM main.policy_audience_counts ORDER BY seed, scope, audience;
 
@@ -250,49 +250,13 @@ SELECT * FROM main.hillstrom_checks ORDER BY check_name;
         statements=con.extract_statements(sql)
         for statement in statements:
             con.execute(statement).fetchall()
-    launcher='''@echo off
-setlocal
-if not exist "%~dp0grocery_hillstrom.duckdb" (
-  echo Hillstrom database is missing. See HILLSTROM_START_HERE.md.
-  pause
-  exit /b 1
-)
-if not exist "C:\\Program Files\\DBeaver\\dbeaver.exe" (
-  echo Open DBeaver manually and connect to grocery_hillstrom.duckdb in this folder.
-  pause
-  exit /b 1
-)
-start "" "C:\\Program Files\\DBeaver\\dbeaver.exe" -con "driver=duckdb_jdbc|url=jdbc:duckdb:%~dp0grocery_hillstrom.duckdb|database=%~dp0grocery_hillstrom.duckdb|name=Grocery Hillstrom - Audited|save=true|connect=true" -f "%~dp0sql\\06_hillstrom_learning.sql"
-'''
-    (ROOT/'Open Hillstrom in DBeaver.cmd').write_text(launcher,encoding='utf-8')
-    start='''# Module 6 of 7 — Hillstrom email experiment
-
-**Done:** source CSV and Parquet, reporting database, statistical comparisons, segment cuts, two-seed targeting check, exact 10,000 candidate lists, three charts, an executed notebook and a complete experiment readout.
-
-**Result:** Men's email adds about $0.77 per assigned customer over two weeks versus no email; Women's adds $0.42. Men's also beats Women's directly. The subgroup targeting advantage is unstable across splits, so its rules remain provisional. Costs and margin are missing; revenue lift is not net ROI.
-
-1. Double-click **Open Hillstrom in DBeaver.cmd**. Use its new **Grocery Hillstrom - Audited** connection, which points to **grocery_hillstrom.duckdb**.
-2. The launcher opens **sql/06_hillstrom_learning.sql**. Put the cursor in query 1 and press **Ctrl+Enter**. Twelve short queries explain their purpose in comments. These inspect already computed results, so you do not need to paste the entire statistical build.
-3. Read **docs/experiment_readout.md** for the eight guide questions, limitations, target/suppression cell definitions and held-out results. The learning notebook is **06_hillstrom.ipynb**; its outputs are already executed.
-
-The first query should show 21,307 Men's, 21,387 Women's and 21,306 no-email customers. Query 2 should show sample-ratio p approximately .904 and FALSE for its warning. Query 12 should return 27 TRUE checks.
-
-Outputs: `exports/hillstrom/` contains all 14 reporting tables as CSV, the exact research candidate lists and both split policies. `exports/hillstrom_readout.csv` contains the six primary results. Charts are `charts/hillstrom_*.png`. Candidate IDs are synthetic row positions, not real email addresses; training version suggestions are explicitly marked unvalidated.
-
-Source: the checksum-verified scikit-uplift mirror is documented in `docs/hillstrom_source.json`; no grocery source tables were changed. The Word guide's 36 theoretical groups have only 30 observed groups. Its whole-cell target has 8,486 customers; our separate exact-quota result has 10,000.
-
-To reproduce, install `requirements-hillstrom.txt` and `requirements-tests.txt`; run `python scripts/run_all.py` from this project. It preserves existing reporting databases, executes notebooks and verifies Modules 1–6. For a fresh calculation, use a fresh project copy with reporting databases absent. `python -m pytest -q tests` runs regression checks. Disconnect the audited reporting connections before verification if DBeaver holds exclusive locks.
-
-**Next: Module 7 — Excel campaign ROI model, Power BI dashboard and recommendation memo.** Publishing to GitHub remains deferred until the end, as requested. The separate Module 6 ZIP is an add-on packet: extract its contents into the audited project; it includes this module's data, database, learning files and reproducible methods, not the other modules' large datasets.
-'''
-    (ROOT/'HILLSTROM_START_HERE.md').write_text(start,encoding='utf-8')
 
     nb=nbformat.v4.new_notebook()
     nb.metadata['kernelspec']={'display_name':'Python 3','language':'python','name':'python3'}
     md=nbformat.v4.new_markdown_cell;code=nbformat.v4.new_code_cell
     nb.cells=[md('''# Module 6 — Randomized email experiment
 
-Word guide steps 1.6.1–1.6.5. This notebook reads verified exports; the complete calculation is in `scripts/run_hillstrom.py`, `scripts/hillstrom_methods.py` and `sql/06_hillstrom.sql`. Monetary values are USD. This is a separate retailer experiment, not the grocery campaign population.'''),
+This notebook reads verified exports; the complete calculation is in `scripts/run_hillstrom.py`, `scripts/hillstrom_methods.py` and `sql/06_hillstrom.sql`. Monetary values are USD. This is a separate retailer experiment, not the grocery campaign population.'''),
         code('''from pathlib import Path
 import json
 import pandas as pd
@@ -344,32 +308,13 @@ print(len(checks),'database checks passed')
 display(checks)'''),
         md('''## 5. Make a decision and learn the SQL workflow
 
-Men's is supported as the population default; the selected cell version mix and ranking remain provisional. No email cost or margin is supplied, so do not claim net profit. Open `Open Hillstrom in DBeaver.cmd` and run `sql/06_hillstrom_learning.sql` one query at a time with Ctrl+Enter. The readout below answers all eight guide questions. The Excel workbook and recommendation memo are complete in the local handoff. The final four-page Power BI PBIX and PDF are saved and verified in the local handoff. See START_HERE.md for current publication status.'''),
+Men's is supported as the population default; the selected cell version mix and ranking remain provisional. No email cost or margin is supplied, so do not claim net profit. To inspect the results in SQL, open `grocery_hillstrom.duckdb` in any SQL client and run `sql/06_hillstrom_learning.sql` one query at a time. The readout below answers eight questions about the experiment.'''),
         code("display(Markdown((ROOT/'docs/experiment_readout.md').read_text(encoding='utf-8')))"),
     ]
     nbformat.write(nb,ROOT/'06_hillstrom.ipynb')
     execute_notebook(ROOT/'06_hillstrom.ipynb',module=6)
 
-    packet=ROOT.parent/'Grocery_Hillstrom_Experiment_Module.zip'
-    paths=['START_HERE.md','HILLSTROM_START_HERE.md','06_hillstrom.ipynb','Open Hillstrom in DBeaver.cmd','grocery_hillstrom.duckdb',
-           'sql/06_hillstrom.sql','sql/06_hillstrom_learning.sql','scripts/get_hillstrom.py',
-           'scripts/run_hillstrom.py','scripts/hillstrom_methods.py','scripts/campaign_methods.py',
-           'scripts/write_hillstrom_deliverables.py','scripts/write_notebooks.py','scripts/provenance.py',
-           'scripts/run_all.py','scripts/verify_modules.py','scripts/export_app_data.py',
-           'requirements-hillstrom.txt','requirements-business-health.txt','requirements-setup.txt','requirements-tests.txt',
-           'tests/test_hillstrom.py','data/raw/hillstrom.csv','data/raw/hillstrom.csv.gz','data/parquet/hillstrom.parquet',
-           'docs/hillstrom_source.json','docs/metric_glossary.md','docs/experiment_readout.md','docs/hillstrom/findings.md','docs/hillstrom/verification.json',
-           'docs/source_manifest.json','docs/verification.json','sql/01_model.sql','exports/hillstrom_readout.csv',
-           'app/streamlit_app.py']
-    include=[ROOT/p for p in paths]+list(OUT.glob('*.csv'))+list(CHARTS.glob('hillstrom_*.png'))
-    include += [ROOT/p for p in ['app/data/hillstrom_readout.csv','app/data/email_head_to_head.csv',
-                                'app/data/status.json'] if (ROOT/p).exists()]
-    with zipfile.ZipFile(packet,'w',zipfile.ZIP_DEFLATED) as z:
-        for path in include:
-            z.write(path,path.relative_to(ROOT))
-    with zipfile.ZipFile(packet) as z:
-        assert z.testzip() is None
-    print(f'Executed Module 6 notebook; {len(statements)} DBeaver queries passed; packet {packet.stat().st_size:,} bytes.')
+    print(f'Executed Module 6 notebook; {len(statements)} inspection queries passed.')
 
 
 if __name__=='__main__':

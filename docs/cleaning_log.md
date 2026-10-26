@@ -10,9 +10,9 @@ Built 25 October 2026 from the commit-pinned completejourney sources. All eight 
 | Retain large quantities; inspect their departments | 13,510 retained; max 89,638 | $364,119.46 | FUEL and code-like product quantities are not necessarily individual grocery units; profile_large_quantities records the split |
 | Flag non-grocery instead of deleting it | 18,526 clean lines flagged | $410,983.94 | FUEL/MISCELLANEOUS departments or COUPON/MISC ITEMS category; sql/01_model.sql |
 | Add UNKNOWN product records | 17 missing product IDs; 4,836 source lines retained | $172.57 | profile_missing_products and dim_product.is_unknown_product |
-| Retain discounts greater than price paid | 37,634 lines | $80,407.91 | Do not automatically discard deep discounts; definitions follow the supplied guide |
+| Retain discounts greater than price paid | 37,634 lines | $80,407.91 | Do not automatically discard deep discounts |
 | Collapse repeated promotion keys | 12,785 extra rows consolidated into 20,927,744 product/store/week rows | Not a sales table | All 12,785 repeated keys have differing placement codes. Flags use any nonzero code; differing labels become MULTIPLE |
-| Derive US Eastern local purchase time | All 1,460,487 clean lines; UTC also retained | No sales removed | Explicit UTC-to-America/New_York conversion; profile_week_boundaries supports the guide's interpretation |
+| Derive US Eastern local purchase time | All 1,460,487 clean lines; UTC also retained | No sales removed | Explicit UTC-to-America/New_York reporting convention; profile_week_boundaries checks calendar alignment, not the physical time zone of every store |
 | Leave demographics absent where unknown | 801 of 2,469 purchasing households have demographics | No sales removed | No imputation; has_demographics distinguishes observed from missing |
 | Flag partial campaigns | 8 of 27 flagged, all retained | No sales removed | Campaigns 15,20,21,22,23,24,25,26; use eligibility rules in later campaign analysis |
 | Retain partial week 1 | One observed local date, all source rows retained | No sales removed | Exclude week 1 only in later like-for-like weekly comparisons |

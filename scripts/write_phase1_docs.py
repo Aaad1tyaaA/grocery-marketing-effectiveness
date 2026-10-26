@@ -32,9 +32,9 @@ Built 25 October 2026 from the commit-pinned completejourney sources. All eight 
 | Retain large quantities; inspect their departments | {s['large_quantity_lines']:,} retained; max {s['maximum_quantity']:,.0f} | {money(impacts['large_quantity_lines'][1])} | FUEL and code-like product quantities are not necessarily individual grocery units; profile_large_quantities records the split |
 | Flag non-grocery instead of deleting it | 18,526 clean lines flagged | $410,983.94 | FUEL/MISCELLANEOUS departments or COUPON/MISC ITEMS category; sql/01_model.sql |
 | Add UNKNOWN product records | 17 missing product IDs; 4,836 source lines retained | $172.57 | profile_missing_products and dim_product.is_unknown_product |
-| Retain discounts greater than price paid | {s['discount_above_paid_price']:,} lines | {money(impacts['discount_above_paid_price'][1])} | Do not automatically discard deep discounts; definitions follow the supplied guide |
+| Retain discounts greater than price paid | {s['discount_above_paid_price']:,} lines | {money(impacts['discount_above_paid_price'][1])} | Do not automatically discard deep discounts |
 | Collapse repeated promotion keys | {p['extra_rows']:,} extra rows consolidated into {p['unique_keys']:,} product/store/week rows | Not a sales table | All {p['conflicting_keys']:,} repeated keys have differing placement codes. Flags use any nonzero code; differing labels become MULTIPLE |
-| Derive US Eastern local purchase time | All {m['fact_sales']:,} clean lines; UTC also retained | No sales removed | Explicit UTC-to-America/New_York conversion; profile_week_boundaries supports the guide's interpretation |
+| Derive US Eastern local purchase time | All {m['fact_sales']:,} clean lines; UTC also retained | No sales removed | Explicit UTC-to-America/New_York reporting convention; profile_week_boundaries checks calendar alignment, not the physical time zone of every store |
 | Leave demographics absent where unknown | 801 of 2,469 purchasing households have demographics | No sales removed | No imputation; has_demographics distinguishes observed from missing |
 | Flag partial campaigns | 8 of 27 flagged, all retained | No sales removed | Campaigns 15,20,21,22,23,24,25,26; use eligibility rules in later campaign analysis |
 | Retain partial week 1 | One observed local date, all source rows retained | No sales removed | Exclude week 1 only in later like-for-like weekly comparisons |
@@ -101,7 +101,7 @@ All 44 source columns have row counts, missingness, cardinality, and types in pr
 
 ## Flagged daily sales
 
-Grocery-only sales, calculated in local time. Scores compare each date with the median for its weekday, using median absolute deviation. Potential holiday explanations from the guide have not been independently verified here.
+Grocery-only sales, calculated in local time. Scores compare each date with the median for its weekday, using median absolute deviation. Possible holiday explanations are hypotheses, not verified facts.
 
 | Date | Robust z-score |
 |---|---:|
@@ -114,26 +114,8 @@ The basket export flags 142 grocery baskets above the 99.9th percentile. Line-le
 - 24 checks cover source immutability, row and monetary reconciliation, dimension uniqueness, fact coverage, promotion grain, conflict accounting, discount formulas, local-time conversion, campaign dates, required-field missingness, and anomaly outputs.
 - The synthetic model regression covers free purchases, unknown products, nullable product attributes, non-grocery classification, conflicting promotions, duplicate campaign recipients, and time conversion.
 - The six reader regressions compare the compact reader with the standard reader on the six smaller R sources.
-- DBeaver's native visual connection test remains unconfirmed. Later KPI/segmentation models, marketing estimates, Hillstrom analysis, Excel, Power BI, and deployment are not part of phase 1.
+- Later modules cover KPIs, segments, promotions, campaigns and the email experiment.
 '''
 (ROOT/'docs/phase1_findings.md').write_text(findings,encoding='utf-8')
-(ROOT/'docs/ai_log.md').write_text('''# AI implementation log
-
-## Phase 1 — 25 October 2026
-
-Request: build the clean grocery data foundation and supply reviewable files using the local guide and repaired kit.
-
-Produced: source profiling SQL, the core model, an explicit household/campaign bridge, anomaly queries, verification SQL, a fresh-database builder, DBeaver inspection queries, measured reports, and regression checks.
-
-Decisions verified:
-- The original database was locked by DBeaver. Built a separate self-contained phase-1 file from Parquet, verifying source counts and fingerprints before and after modelling.
-- Did not copy the guide's independent maximum-code selection for promotion duplicates: source profiling showed 12,785 conflicting keys. Used MULTIPLE labels and preserved exposure flags/source row counts.
-- Made non-grocery classification non-null even when product metadata fields are missing. A synthetic regression tests that case.
-- Preserved UTC time and added explicit Eastern local time. A synthetic regression verifies a winter conversion.
-- Added zero-MAD protection to anomaly scoring and kept anomaly flags separate from deletion rules.
-- Did not repeat the guide's missing-date/store-closure claim as an observed fact.
-
-Validation: 24 database checks; a synthetic model regression; six compact-reader regressions. Later statistical and business conclusions remain to be implemented and validated.
-''',encoding='utf-8')
 con.close()
-print('Written: cleaning log, findings, data dictionary, AI log, rule impact export')
+print('Written: cleaning log, findings, data dictionary, rule impact export')

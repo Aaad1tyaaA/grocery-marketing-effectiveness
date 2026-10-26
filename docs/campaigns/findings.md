@@ -1,4 +1,4 @@
-# Campaign incrementality — Word guide Module 5
+# Campaign incrementality
 
 Completed **Steps 1.5.1–1.5.5** with verified Complete Journey Parquet sources. The analysis uses grocery household-week spend, campaigns 8, 13 and 18, four comparison designs, placebo checks, an overlap audit, and the later ROI inputs.
 
@@ -10,7 +10,7 @@ The earlier-window matched estimates are **+$0.80** for Campaign 8, **+$0.39** f
 
 ## The four designs, dollars per household per week
 
-The table below reproduces the guide's common-support comparison. Intervals are pointwise 95% HC1 intervals, treating the estimated matching weights as fixed.
+The table below shows the common-support comparison. Intervals are pointwise 95% HC1 intervals, treating the estimated matching weights as fixed.
 
 | Campaign | Naive gap | Unmatched DiD | Matched on pre-period | Matched on earlier weeks | Pre-match placebo | Earlier-match placebo |
 |---|---:|---:|---:|---:|---:|---:|
@@ -18,7 +18,7 @@ The table below reproduces the guide's common-support comparison. Intervals are 
 | 13 | +34.31 (+31.49 to +37.13) | -0.20 (-2.00 to +1.59) | +6.63 (+3.28 to +9.99) | +0.39 (-3.25 to +4.04) | +3.67 (-0.79 to +8.13; Holm p=0.320) | -3.50 (-8.75 to +1.75; Holm p=0.384) |
 | 18 | +34.77 (+31.81 to +37.73) | +1.68 (-0.01 to +3.38) | +6.27 (+3.07 to +9.48) | +2.95 (-0.74 to +6.64) | +4.85 (+0.73 to +8.96; Holm p=0.084) | -1.51 (-5.71 to +2.69; Holm p=0.481) |
 
-The naive and unmatched comparisons use the same common-support households shown for the pre-period match, to make the guide's sequence comparable. The exported `campaign_estimates.csv` also includes full-sample naive and unmatched estimates. Matching retains only households in strata containing both targeted and untargeted households; the campaign-specific counts are in the CSVs and database.
+The naive and unmatched comparisons use the same common-support households shown for the pre-period match, to make the sequence comparable. The exported `campaign_estimates.csv` also includes full-sample naive and unmatched estimates. Matching retains only households in strata containing both targeted and untargeted households; the campaign-specific counts are in the CSVs and database.
 
 ## Pre-period contrasts, weights, and week boundaries
 
@@ -38,13 +38,13 @@ Using the actual earlier-matched sample and weights, compare the last four pre-c
 
 Weights are positive and stratum shares reconcile, but a few controls carry substantial weight. The reported HC1 intervals condition on these weights; they are not a full uncertainty analysis of selecting/matching households. Equal activity values are split by household ordering in the guide-compatible method. The tie-preserving sensitivity keeps them together and is exported separately.
 
-The guide uses whole source weeks. **Campaign 13 actually starts Tuesday 8 August, while modeled week 33 starts Monday 7 August**, so its during-period includes one pre-campaign day (49 modeled days versus 48 calendar campaign days). Campaigns 8 and 18 align with week boundaries. `campaign_window_audit.csv` reports the exact dates, extra days, and grocery sales on those off-date days across all households. Those amounts are not campaign effects. An exact-day analysis would be needed to remove this approximation; the primary values retain the guide's weekly definition.
+The analysis uses whole source weeks. **Campaign 13 actually starts Tuesday 8 August, while modeled week 33 starts Monday 7 August**, so its during-period includes one pre-campaign day (49 modeled days versus 48 calendar campaign days). Campaigns 8 and 18 align with week boundaries. `campaign_window_audit.csv` reports the exact dates, extra days, and grocery sales on those off-date days across all households. Those amounts are not campaign effects. An exact-day analysis would be needed to remove this approximation; the primary values retain the guide's weekly definition.
 
 ## Campaigns and audience
 
 There are **27 campaigns**. The available source data covers **2,467 grocery households**; **1,559** received at least one campaign and **908** received none. Type A has four campaigns: Campaign 27 begins too early to supply the guide's eight-week pre-period; Campaigns 8, 13 and 18 are the large campaigns used for the incrementality analysis. Type B and C audiences are much smaller. See `campaign_overview.csv` for each audience and redemption count.
 
-The guide's 910 never-assigned households use all 2,469 purchasing households. The grocery cohort excludes two non-grocery-only, never-assigned households, leaving 908. This denominator difference is intentional.
+The 910 never-assigned households use all 2,469 purchasing households. The grocery cohort excludes two non-grocery-only, never-assigned households, leaving 908. This denominator difference is intentional.
 
 Campaign assignment overlaps are substantial inside these analysis windows: **1,076**, **1,077** and **1,133** households were assigned to the respective campaign, and many were also assigned to other campaigns during the pre-period or campaign window. The overlap audit lists treated and control overlap counts. Excluding other-campaign recipients is exported as a sensitivity; its smaller samples still have intervals spanning zero.
 

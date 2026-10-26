@@ -9,7 +9,7 @@ All monetary values are source USD. Definitions cover completed Modules 1–5. C
 | Basket / shopping trip | One distinct `basket_id`; confirm its household/store consistency before changing the grain. |
 | Average basket value | `sum(sales_value) / nullif(count(DISTINCT basket_id),0)` with the same filters in numerator and denominator. |
 | Active household | A distinct household purchasing in the selected period. |
-| Shelf value | `sales_value + retail_disc + coupon_match_disc`, following the supplied guide. |
+| Shelf value | `sales_value + retail_disc + coupon_match_disc`. |
 | Retailer-funded discount | `retail_disc + coupon_match_disc`. Manufacturer-funded `coupon_disc` is excluded. |
 | Discount depth | `sum(retailer_funded_disc) / nullif(sum(shelf_value),0)`. This is a ratio of totals, not an average of line ratios. |
 | Free line | `sales_value=0 AND quantity>0`. Retained in the model. |
@@ -37,14 +37,14 @@ Missing demographics mean unknown attributes, not zero income or a particular ho
 | Loyal regulars | Remaining non-lapsed households at or above median spend. |
 | Light regulars | Remaining non-lapsed households with at least 12 baskets. |
 | Occasional | Remaining non-lapsed households. |
-| Deal-driven flag | Discount share at or above its 75th percentile, using the guide's three-decimal rounded household discount shares. Ties can include more than 25%. |
+| Deal-driven flag | Discount share at or above its 75th percentile, using household discount shares rounded to three decimals. Ties can include more than 25%. |
 | H1 / H2 spend | Source weeks 2-27 / 28-53; excludes partial week 1. |
 | Growing / Declining | At least 20% higher / lower H2 spend relative to H1, after separately handling zero-spend periods. |
-| New in H2 / Gone in H2 | Guide labels for zero positive spend in H1 / H2. These are observed patterns, not proven acquisition/churn. |
+| New in H2 / Gone in H2 | Labels for zero positive spend in H1 / H2. These are observed patterns, not proven acquisition/churn. |
 | Cohort | First observed purchase month in the clean all-purchase panel; not verified acquisition month. |
 | Monthly activity retention | Distinct households purchasing in a cohort-month divided by initial cohort size. Includes returning households after missed months. Elapsed inactive months are zero; future months are unobserved. |
 
-Segments use 2,467 grocery households. Cohorts follow the guide's all-purchase scope of 2,469 households. Income associations apply only to the demographic subset; they are not causal effects or population-wide estimates.
+Segments use 2,467 grocery households. Cohorts use the all-purchase scope of 2,469 households. Income associations apply only to the demographic subset; they are not causal effects or population-wide estimates.
 
 ## Module 4 promotion measures
 
@@ -52,7 +52,7 @@ Segments use 2,467 grocery households. Cohorts follow the guide's all-purchase s
 |---|---|
 | Eligible product/store pair | Recorded grocery panel purchases in at least eight source weeks, using weeks 2-53. |
 | Pair-week panel | Every eligible pair crossed with 52 weeks; absent panel purchases are zero. This does not measure all store sales. |
-| Promotion flag | Recorded nonzero display and/or mailer code. Primary guide-style flags treat absent promotion records as no recorded exposure, not proven no price discount. |
+| Promotion flag | Recorded nonzero display and/or mailer code. Primary flags treat absent promotion records as no recorded exposure, not proven no price discount. |
 | Baseline units | Each pair's average panel units in weeks with no recorded promotion, excluding the week immediately after a promotion; requires at least four weeks. |
 | Unit lift index | Sum of observed panel units divided by the sum of pair-specific baseline units for the same condition's pair-weeks. An index of 3.14 is 214% above baseline; it is not a causal estimate. |
 | Post-promotion week | A non-promoted week immediately after a promoted week. Two consecutive prior promoted weeks define the multi-week category; left-boundary history is incomplete and reported. |
@@ -94,7 +94,7 @@ Weekly household and category buyer counts are not additive. Customer cohorts us
 | Merchandise buyer type | Historical purchase of men's merchandise, women's merchandise or both; not customer sex or gender. |
 | Frozen cell policy | Thirty observed pre-treatment cells ranked by the better email spend lift in the training half only. Holdout outcomes and assignments do not choose the rule. |
 | Exact capacity list | Seeded outcome-free boundary tie breaks fill exactly 10,000 targets and 10,000 suppressed with no overlap. Source_row is a synthetic row position, not a real contact ID. |
-| Whole-cell policy | Word guide rule selecting complete cells without exceeding 10,000; seed 7 selects 8,486 targets. Retained separately from exact-capacity selection. |
+| Whole-cell policy | Rule selecting complete cells without exceeding 10,000; seed 7 selects 8,486 targets. Retained separately from exact-capacity selection. |
 | Held-out version-policy value | Horvitz–Thompson estimate using the trained version for each cell and known 1/3 random assignment. The learned-minus-always-Men's comparison is paired. Intervals condition on the fitted rule. |
 | Targeting sensitivity | Seed 8 reuses the same experiment in an overlapping split and fails to confirm a strong targeting advantage. A sensitivity check, not independent replication or an opportunity to pick the most favorable seed. |
 | Suppression | Forced capacity ranking based on lowest training scores; not established negative email effects, net losses or an unsubscribe recommendation. |

@@ -427,9 +427,9 @@
     }
   ],
   "build_inputs_sha256": {
-    "docs/hillstrom_source.json": "30ce2c27e4b07c43a67bea73a326366106104557cbace4a53d39028a302e7d8a",
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "docs/hillstrom_source.json": "1b615e83a1cac526d53a54604f15a054e0946da0c787ebfcda2fc81a264adb19",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
     "requirements-hillstrom.txt": "70ab4ae26011dd6926b8bdafc6cbf88a9b9f3720b2fdf5e63bec75a40cb9d4a9",
     "scripts/campaign_methods.py": "7d924d1a2096df7d5d26e94ad860f91e59735430284475ad1855e41b892b045d",
     "scripts/get_hillstrom.py": "e023952b2ee2ea421b276f1946061e0b47ccefc2eac7f042bb0058a8ed885dc5",

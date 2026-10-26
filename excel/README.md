@@ -1,22 +1,22 @@
-# Excel campaign ROI scenario model
+# Campaign ROI workbook
 
-The complete, verified workbook is delivered locally as `campaign_roi_model_v3.xlsx`. It is not included in the public repository because its lookup/pivot features contain household-level source-derived data. The public repository contains the model specification and native verification record instead.
+`campaign_roi_model_v3.xlsx` answers one question: **at what lift does a campaign pay for itself, and how sure can we be?** Blue cells are editable assumptions; black cells are formulas.
 
-## Inputs and formula contract
+The completed workbook is a local deliverable because its household lookup sheet contains household-level data. This folder publishes its specification and the recorded verification evidence, rather than the workbook itself.
 
-- Targeted households, campaign weeks, assumed incremental weekly household spend, gross margin, coupon redemptions, coupon amount proxy, **additional** retailer coupon funding share, and distribution cost per household.
-- Incremental revenue = targeted households x campaign weeks x assumed spend lift.
-- Incremental gross profit = incremental revenue x gross margin.
-- Additional coupon cost = redemptions x coupon amount proxy x additional retailer funding share. The manufacturer coupon-line average is a proxy, not an observed campaign cost. The local workbook retains a 100% additional-funding scenario assumption; this is not an observed retailer cost. Set it to zero when manufacturer-funded or already included in margin. The separate summary app defaults to zero. Compare both assumptions to avoid charging manufacturer-funded discounts to the retailer or double-counting source net sales effects.
-- Campaign cost = additional coupon cost + households x distribution cost per household.
-- Scenario net profit = incremental gross profit - campaign cost.
-- Scenario ROI = net profit / campaign cost, unavailable when cost is zero.
-- Break-even lift = campaign cost / (households x weeks x gross margin), unavailable for zero/invalid denominators.
+## Model
 
-The historical campaign point estimate remains separate from editable scenario lift. Historical lift is observational and its interval crosses zero. A positive scenario must not trigger automatic scale-up.
+- **Inputs:** targeted households, campaign weeks, incremental spend per household per week, gross margin, coupon redemptions, coupon amount per redemption, the share of coupon cost the retailer pays, and distribution cost per household.
+- **Incremental revenue** = households × weeks × lift.
+- **Incremental gross profit** = revenue × margin.
+- **Coupon cost** = redemptions × coupon amount × retailer share. Manufacturer coupons are reimbursed, so set the share to 0% unless the retailer funds extra coupons.
+- **Net profit** = gross profit − coupon cost − households × distribution cost. **ROI** = net profit ÷ cost.
+- **Break-even lift** = cost ÷ (households × weeks × margin).
 
-## Verified native features
+## Features
 
-The seven-sheet desktop workbook includes named inputs, a two-input sensitivity Data Table, scenarios, charts, Goal Seek, household lookups and a category pivot. [The native verification record](../docs/excel/verification_v3.json) documents 127 checks, including blank/invalid inputs, cost and margin changes, formula restoration, and sample-allocation calculations.
+Named inputs, a two-way Data Table (lift × margin), Goal Seek for the maximum affordable distribution cost, a holdout-size planner, a household segment lookup (XLOOKUP), a category discount PivotTable and charts. Checks are recorded in [`docs/excel/verification_v3.json`](../docs/excel/verification_v3.json).
 
-The holdout planner uses an eight-week household outcome and baseline variance as a planning proxy. The default break-even-effect scenario needs far more households than the current audience. Re-estimate variance, commercial effect, allocation and power before promising a feasible campaign experiment.
+## How to read it
+
+The campaign 18 lift ($2.95 per household per week) comes from an observational estimate whose 95% interval (−$0.74 to $6.64) includes zero. A positive scenario is not proof the campaign paid; the holdout planner shows how large a randomized test would need to be to settle it. Margin, coupon funding and distribution cost are assumptions, not data.

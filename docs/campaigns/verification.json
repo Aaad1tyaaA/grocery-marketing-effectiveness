@@ -772,7 +772,7 @@
       "ci_high": 4.039750275,
       "estimated_change_supported_sample": 2971.6218362177,
       "ci_low_supported_sample": -24484.1553989309,
-      "ci_high_supported_sample": 30427.3990713662,
+      "ci_high_supported_sample": 30427.3990713663,
       "costs_observed": false,
       "extrapolation_to_all_recipients_validated": false
     },
@@ -1019,8 +1019,8 @@
   "inference": "Household-level WLS, HC1 normal intervals; estimated weights treated as fixed; not causal identification",
   "unsupported_case": "Campaign 8 earlier-window placebo lacks required history",
   "build_inputs_sha256": {
-    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
-    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "docs/source_manifest.json": "00e1bb877133a1bb206089dfb4b3b804001445fa6f11d734687aa56cb18accab",
+    "docs/verification.json": "3c7d8b8615b64fe065033dbbd146b29c78dab5a832939f77b89a2554534f7cd3",
     "scripts/campaign_methods.py": "7d924d1a2096df7d5d26e94ad860f91e59735430284475ad1855e41b892b045d",
     "scripts/run_campaigns.py": "90a91dd1b904f99bbd48ffd723e9ba87a2e9009cc87835a8df4fbc38d48a9afb",
     "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",

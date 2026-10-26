@@ -1,4 +1,4 @@
-"""Exercise cleaning edge cases on synthetic rows, without opening the user's database."""
+"""Exercise cleaning edge cases on synthetic rows, without opening the local database."""
 from pathlib import Path
 import duckdb
 

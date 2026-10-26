@@ -34,7 +34,7 @@ def main():
 
     # DBeaver worksheet: short, separately runnable queries against the small reporting DB.
     sql = r'''-- Module 5: Campaign incrementality results (run each statement with Ctrl+Enter)
--- Connect DBeaver to grocery_campaigns.duckdb first. These are compact reporting tables.
+-- Open grocery_campaigns.duckdb in any SQL client first. These are compact reporting tables.
 
 -- 1. List the Module 5 tables.
 SHOW TABLES;
@@ -51,7 +51,7 @@ SELECT campaign_id, start_week, end_week, weeks, households,
 FROM main.campaign_roi_inputs
 ORDER BY start_week;
 
--- 4. Compare all four designs on the same matched support, as in the Word guide.
+-- 4. Compare all four designs on the same matched support.
 -- Estimates are dollars per household per week; intervals crossing zero are uncertain.
 SELECT campaign_id, method, n_treated, n_control,
        round(estimate, 2) AS estimate,
@@ -119,7 +119,7 @@ SELECT * FROM main.campaign_window_audit ORDER BY start_week;
                            for r in pretrend.itertuples())
     support_rows='\n'.join(f'| {r.campaign_id} | {r.n_treated:,} | {r.n_control:,} | {r.control_ess:.1f} | {r.maximum_control_weight:.2f} |'
                           for r in guide[guide.method=='matched_earlier'].itertuples())
-    findings = f'''# Campaign incrementality — Word guide Module 5
+    findings = f'''# Campaign incrementality
 
 Completed **Steps 1.5.1–1.5.5** with verified Complete Journey Parquet sources. The analysis uses grocery household-week spend, campaigns 8, 13 and 18, four comparison designs, placebo checks, an overlap audit, and the later ROI inputs.
 
@@ -131,13 +131,13 @@ The earlier-window matched estimates are **+$0.80** for Campaign 8, **+$0.39** f
 
 ## The four designs, dollars per household per week
 
-The table below reproduces the guide's common-support comparison. Intervals are pointwise 95% HC1 intervals, treating the estimated matching weights as fixed.
+The table below shows the common-support comparison. Intervals are pointwise 95% HC1 intervals, treating the estimated matching weights as fixed.
 
 | Campaign | Naive gap | Unmatched DiD | Matched on pre-period | Matched on earlier weeks | Pre-match placebo | Earlier-match placebo |
 |---|---:|---:|---:|---:|---:|---:|
 {chr(10).join(rows)}
 
-The naive and unmatched comparisons use the same common-support households shown for the pre-period match, to make the guide's sequence comparable. The exported `campaign_estimates.csv` also includes full-sample naive and unmatched estimates. Matching retains only households in strata containing both targeted and untargeted households; the campaign-specific counts are in the CSVs and database.
+The naive and unmatched comparisons use the same common-support households shown for the pre-period match, to make the sequence comparable. The exported `campaign_estimates.csv` also includes full-sample naive and unmatched estimates. Matching retains only households in strata containing both targeted and untargeted households; the campaign-specific counts are in the CSVs and database.
 
 ## Pre-period contrasts, weights, and week boundaries
 
@@ -153,13 +153,13 @@ Using the actual earlier-matched sample and weights, compare the last four pre-c
 
 Weights are positive and stratum shares reconcile, but a few controls carry substantial weight. The reported HC1 intervals condition on these weights; they are not a full uncertainty analysis of selecting/matching households. Equal activity values are split by household ordering in the guide-compatible method. The tie-preserving sensitivity keeps them together and is exported separately.
 
-The guide uses whole source weeks. **Campaign 13 actually starts Tuesday 8 August, while modeled week 33 starts Monday 7 August**, so its during-period includes one pre-campaign day (49 modeled days versus 48 calendar campaign days). Campaigns 8 and 18 align with week boundaries. `campaign_window_audit.csv` reports the exact dates, extra days, and grocery sales on those off-date days across all households. Those amounts are not campaign effects. An exact-day analysis would be needed to remove this approximation; the primary values retain the guide's weekly definition.
+The analysis uses whole source weeks. **Campaign 13 actually starts Tuesday 8 August, while modeled week 33 starts Monday 7 August**, so its during-period includes one pre-campaign day (49 modeled days versus 48 calendar campaign days). Campaigns 8 and 18 align with week boundaries. `campaign_window_audit.csv` reports the exact dates, extra days, and grocery sales on those off-date days across all households. Those amounts are not campaign effects. An exact-day analysis would be needed to remove this approximation; the primary values retain the guide's weekly definition.
 
 ## Campaigns and audience
 
 There are **27 campaigns**. The available source data covers **{all_grocery_households:,} grocery households**; **{unique_recipients:,}** received at least one campaign and **{unassigned_households:,}** received none. Type A has four campaigns: Campaign 27 begins too early to supply the guide's eight-week pre-period; Campaigns 8, 13 and 18 are the large campaigns used for the incrementality analysis. Type B and C audiences are much smaller. See `campaign_overview.csv` for each audience and redemption count.
 
-The guide's 910 never-assigned households use all 2,469 purchasing households. The grocery cohort excludes two non-grocery-only, never-assigned households, leaving 908. This denominator difference is intentional.
+The 910 never-assigned households use all 2,469 purchasing households. The grocery cohort excludes two non-grocery-only, never-assigned households, leaving 908. This denominator difference is intentional.
 
 Campaign assignment overlaps are substantial inside these analysis windows: **{int(roi.loc[roi.campaign_id=='8','households'].iloc[0]):,}**, **{int(roi.loc[roi.campaign_id=='13','households'].iloc[0]):,}** and **{int(roi.loc[roi.campaign_id=='18','households'].iloc[0]):,}** households were assigned to the respective campaign, and many were also assigned to other campaigns during the pre-period or campaign window. The overlap audit lists treated and control overlap counts. Excluding other-campaign recipients is exported as a sensitivity; its smaller samples still have intervals spanning zero.
 
@@ -177,37 +177,6 @@ For a business decision, run a randomized household holdout for the next campaig
 '''
     (DOCS / 'findings.md').write_text(findings, encoding='utf-8')
 
-    start = '''# Campaign incrementality is ready — Word guide Module 5
-
-Completed **Steps 1.5.1–1.5.5**. You can inspect the finished results without manually building the 128,284-row household-week panel or pasting each setup query.
-
-## Open these first
-
-1. `docs/campaigns/findings.md` — interpretation and limitations.
-2. `charts/campaign_estimate_path.png` — how the estimate changes across four designs.
-3. `charts/campaign_pretrends.png` and `charts/campaign18_pretrend.png` — weekly treated/control gaps.
-4. `05_campaigns.ipynb` — executed learning notebook.
-5. `sql/05_campaigns_learning.sql` — twelve short DBeaver queries, one at a time.
-
-## Main result
-
-The earlier-window matched estimate is **+$0.80** for Campaign 8 (95% CI −$2.71 to +$4.31), **+$0.39** for Campaign 13 (−$3.25 to +$4.04), and **+$2.95** for Campaign 18 (−$0.74 to +$6.64) per supported household per week. All intervals include zero. The pre-period-matched estimate looks larger, but Campaign 8's fake-start placebo is also positive and significant after Holm correction.
-
-## Open in DBeaver
-
-Double-click `Open Campaign Analysis in DBeaver.cmd`. If a DuckDB driver prompt appears, choose **Download**. Then open `sql/05_campaigns_learning.sql`. Run each statement with **Ctrl+Enter**. It queries the compact `grocery_campaigns.duckdb` reporting database, so it won't scan the 21-million-row promotions table or write into your raw database.
-
-The SQL worksheet starts with `SHOW TABLES`, then shows campaign audiences, the four estimates, placebo checks, campaign overlap, ROI inputs, weekly gaps, and final checks. `main.` is included in the table names for DBeaver.
-
-The audit also added pre-period contrasts, effective control sample sizes, and an explicit date-boundary check: Campaign 13's whole-week outcome includes one day before its actual Tuesday start. This approximation is disclosed in the readout; it is not an exact-day causal estimate.
-
-## Rebuild
-
-The project requires the packages in `requirements-business-health.txt`. Run `python scripts/run_campaigns.py` to build the verified campaign results, then `python scripts/write_campaign_deliverables.py` to regenerate the notebook and readout. The builder refuses to overwrite an existing `grocery_campaigns.duckdb`; rename the prior report database first if intentionally rebuilding. Keep DBeaver disconnected from that report file while rebuilding.
-
-The packet `Grocery_Campaign_Incrementality_Module.zip` contains the module files and reproducible scripts. Raw data and other modules are not duplicated in the packet; the complete project folder contains them.
-'''
-    (ROOT / 'CAMPAIGNS_START_HERE.md').write_text(start, encoding='utf-8')
 
     # Tutorial notebook reads compact outputs, leaving the expensive transformations reproducible in SQL/Python.
     nb = nbformat.v4.new_notebook()
@@ -215,7 +184,7 @@ The packet `Grocery_Campaign_Incrementality_Module.zip` contains the module file
     cells = [
         nbformat.v4.new_markdown_cell('''# Module 5 — Campaign incrementality
 
-This follows Word guide Steps 1.5.1–1.5.5. The campaign assignment was observational, not randomized. We compare four designs, use fake-start placebo checks to look for bias, and collect inputs for the later ROI model. Dollar estimates are per household per week.'''),
+The campaign assignment was observational, not randomized. We compare four designs, use fake-start placebo checks to look for bias, and collect inputs for the later ROI model. Dollar estimates are per household per week.'''),
         nbformat.v4.new_code_cell('''from pathlib import Path
 import pandas as pd
 from IPython.display import display, Image
@@ -227,7 +196,7 @@ overview = load("campaign_overview")
 display(overview[["campaign_id", "campaign_type", "start_date", "end_date", "households", "redemptions"]].sort_values("start_date"))'''),
         nbformat.v4.new_markdown_cell('''## 1. Which campaigns can we compare?
 
-The guide focuses on large Type A campaigns 8, 13 and 18. Campaign 27 begins too early for the required eight-week pre-period. Campaign assignment used past purchases, so targeted households started out different from everyone else.'''),
+I focus on the large Type A campaigns 8, 13 and 18. Campaign 27 begins too early for the required eight-week pre-period. Campaign assignment used past purchases, so targeted households started out different from everyone else.'''),
         nbformat.v4.new_code_cell('''roi = load("campaign_roi_inputs")
 display(roi[["campaign_id", "start_week", "end_week", "weeks", "households", "redemptions", "redeeming_households"]])
 print("Grocery households x 52 weeks:", 2_467 * 52)'''),
@@ -254,9 +223,9 @@ The weekly chart shows the noisy gap for Campaign 18. Pointwise intervals are se
         nbformat.v4.new_code_cell('''display(Image(filename=str(ROOT / "charts" / "campaign18_pretrend.png")))
 display(load("campaign_roi_inputs"))
 display(load("coupon_amount_summary"))'''),
-        nbformat.v4.new_markdown_cell('''## 4. Run the workflow yourself in DBeaver
+        nbformat.v4.new_markdown_cell('''## 4. Run the workflow yourself in SQL
 
-Open `grocery_campaigns.duckdb` with `Open Campaign Analysis in DBeaver.cmd`, then run one statement at a time from `sql/05_campaigns_learning.sql` with Ctrl+Enter. These are small reporting tables. The full household-week model and statistical estimates are reproducible with `scripts/run_campaigns.py`.
+Open `grocery_campaigns.duckdb` in any SQL client, then run one statement at a time from `sql/05_campaigns_learning.sql` with Ctrl+Enter. These are small reporting tables. The full household-week model and statistical estimates are reproducible with `scripts/run_campaigns.py`.
 
 **Conclusion:** the best observational design finds a small, uncertain spend change. Recommend a randomized household holdout and measure net revenue and retailer costs before claiming campaign ROI.'''),
         nbformat.v4.new_code_cell('''checks = load("campaign_checks")
@@ -269,34 +238,7 @@ display(checks)''')
     nbformat.write(nb, path)
     execute_notebook(path,module=5)
 
-    # Point the project landing page to the latest finished module.
-    landing = ROOT / 'START_HERE.md'
-    text = landing.read_text(encoding='utf-8')
-    old = '**Latest completed section: Word guide Module 4, promotion analysis. Open PROMOTIONS_START_HERE.md for its notebook, charts, exports, and interpretation limits. Earlier sections are documented in CUSTOMERS_START_HERE.md and BUSINESS_HEALTH_START_HERE.md.**'
-    new = '**Latest completed section: Word guide Module 5, campaign incrementality. Open CAMPAIGNS_START_HERE.md for its notebook, charts, exports, DBeaver worksheet, and interpretation limits. Earlier sections are documented in PROMOTIONS_START_HERE.md, CUSTOMERS_START_HERE.md, and BUSINESS_HEALTH_START_HERE.md.**'
-    if old in text:
-        landing.write_text(text.replace(old,new,1), encoding='utf-8')
-
-    packet = ROOT.parent / 'Grocery_Campaign_Incrementality_Module.zip'
-    include = [
-        ROOT/'CAMPAIGNS_START_HERE.md', ROOT/'05_campaigns.ipynb', ROOT/'Open Campaign Analysis in DBeaver.cmd',
-        ROOT/'grocery_campaigns.duckdb', ROOT/'sql/05_campaigns.sql',
-        ROOT/'sql/05_campaigns_learning.sql', ROOT/'scripts/run_campaigns.py',
-        ROOT/'scripts/campaign_methods.py', ROOT/'scripts/write_campaign_deliverables.py',
-        ROOT/'docs/campaigns/findings.md', ROOT/'docs/campaigns/verification.json',
-        ROOT/'charts/campaign_estimate_path.png', ROOT/'charts/campaign_earlier_estimates.png',
-        ROOT/'charts/campaign_pretrends.png', ROOT/'charts/campaign18_pretrend.png',
-        ROOT/'scripts/write_notebooks.py',ROOT/'scripts/provenance.py',ROOT/'sql/01_model.sql',
-        ROOT/'requirements-business-health.txt',ROOT/'requirements-setup.txt',ROOT/'tests/test_campaigns.py',
-        ROOT/'docs/source_manifest.json',ROOT/'docs/verification.json',
-    ] + list(OUT.glob('*.csv'))
-    with zipfile.ZipFile(packet,'w',zipfile.ZIP_DEFLATED) as z:
-        for file in include:
-            z.write(file,file.relative_to(ROOT))
-    with zipfile.ZipFile(packet) as z:
-        assert z.testzip() is None
-    print('Notebook executed; findings, DBeaver worksheet, start page, and packet written.')
-    print(f'Packet: {packet} ({packet.stat().st_size:,} bytes)')
+    print('Notebook executed; findings and SQL worksheet written.')
 
 
 if __name__ == '__main__':
