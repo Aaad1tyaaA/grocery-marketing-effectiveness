@@ -177,7 +177,7 @@ Random assignment supports a causal comparison of these email versions within th
 
 ## Reproduce and inspect
 
-Word guide steps 1.6.1–1.6.5 are covered. Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for numbered DBeaver queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for statistics. The run passed **{len(checks)} database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic. The existing reporting database is protected from overwrite. The Excel workbook and recommendation memo are complete in the local handoff. The improved Power BI source is saved; its final PBIX/PDF export remains pending. See START_HERE.md for current publication status.
+Word guide steps 1.6.1–1.6.5 are covered. Open `06_hillstrom.ipynb` for executed outputs, `sql/06_hillstrom_learning.sql` for numbered DBeaver queries, `scripts/run_hillstrom.py` for the build, and `scripts/hillstrom_methods.py` for statistics. The run passed **{len(checks)} database checks**. Unit tests cover bootstrap equivalence, frozen holdout isolation, exact disjoint quotas, unsupported cells, feature boundaries and policy-value arithmetic. The existing reporting database is protected from overwrite. The Excel workbook and recommendation memo are complete in the local handoff. The final four-page Power BI PBIX and PDF are saved and verified in the local handoff. See START_HERE.md for current publication status.
 '''
     (ROOT/'docs/experiment_readout.md').write_text(readout,encoding='utf-8')
     (DOCS/'findings.md').write_text(readout.replace('(../charts/','(../../charts/'),encoding='utf-8')
@@ -344,7 +344,7 @@ print(len(checks),'database checks passed')
 display(checks)'''),
         md('''## 5. Make a decision and learn the SQL workflow
 
-Men's is supported as the population default; the selected cell version mix and ranking remain provisional. No email cost or margin is supplied, so do not claim net profit. Open `Open Hillstrom in DBeaver.cmd` and run `sql/06_hillstrom_learning.sql` one query at a time with Ctrl+Enter. The readout below answers all eight guide questions. The Excel workbook and recommendation memo are complete in the local handoff. The improved Power BI source is saved; its final PBIX/PDF export remains pending. See START_HERE.md for current publication status.'''),
+Men's is supported as the population default; the selected cell version mix and ranking remain provisional. No email cost or margin is supplied, so do not claim net profit. Open `Open Hillstrom in DBeaver.cmd` and run `sql/06_hillstrom_learning.sql` one query at a time with Ctrl+Enter. The readout below answers all eight guide questions. The Excel workbook and recommendation memo are complete in the local handoff. The final four-page Power BI PBIX and PDF are saved and verified in the local handoff. See START_HERE.md for current publication status.'''),
         code("display(Markdown((ROOT/'docs/experiment_readout.md').read_text(encoding='utf-8')))"),
     ]
     nbformat.write(nb,ROOT/'06_hillstrom.ipynb')

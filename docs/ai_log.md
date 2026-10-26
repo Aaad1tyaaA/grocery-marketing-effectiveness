@@ -35,3 +35,7 @@ This is an AI-assisted project. The following are actual corrections or checks f
 The original module log above is historical. Excel is a complete local artifact. Power BI has a verified earlier PBIX and saved improved source; the final source-to-PBIX/PDF export remains pending. See verification files for exact checks. Public CI omits raw-data-dependent tests and does not claim an independent full rebuild.
 
 11. **Empty-text brands:** the final source share measure checks trimmed text length, since empty strings are not DAX BLANK values. A query-scoped measure was reconciled without changing the open desktop model. The final source must be reopened/refreshed before exporting the latest PBIX/PDF.
+
+## Native export completion - 26 October 2026
+
+After the user authorized desktop use for saving/exporting only, the final PBIX was saved natively and passed 660 checks. A four-page PDF was exported, visually reviewed, and re-exported after file-level fixes to an email table, notes and selector height. No desktop formatting controls were used. The PBIX and data-bearing Excel workbook remain local; only the aggregate PDF, report definitions and verification are published. The earlier pending-export notes above record an intermediate state. Streamlit Cloud deployment is still separate and requires a signed-in hosting account.

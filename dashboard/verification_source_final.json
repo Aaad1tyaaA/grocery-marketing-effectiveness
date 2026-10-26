@@ -616,8 +616,7 @@
   "native_pbix_save": false,
   "native_pdf_export": false,
   "limits": [
-    "Latest Final PBIX and PDF export remain pending; desktop control was disabled at user request.",
-    "The preserved Polished PBIX is an earlier, separately verified presentation.",
-    "This check is not a fresh report rendering or assistive-technology audit."
-  ]
+    "Historical source-only check. Final native PBIX/PDF completion is documented in verification_final.json."
+  ],
+  "superseded_by": "verification_final.json"
 }

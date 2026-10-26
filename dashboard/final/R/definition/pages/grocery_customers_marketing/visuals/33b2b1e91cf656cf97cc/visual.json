@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Separate randomized email test. Two-week spend per assigned customer; grocery ROI uses separate assumptions.",
+                    "value": "Separate randomized retailer test; two-week spend per assigned customer.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

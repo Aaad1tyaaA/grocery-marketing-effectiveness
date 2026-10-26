@@ -16,3 +16,5 @@ Reviewed 26 October 2026 against [Microsoft dashboard design guidance](https://l
 Four pages retain a consistent font hierarchy, contrasting navy headers, restrained chart accents, zero-based bar scales and ordered categories. The six-month activity matrix is labelled as observed activity, not acquisition retention. The separate retailer experiment is labelled throughout. Native page navigators use Ctrl+click in Desktop edit mode. Essential results are visible without relying solely on hover; tooltips add context.
 
 Accessibility review covers text contrast, alt descriptions and logical navigation order. A dedicated screen-reader/high-contrast assistive-technology audit and every device size have not been independently tested. Full category names can still require hover or the accessible data table in narrow panels.
+
+Final export review: all four native PDF pages inspected. Reduced email-table font to 11 pt, fixed column widths, enlarged the campaign selector, and shortened notes to fit. Long product/category labels can still use deliberate ellipsis; the PBIX provides tooltips.

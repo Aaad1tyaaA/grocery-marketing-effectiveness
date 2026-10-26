@@ -1,0 +1,2341 @@
+{
+  "presentation": "Four pages with shopping-trip trends, known-brand share bars, campaign design matrix, household redemption rates, bold labels and readable email table.",
+  "passed": true,
+  "check_count": 660,
+  "checks": [
+    "all_departments_returned",
+    "PASTRY_sales",
+    "PASTRY_baskets",
+    "PASTRY_households",
+    "GROCERY_sales",
+    "GROCERY_baskets",
+    "GROCERY_households",
+    "PRODUCE_sales",
+    "PRODUCE_baskets",
+    "PRODUCE_households",
+    "DRUG GM_sales",
+    "DRUG GM_baskets",
+    "DRUG GM_households",
+    "MEAT_sales",
+    "MEAT_baskets",
+    "MEAT_households",
+    "MEAT-PCKGD_sales",
+    "MEAT-PCKGD_baskets",
+    "MEAT-PCKGD_households",
+    "DELI_sales",
+    "DELI_baskets",
+    "DELI_households",
+    "NUTRITION_sales",
+    "NUTRITION_baskets",
+    "NUTRITION_households",
+    "SEAFOOD_sales",
+    "SEAFOOD_baskets",
+    "SEAFOOD_households",
+    "COSMETICS_sales",
+    "COSMETICS_baskets",
+    "COSMETICS_households",
+    "SALAD BAR_sales",
+    "SALAD BAR_baskets",
+    "SALAD BAR_households",
+    "SEAFOOD-PCKGD_sales",
+    "SEAFOOD-PCKGD_baskets",
+    "SEAFOOD-PCKGD_households",
+    "COUPON_sales",
+    "COUPON_baskets",
+    "COUPON_households",
+    "UNKNOWN_sales",
+    "UNKNOWN_baskets",
+    "UNKNOWN_households",
+    "FLORAL_sales",
+    "FLORAL_baskets",
+    "FLORAL_households",
+    "AUTOMOTIVE_sales",
+    "AUTOMOTIVE_baskets",
+    "AUTOMOTIVE_households",
+    "TRAVEL & LEISURE_sales",
+    "TRAVEL & LEISURE_baskets",
+    "TRAVEL & LEISURE_households",
+    "SPIRITS_sales",
+    "SPIRITS_baskets",
+    "SPIRITS_households",
+    "FROZEN GROCERY_sales",
+    "FROZEN GROCERY_baskets",
+    "FROZEN GROCERY_households",
+    "RESTAURANT_sales",
+    "RESTAURANT_baskets",
+    "RESTAURANT_households",
+    "CHEF SHOPPE_sales",
+    "CHEF SHOPPE_baskets",
+    "CHEF SHOPPE_households",
+    "GARDEN CENTER_sales",
+    "GARDEN CENTER_baskets",
+    "GARDEN CENTER_households",
+    "PHOTO & VIDEO_sales",
+    "PHOTO & VIDEO_baskets",
+    "PHOTO & VIDEO_households",
+    "TOYS_sales",
+    "TOYS_baskets",
+    "TOYS_households",
+    "PROD-WHS SALES_sales",
+    "PROD-WHS SALES_baskets",
+    "PROD-WHS SALES_households",
+    "POSTAL CENTER_sales",
+    "POSTAL CENTER_baskets",
+    "POSTAL CENTER_households",
+    "ELECT &PLUMBING_sales",
+    "ELECT &PLUMBING_baskets",
+    "ELECT &PLUMBING_households",
+    "week_1_sales",
+    "partial_week_1_excluded_from_trend",
+    "week_1_wow_unavailable",
+    "week_2_sales",
+    "week_2_comparable",
+    "week_2_wow_unavailable",
+    "week_3_sales",
+    "week_3_comparable",
+    "week_3_wow",
+    "week_4_sales",
+    "week_4_comparable",
+    "week_4_wow",
+    "week_5_sales",
+    "week_5_comparable",
+    "week_5_wow",
+    "week_6_sales",
+    "week_6_comparable",
+    "week_6_wow",
+    "week_7_sales",
+    "week_7_comparable",
+    "week_7_wow",
+    "week_8_sales",
+    "week_8_comparable",
+    "week_8_wow",
+    "week_9_sales",
+    "week_9_comparable",
+    "week_9_wow",
+    "week_10_sales",
+    "week_10_comparable",
+    "week_10_wow",
+    "week_11_sales",
+    "week_11_comparable",
+    "week_11_wow",
+    "week_12_sales",
+    "week_12_comparable",
+    "week_12_wow",
+    "week_13_sales",
+    "week_13_comparable",
+    "week_13_wow",
+    "week_14_sales",
+    "week_14_comparable",
+    "week_14_wow",
+    "week_15_sales",
+    "week_15_comparable",
+    "week_15_wow",
+    "week_16_sales",
+    "week_16_comparable",
+    "week_16_wow",
+    "week_17_sales",
+    "week_17_comparable",
+    "week_17_wow",
+    "week_18_sales",
+    "week_18_comparable",
+    "week_18_wow",
+    "week_19_sales",
+    "week_19_comparable",
+    "week_19_wow",
+    "week_20_sales",
+    "week_20_comparable",
+    "week_20_wow",
+    "week_21_sales",
+    "week_21_comparable",
+    "week_21_wow",
+    "week_22_sales",
+    "week_22_comparable",
+    "week_22_wow",
+    "week_23_sales",
+    "week_23_comparable",
+    "week_23_wow",
+    "week_24_sales",
+    "week_24_comparable",
+    "week_24_wow",
+    "week_25_sales",
+    "week_25_comparable",
+    "week_25_wow",
+    "week_26_sales",
+    "week_26_comparable",
+    "week_26_wow",
+    "week_27_sales",
+    "week_27_comparable",
+    "week_27_wow",
+    "week_28_sales",
+    "week_28_comparable",
+    "week_28_wow",
+    "week_29_sales",
+    "week_29_comparable",
+    "week_29_wow",
+    "week_30_sales",
+    "week_30_comparable",
+    "week_30_wow",
+    "week_31_sales",
+    "week_31_comparable",
+    "week_31_wow",
+    "week_32_sales",
+    "week_32_comparable",
+    "week_32_wow",
+    "week_33_sales",
+    "week_33_comparable",
+    "week_33_wow",
+    "week_34_sales",
+    "week_34_comparable",
+    "week_34_wow",
+    "week_35_sales",
+    "week_35_comparable",
+    "week_35_wow",
+    "week_36_sales",
+    "week_36_comparable",
+    "week_36_wow",
+    "week_37_sales",
+    "week_37_comparable",
+    "week_37_wow",
+    "week_38_sales",
+    "week_38_comparable",
+    "week_38_wow",
+    "week_39_sales",
+    "week_39_comparable",
+    "week_39_wow",
+    "week_40_sales",
+    "week_40_comparable",
+    "week_40_wow",
+    "week_41_sales",
+    "week_41_comparable",
+    "week_41_wow",
+    "week_42_sales",
+    "week_42_comparable",
+    "week_42_wow",
+    "week_43_sales",
+    "week_43_comparable",
+    "week_43_wow",
+    "week_44_sales",
+    "week_44_comparable",
+    "week_44_wow",
+    "week_45_sales",
+    "week_45_comparable",
+    "week_45_wow",
+    "week_46_sales",
+    "week_46_comparable",
+    "week_46_wow",
+    "week_47_sales",
+    "week_47_comparable",
+    "week_47_wow",
+    "week_48_sales",
+    "week_48_comparable",
+    "week_48_wow",
+    "week_49_sales",
+    "week_49_comparable",
+    "week_49_wow",
+    "week_50_sales",
+    "week_50_comparable",
+    "week_50_wow",
+    "week_51_sales",
+    "week_51_comparable",
+    "week_51_wow",
+    "week_52_sales",
+    "week_52_comparable",
+    "week_52_wow",
+    "week_53_sales",
+    "week_53_comparable",
+    "week_53_wow",
+    "1 Champions_spend",
+    "1 Champions_share",
+    "1 Champions_households",
+    "2 Loyal regulars_spend",
+    "2 Loyal regulars_share",
+    "2 Loyal regulars_households",
+    "3 Light regulars_spend",
+    "3 Light regulars_share",
+    "3 Light regulars_households",
+    "4 Occasional_spend",
+    "4 Occasional_share",
+    "4 Occasional_households",
+    "5 Lapsed_spend",
+    "5 Lapsed_share",
+    "5 Lapsed_households",
+    "naive_lift",
+    "unmatched_lift",
+    "matched_pre_lift",
+    "matched_earlier_lift",
+    "Mens E-Mail_email_lift",
+    "Womens E-Mail_email_lift",
+    "exploration_Discounts",
+    "exploration_DiscountedShare",
+    "exploration_Products",
+    "AnalysedCampaigns",
+    "ObservedCampaigns",
+    "EmailAssigned",
+    "six_department_rows",
+    "top_GROCERY_sales",
+    "top_GROCERY_depth",
+    "top_DRUG GM_sales",
+    "top_DRUG GM_depth",
+    "top_PRODUCE_sales",
+    "top_PRODUCE_depth",
+    "top_MEAT_sales",
+    "top_MEAT_depth",
+    "top_MEAT-PCKGD_sales",
+    "top_MEAT-PCKGD_depth",
+    "top_DELI_sales",
+    "top_DELI_depth",
+    "weekly_discount_rows",
+    "shelf_2",
+    "discounts_2",
+    "shelf_3",
+    "discounts_3",
+    "shelf_4",
+    "discounts_4",
+    "shelf_5",
+    "discounts_5",
+    "shelf_6",
+    "discounts_6",
+    "shelf_7",
+    "discounts_7",
+    "shelf_8",
+    "discounts_8",
+    "shelf_9",
+    "discounts_9",
+    "shelf_10",
+    "discounts_10",
+    "shelf_11",
+    "discounts_11",
+    "shelf_12",
+    "discounts_12",
+    "shelf_13",
+    "discounts_13",
+    "shelf_14",
+    "discounts_14",
+    "shelf_15",
+    "discounts_15",
+    "shelf_16",
+    "discounts_16",
+    "shelf_17",
+    "discounts_17",
+    "shelf_18",
+    "discounts_18",
+    "shelf_19",
+    "discounts_19",
+    "shelf_20",
+    "discounts_20",
+    "shelf_21",
+    "discounts_21",
+    "shelf_22",
+    "discounts_22",
+    "shelf_23",
+    "discounts_23",
+    "shelf_24",
+    "discounts_24",
+    "shelf_25",
+    "discounts_25",
+    "shelf_26",
+    "discounts_26",
+    "shelf_27",
+    "discounts_27",
+    "shelf_28",
+    "discounts_28",
+    "shelf_29",
+    "discounts_29",
+    "shelf_30",
+    "discounts_30",
+    "shelf_31",
+    "discounts_31",
+    "shelf_32",
+    "discounts_32",
+    "shelf_33",
+    "discounts_33",
+    "shelf_34",
+    "discounts_34",
+    "shelf_35",
+    "discounts_35",
+    "shelf_36",
+    "discounts_36",
+    "shelf_37",
+    "discounts_37",
+    "shelf_38",
+    "discounts_38",
+    "shelf_39",
+    "discounts_39",
+    "shelf_40",
+    "discounts_40",
+    "shelf_41",
+    "discounts_41",
+    "shelf_42",
+    "discounts_42",
+    "shelf_43",
+    "discounts_43",
+    "shelf_44",
+    "discounts_44",
+    "shelf_45",
+    "discounts_45",
+    "shelf_46",
+    "discounts_46",
+    "shelf_47",
+    "discounts_47",
+    "shelf_48",
+    "discounts_48",
+    "shelf_49",
+    "discounts_49",
+    "shelf_50",
+    "discounts_50",
+    "shelf_51",
+    "discounts_51",
+    "shelf_52",
+    "discounts_52",
+    "shelf_53",
+    "discounts_53",
+    "six_category_rows",
+    "category_GROCERY / SOFT DRINKS",
+    "category_MEAT / BEEF",
+    "category_GROCERY / FLUID MILK PRODUCTS",
+    "category_GROCERY / CHEESE",
+    "category_GROCERY / FRZN MEAT/MEAT DINNERS",
+    "category_GROCERY / BAG SNACKS",
+    "brand_National",
+    "brand_Private",
+    "brand_",
+    "campaign_8_naive",
+    "campaign_8_unmatched",
+    "campaign_8_matched_pre",
+    "campaign_8_matched_earlier",
+    "earlier_8",
+    "campaign_13_naive",
+    "campaign_13_unmatched",
+    "campaign_13_matched_pre",
+    "campaign_13_matched_earlier",
+    "earlier_13",
+    "campaign_18_naive",
+    "campaign_18_unmatched",
+    "campaign_18_matched_pre",
+    "campaign_18_matched_earlier",
+    "earlier_18",
+    "Mens E-Mail_ArmMean",
+    "Mens E-Mail_ControlMean",
+    "Mens E-Mail_Lift",
+    "Womens E-Mail_ArmMean",
+    "Womens E-Mail_ControlMean",
+    "Womens E-Mail_Lift",
+    "six_month_cohort_scope",
+    "cohort_2017-01-01_0",
+    "cohort_2017-01-01_1",
+    "cohort_2017-01-01_2",
+    "cohort_2017-01-01_3",
+    "cohort_2017-01-01_4",
+    "cohort_2017-01-01_5",
+    "cohort_2017-02-01_0",
+    "cohort_2017-02-01_1",
+    "cohort_2017-02-01_2",
+    "cohort_2017-02-01_3",
+    "cohort_2017-02-01_4",
+    "cohort_2017-02-01_5",
+    "cohort_2017-03-01_0",
+    "cohort_2017-03-01_1",
+    "cohort_2017-03-01_2",
+    "cohort_2017-03-01_3",
+    "cohort_2017-03-01_4",
+    "cohort_2017-03-01_5",
+    "cohort_2017-04-01_0",
+    "cohort_2017-04-01_1",
+    "cohort_2017-04-01_2",
+    "cohort_2017-04-01_3",
+    "cohort_2017-04-01_4",
+    "cohort_2017-04-01_5",
+    "cohort_2017-05-01_0",
+    "cohort_2017-05-01_1",
+    "cohort_2017-05-01_2",
+    "cohort_2017-05-01_3",
+    "cohort_2017-05-01_4",
+    "cohort_2017-05-01_5",
+    "cohort_2017-06-01_0",
+    "cohort_2017-06-01_1",
+    "cohort_2017-06-01_2",
+    "cohort_2017-06-01_3",
+    "cohort_2017-06-01_4",
+    "cohort_2017-06-01_5",
+    "cohort_2017-07-01_0",
+    "cohort_2017-07-01_1",
+    "cohort_2017-07-01_2",
+    "cohort_2017-07-01_3",
+    "cohort_2017-07-01_4",
+    "cohort_2017-07-01_5",
+    "cohort_2017-08-01_0",
+    "cohort_2017-08-01_1",
+    "cohort_2017-08-01_2",
+    "cohort_2017-08-01_3",
+    "cohort_2017-08-01_4",
+    "cohort_2017-09-01_0",
+    "cohort_2017-09-01_1",
+    "cohort_2017-09-01_2",
+    "cohort_2017-09-01_3",
+    "cohort_2017-10-01_0",
+    "cohort_2017-10-01_1",
+    "cohort_2017-10-01_2",
+    "cohort_2017-11-01_0",
+    "cohort_2017-11-01_1",
+    "cohort_2017-12-01_0",
+    "52_comparable_shopping_trip_weeks",
+    "trip_week_2",
+    "aov_week_2",
+    "trip_week_3",
+    "aov_week_3",
+    "trip_week_4",
+    "aov_week_4",
+    "trip_week_5",
+    "aov_week_5",
+    "trip_week_6",
+    "aov_week_6",
+    "trip_week_7",
+    "aov_week_7",
+    "trip_week_8",
+    "aov_week_8",
+    "trip_week_9",
+    "aov_week_9",
+    "trip_week_10",
+    "aov_week_10",
+    "trip_week_11",
+    "aov_week_11",
+    "trip_week_12",
+    "aov_week_12",
+    "trip_week_13",
+    "aov_week_13",
+    "trip_week_14",
+    "aov_week_14",
+    "trip_week_15",
+    "aov_week_15",
+    "trip_week_16",
+    "aov_week_16",
+    "trip_week_17",
+    "aov_week_17",
+    "trip_week_18",
+    "aov_week_18",
+    "trip_week_19",
+    "aov_week_19",
+    "trip_week_20",
+    "aov_week_20",
+    "trip_week_21",
+    "aov_week_21",
+    "trip_week_22",
+    "aov_week_22",
+    "trip_week_23",
+    "aov_week_23",
+    "trip_week_24",
+    "aov_week_24",
+    "trip_week_25",
+    "aov_week_25",
+    "trip_week_26",
+    "aov_week_26",
+    "trip_week_27",
+    "aov_week_27",
+    "trip_week_28",
+    "aov_week_28",
+    "trip_week_29",
+    "aov_week_29",
+    "trip_week_30",
+    "aov_week_30",
+    "trip_week_31",
+    "aov_week_31",
+    "trip_week_32",
+    "aov_week_32",
+    "trip_week_33",
+    "aov_week_33",
+    "trip_week_34",
+    "aov_week_34",
+    "trip_week_35",
+    "aov_week_35",
+    "trip_week_36",
+    "aov_week_36",
+    "trip_week_37",
+    "aov_week_37",
+    "trip_week_38",
+    "aov_week_38",
+    "trip_week_39",
+    "aov_week_39",
+    "trip_week_40",
+    "aov_week_40",
+    "trip_week_41",
+    "aov_week_41",
+    "trip_week_42",
+    "aov_week_42",
+    "trip_week_43",
+    "aov_week_43",
+    "trip_week_44",
+    "aov_week_44",
+    "trip_week_45",
+    "aov_week_45",
+    "trip_week_46",
+    "aov_week_46",
+    "trip_week_47",
+    "aov_week_47",
+    "trip_week_48",
+    "aov_week_48",
+    "trip_week_49",
+    "aov_week_49",
+    "trip_week_50",
+    "aov_week_50",
+    "trip_week_51",
+    "aov_week_51",
+    "trip_week_52",
+    "aov_week_52",
+    "trip_week_53",
+    "aov_week_53",
+    "two_known_brand_groups",
+    "known_brand_National",
+    "known_brand_Private",
+    "three_campaign_redemption_rates",
+    "unique_hh_redemption_8",
+    "unique_hh_redemption_13",
+    "unique_hh_redemption_18",
+    "no_earlier_interval_excludes_zero",
+    "twelve_short_design_cells",
+    "pbix_container_valid",
+    "data_embedded",
+    "four_pages",
+    "opens_on_business_health",
+    "grocery_business_health_compact_readable_canvas",
+    "grocery_business_health_native_navigator",
+    "grocery_business_health_187bfecdd93e5bc79835_bold_chart_values",
+    "grocery_business_health_3e7f6086159752bd812a_zero_text_padding",
+    "grocery_business_health_427d0ca1465a59e3816b_zero_text_padding",
+    "grocery_business_health_c37d6d4490915586bcf1_zero_text_padding",
+    "grocery_business_health_c41c621b50595bb186b4_zero_text_padding",
+    "grocery_business_health_header_background_zero_text_padding",
+    "grocery_business_health_navigation_hint_zero_text_padding",
+    "grocery_business_health_weekly_basket_note_zero_text_padding",
+    "grocery_business_health_all_visuals_within_canvas",
+    "grocery_business_health_soft_background",
+    "grocery_business_health_no_flagged_days_block",
+    "shopping_trip_chart_present",
+    "grocery_customers_marketing_compact_readable_canvas",
+    "grocery_customers_marketing_native_navigator",
+    "grocery_customers_marketing_06f2c056f0a15b5284a9_zero_text_padding",
+    "grocery_customers_marketing_33b2b1e91cf656cf97cc_zero_text_padding",
+    "grocery_customers_marketing_6dda30fa78f95076887f_zero_text_padding",
+    "grocery_customers_marketing_6e11a31eb6355236ac3e_bold_chart_values",
+    "grocery_customers_marketing_71160bfa9e5e586385c1_zero_text_padding",
+    "grocery_customers_marketing_73bcd1c10a855497aacc_zero_text_padding",
+    "grocery_customers_marketing_9b07e3a30a7c520e858d_zero_text_padding",
+    "grocery_customers_marketing_9ecef393838a5fb38359_zero_text_padding",
+    "grocery_customers_marketing_b66f9e81b1ca599cb140_zero_text_padding",
+    "grocery_customers_marketing_c83525e6aa08571c9494_bold_chart_values",
+    "grocery_customers_marketing_ed841ed3386f5c23ac42_zero_text_padding",
+    "grocery_customers_marketing_fd88eca02a2d5d508fdc_bold_chart_values",
+    "grocery_customers_marketing_header_background_zero_text_padding",
+    "grocery_customers_marketing_navigation_hint_zero_text_padding",
+    "grocery_customers_marketing_all_visuals_within_canvas",
+    "grocery_customers_marketing_soft_background",
+    "grocery_customers_marketing_no_flagged_days_block",
+    "retention_conditional_cells",
+    "campaign_conditional_cells",
+    "campaign_comparisons_visible",
+    "grocery_products_discounts_compact_readable_canvas",
+    "grocery_products_discounts_native_navigator",
+    "grocery_products_discounts_brand_mix_bold_chart_values",
+    "grocery_products_discounts_category_sales_bold_chart_values",
+    "grocery_products_discounts_department_depth_bold_chart_values",
+    "grocery_products_discounts_department_sales_bold_chart_values",
+    "grocery_products_discounts_header_background_zero_text_padding",
+    "grocery_products_discounts_navigation_hint_zero_text_padding",
+    "grocery_products_discounts_products_footer_zero_text_padding",
+    "grocery_products_discounts_products_kicker_zero_text_padding",
+    "grocery_products_discounts_products_subtitle_zero_text_padding",
+    "grocery_products_discounts_products_title_zero_text_padding",
+    "grocery_products_discounts_all_visuals_within_canvas",
+    "grocery_products_discounts_soft_background",
+    "grocery_products_discounts_no_flagged_days_block",
+    "brand_comparison_uses_bars",
+    "grocery_campaigns_email_compact_readable_canvas",
+    "grocery_campaigns_email_native_navigator",
+    "grocery_campaigns_email_campaigns_kicker_zero_text_padding",
+    "grocery_campaigns_email_campaigns_subtitle_zero_text_padding",
+    "grocery_campaigns_email_campaigns_title_zero_text_padding",
+    "grocery_campaigns_email_campaign_footer_zero_text_padding",
+    "grocery_campaigns_email_campaign_volume_bold_chart_values",
+    "grocery_campaigns_email_earlier_estimates_bold_chart_values",
+    "grocery_campaigns_email_email_lift_bold_chart_values",
+    "grocery_campaigns_email_email_means_bold_chart_values",
+    "grocery_campaigns_email_header_background_zero_text_padding",
+    "grocery_campaigns_email_navigation_hint_zero_text_padding",
+    "grocery_campaigns_email_all_visuals_within_canvas",
+    "grocery_campaigns_email_soft_background",
+    "grocery_campaigns_email_no_flagged_days_block"
+  ],
+  "file": "Grocery Marketing Final.pbix",
+  "bytes": 13351641,
+  "sha256": "cbb5789c781154ddb06e8130b9220d422085a64a3f2fded5416d545039652f1f",
+  "verified_at_utc": "2026-10-26T15:43:16.739805+00:00",
+  "native_dax": {
+    "campaign": [
+      {
+        "Campaign estimates[design]": "1 \u00b7 Targeted vs untargeted",
+        "[Lift]": 34.768280289838785,
+        "[Interval]": "$31.81 to $37.73"
+      },
+      {
+        "Campaign estimates[design]": "2 \u00b7 Unmatched DiD",
+        "[Lift]": 1.6841382938108707,
+        "[Interval]": "($0.01) to $3.38"
+      },
+      {
+        "Campaign estimates[design]": "3 \u00b7 Match on recent pre-period",
+        "[Lift]": 6.272616405403071,
+        "[Interval]": "$3.07 to $9.48"
+      },
+      {
+        "Campaign estimates[design]": "4 \u00b7 Match on earlier weeks",
+        "[Lift]": 2.9502393447472057,
+        "[Interval]": "($0.74) to $6.64"
+      }
+    ],
+    "exploration_summary": [
+      {
+        "[Discounts]": 783831.6299999983,
+        "[DiscountedShare]": 0.5558225513938847,
+        "[Products]": 67860,
+        "[AnalysedCampaigns]": 3,
+        "[ObservedCampaigns]": 27,
+        "[EmailAssigned]": 64000
+      }
+    ],
+    "summary": [
+      {
+        "[Sales]": 4185055.640000006,
+        "[Baskets]": 141063,
+        "[Households]": 2467,
+        "[AOV]": 29.667989763439074,
+        "[DiscountDepth]": 0.1577479196866538,
+        "[SalesRows]": 1441961,
+        "[CustomerRows]": 2467
+      }
+    ],
+    "exploration_email": [
+      {
+        "Email experiment[arm]": "Mens E-Mail",
+        "[ArmMean]": 1.422616511005773,
+        "[ControlMean]": 0.6527893551112363,
+        "[Lift]": 0.7698271558945367
+      },
+      {
+        "Email experiment[arm]": "Womens E-Mail",
+        "[ArmMean]": 1.0772015710478329,
+        "[ControlMean]": 0.6527893551112363,
+        "[Lift]": 0.4244122159365966
+      }
+    ],
+    "customers": [
+      {
+        "Households[segment]": "1 Champions",
+        "[Spend]": 1870445.1100000006,
+        "[Share]": 0.4469343470903055,
+        "[Households]": 416
+      },
+      {
+        "Households[segment]": "2 Loyal regulars",
+        "[Spend]": 1683639.3099999994,
+        "[Share]": 0.4022979512884085,
+        "[Households]": 804
+      },
+      {
+        "Households[segment]": "5 Lapsed",
+        "[Spend]": 78221.99999999996,
+        "[Share]": 0.018690790930559757,
+        "[Households]": 222
+      },
+      {
+        "Households[segment]": "3 Light regulars",
+        "[Spend]": 504643.04000000004,
+        "[Share]": 0.12058215789933918,
+        "[Households]": 800
+      },
+      {
+        "Households[segment]": "4 Occasional",
+        "[Spend]": 48106.17999999999,
+        "[Share]": 0.01149475279138702,
+        "[Households]": 225
+      }
+    ],
+    "verified_at": "2026-10-26T21:04:00.4392073+05:30",
+    "weeks": [
+      {
+        "Weeks[week]": 1,
+        "[Sales]": 10106.849999999971,
+        "[ComparableSales]": null,
+        "[WoW]": null
+      },
+      {
+        "Weeks[week]": 2,
+        "[Sales]": 87182.19000000044,
+        "[ComparableSales]": 87182.19000000044,
+        "[WoW]": null
+      },
+      {
+        "Weeks[week]": 3,
+        "[Sales]": 77454.82000000025,
+        "[ComparableSales]": 77454.82000000025,
+        "[WoW]": -0.11157519672309374
+      },
+      {
+        "Weeks[week]": 4,
+        "[Sales]": 76394.51999999983,
+        "[ComparableSales]": 76394.51999999983,
+        "[WoW]": -0.013689270725829863
+      },
+      {
+        "Weeks[week]": 5,
+        "[Sales]": 72653.19000000012,
+        "[ComparableSales]": 72653.19000000012,
+        "[WoW]": -0.04897380073858333
+      },
+      {
+        "Weeks[week]": 6,
+        "[Sales]": 90024.21000000028,
+        "[ComparableSales]": 90024.21000000028,
+        "[WoW]": 0.23909507621069545
+      },
+      {
+        "Weeks[week]": 7,
+        "[Sales]": 83061.84000000014,
+        "[ComparableSales]": 83061.84000000014,
+        "[WoW]": -0.07733886251265208
+      },
+      {
+        "Weeks[week]": 8,
+        "[Sales]": 74802.88999999939,
+        "[ComparableSales]": 74802.88999999939,
+        "[WoW]": -0.0994313393491011
+      },
+      {
+        "Weeks[week]": 9,
+        "[Sales]": 78675.8900000002,
+        "[ComparableSales]": 78675.8900000002,
+        "[WoW]": 0.05177607442708225
+      },
+      {
+        "Weeks[week]": 10,
+        "[Sales]": 83797.80000000016,
+        "[ComparableSales]": 83797.80000000016,
+        "[WoW]": 0.06510139256130368
+      },
+      {
+        "Weeks[week]": 11,
+        "[Sales]": 77785.83000000013,
+        "[ComparableSales]": 77785.83000000013,
+        "[WoW]": -0.07174376892949479
+      },
+      {
+        "Weeks[week]": 12,
+        "[Sales]": 78369.21999999986,
+        "[ComparableSales]": 78369.21999999986,
+        "[WoW]": 0.0074999521120970485
+      },
+      {
+        "Weeks[week]": 13,
+        "[Sales]": 76401.82999999977,
+        "[ComparableSales]": 76401.82999999977,
+        "[WoW]": -0.025104116131308828
+      },
+      {
+        "Weeks[week]": 14,
+        "[Sales]": 80001.82000000005,
+        "[ComparableSales]": 80001.82000000005,
+        "[WoW]": 0.04711915931856989
+      },
+      {
+        "Weeks[week]": 15,
+        "[Sales]": 79509.83000000028,
+        "[ComparableSales]": 79509.83000000028,
+        "[WoW]": -0.006149735093523774
+      },
+      {
+        "Weeks[week]": 16,
+        "[Sales]": 82033.75000000022,
+        "[ComparableSales]": 82033.75000000022,
+        "[WoW]": 0.03174349637019638
+      },
+      {
+        "Weeks[week]": 17,
+        "[Sales]": 73655.96999999981,
+        "[ComparableSales]": 73655.96999999981,
+        "[WoW]": -0.10212601520716028
+      },
+      {
+        "Weeks[week]": 18,
+        "[Sales]": 74231.93999999965,
+        "[ComparableSales]": 74231.93999999965,
+        "[WoW]": 0.0078197327385661
+      },
+      {
+        "Weeks[week]": 19,
+        "[Sales]": 88500.53000000036,
+        "[ComparableSales]": 88500.53000000036,
+        "[WoW]": 0.19221631551055754
+      },
+      {
+        "Weeks[week]": 20,
+        "[Sales]": 82495.52000000003,
+        "[ComparableSales]": 82495.52000000003,
+        "[WoW]": -0.06785281398880103
+      },
+      {
+        "Weeks[week]": 21,
+        "[Sales]": 81216.13999999997,
+        "[ComparableSales]": 81216.13999999997,
+        "[WoW]": -0.0155084785210162
+      },
+      {
+        "Weeks[week]": 22,
+        "[Sales]": 79266.17000000014,
+        "[ComparableSales]": 79266.17000000014,
+        "[WoW]": -0.024009636508209174
+      },
+      {
+        "Weeks[week]": 23,
+        "[Sales]": 84451.54999999987,
+        "[ComparableSales]": 84451.54999999987,
+        "[WoW]": 0.06541731485196924
+      },
+      {
+        "Weeks[week]": 24,
+        "[Sales]": 82913.02000000005,
+        "[ComparableSales]": 82913.02000000005,
+        "[WoW]": -0.01821790127001608
+      },
+      {
+        "Weeks[week]": 25,
+        "[Sales]": 78412.3800000001,
+        "[ComparableSales]": 78412.3800000001,
+        "[WoW]": -0.054281462670156495
+      },
+      {
+        "Weeks[week]": 26,
+        "[Sales]": 69610.65999999986,
+        "[ComparableSales]": 69610.65999999986,
+        "[WoW]": -0.11224911168364277
+      },
+      {
+        "Weeks[week]": 27,
+        "[Sales]": 81647.20999999982,
+        "[ComparableSales]": 81647.20999999982,
+        "[WoW]": 0.17291245335125371
+      },
+      {
+        "Weeks[week]": 28,
+        "[Sales]": 89528.2000000001,
+        "[ComparableSales]": 89528.2000000001,
+        "[WoW]": 0.09652491493586002
+      },
+      {
+        "Weeks[week]": 29,
+        "[Sales]": 76211.4099999998,
+        "[ComparableSales]": 76211.4099999998,
+        "[WoW]": -0.1487440828699816
+      },
+      {
+        "Weeks[week]": 30,
+        "[Sales]": 75932.93999999997,
+        "[ComparableSales]": 75932.93999999997,
+        "[WoW]": -0.003653914814065601
+      },
+      {
+        "Weeks[week]": 31,
+        "[Sales]": 73729.5199999999,
+        "[ComparableSales]": 73729.5199999999,
+        "[WoW]": -0.029017972964040004
+      },
+      {
+        "Weeks[week]": 32,
+        "[Sales]": 87113.66,
+        "[ComparableSales]": 87113.66,
+        "[WoW]": 0.18153027444095823
+      },
+      {
+        "Weeks[week]": 33,
+        "[Sales]": 77848.51999999992,
+        "[ComparableSales]": 77848.51999999992,
+        "[WoW]": -0.10635691348521101
+      },
+      {
+        "Weeks[week]": 34,
+        "[Sales]": 76011.82999999996,
+        "[ComparableSales]": 76011.82999999996,
+        "[WoW]": -0.023593126754368105
+      },
+      {
+        "Weeks[week]": 35,
+        "[Sales]": 74354.29999999986,
+        "[ComparableSales]": 74354.29999999986,
+        "[WoW]": -0.021806210954269902
+      },
+      {
+        "Weeks[week]": 36,
+        "[Sales]": 79163.61999999972,
+        "[ComparableSales]": 79163.61999999972,
+        "[WoW]": 0.06468112805849656
+      },
+      {
+        "Weeks[week]": 37,
+        "[Sales]": 84648.13999999998,
+        "[ComparableSales]": 84648.13999999998,
+        "[WoW]": 0.06928081358584012
+      },
+      {
+        "Weeks[week]": 38,
+        "[Sales]": 74034.82999999975,
+        "[ComparableSales]": 74034.82999999975,
+        "[WoW]": -0.12538149095774853
+      },
+      {
+        "Weeks[week]": 39,
+        "[Sales]": 74912.47999999986,
+        "[ComparableSales]": 74912.47999999986,
+        "[WoW]": 0.011854555484224297
+      },
+      {
+        "Weeks[week]": 40,
+        "[Sales]": 76031.11999999965,
+        "[ComparableSales]": 76031.11999999965,
+        "[WoW]": 0.014932625378305232
+      },
+      {
+        "Weeks[week]": 41,
+        "[Sales]": 83263.2,
+        "[ComparableSales]": 83263.2,
+        "[WoW]": 0.09511999823230784
+      },
+      {
+        "Weeks[week]": 42,
+        "[Sales]": 78969.82000000017,
+        "[ComparableSales]": 78969.82000000017,
+        "[WoW]": -0.05156395622555739
+      },
+      {
+        "Weeks[week]": 43,
+        "[Sales]": 76117.15000000015,
+        "[ComparableSales]": 76117.15000000015,
+        "[WoW]": -0.03612354694489625
+      },
+      {
+        "Weeks[week]": 44,
+        "[Sales]": 78421.01999999958,
+        "[ComparableSales]": 78421.01999999958,
+        "[WoW]": 0.030267423307354824
+      },
+      {
+        "Weeks[week]": 45,
+        "[Sales]": 90543.8000000002,
+        "[ComparableSales]": 90543.8000000002,
+        "[WoW]": 0.15458584955922136
+      },
+      {
+        "Weeks[week]": 46,
+        "[Sales]": 79033.45000000019,
+        "[ComparableSales]": 79033.45000000019,
+        "[WoW]": -0.12712466231812664
+      },
+      {
+        "Weeks[week]": 47,
+        "[Sales]": 83714.15999999995,
+        "[ComparableSales]": 83714.15999999995,
+        "[WoW]": 0.05922441700317711
+      },
+      {
+        "Weeks[week]": 48,
+        "[Sales]": 84898.51000000018,
+        "[ComparableSales]": 84898.51000000018,
+        "[WoW]": 0.01414754684273532
+      },
+      {
+        "Weeks[week]": 49,
+        "[Sales]": 82895.09000000005,
+        "[ComparableSales]": 82895.09000000005,
+        "[WoW]": -0.023597822859319027
+      },
+      {
+        "Weeks[week]": 50,
+        "[Sales]": 85569.4899999999,
+        "[ComparableSales]": 85569.4899999999,
+        "[WoW]": 0.03226246572625528
+      },
+      {
+        "Weeks[week]": 51,
+        "[Sales]": 79394.70999999983,
+        "[ComparableSales]": 79394.70999999983,
+        "[WoW]": -0.07216100037525149
+      },
+      {
+        "Weeks[week]": 52,
+        "[Sales]": 103168.27000000067,
+        "[ComparableSales]": 103168.27000000067,
+        "[WoW]": 0.2994350631169368
+      },
+      {
+        "Weeks[week]": 53,
+        "[Sales]": 74888.82999999996,
+        "[ComparableSales]": 74888.82999999996,
+        "[WoW]": -0.2741098595527533
+      }
+    ],
+    "exploration_brands": [
+      {
+        "Products[brand]": "National",
+        "[Sales]": 3288531.34000028
+      },
+      {
+        "Products[brand]": "Private",
+        "[Sales]": 896351.7299999194
+      },
+      {
+        "Products[brand]": "",
+        "[Sales]": 172.57
+      }
+    ],
+    "department": [
+      {
+        "Departments[department]": "AUTOMOTIVE",
+        "[Sales]": 301.96000000000004,
+        "[Baskets]": 36,
+        "[Households]": 34
+      },
+      {
+        "Departments[department]": "CHEF SHOPPE",
+        "[Sales]": 1701.98,
+        "[Baskets]": 584,
+        "[Households]": 317
+      },
+      {
+        "Departments[department]": "COSMETICS",
+        "[Sales]": 18799.220000000027,
+        "[Baskets]": 2938,
+        "[Households]": 969
+      },
+      {
+        "Departments[department]": "COUPON",
+        "[Sales]": 652.5100000000001,
+        "[Baskets]": 408,
+        "[Households]": 262
+      },
+      {
+        "Departments[department]": "DELI",
+        "[Sales]": 148344.05999999793,
+        "[Baskets]": 19956,
+        "[Households]": 2018
+      },
+      {
+        "Departments[department]": "DRUG GM",
+        "[Sales]": 596783.0299999343,
+        "[Baskets]": 66371,
+        "[Households]": 2403
+      },
+      {
+        "Departments[department]": "ELECT &PLUMBING",
+        "[Sales]": 1,
+        "[Baskets]": 1,
+        "[Households]": 1
+      },
+      {
+        "Departments[department]": "FLORAL",
+        "[Sales]": 22303.180000000186,
+        "[Baskets]": 2178,
+        "[Households]": 892
+      },
+      {
+        "Departments[department]": "FROZEN GROCERY",
+        "[Sales]": 419.7300000000002,
+        "[Baskets]": 140,
+        "[Households]": 105
+      },
+      {
+        "Departments[department]": "GARDEN CENTER",
+        "[Sales]": 5351.789999999977,
+        "[Baskets]": 370,
+        "[Households]": 231
+      },
+      {
+        "Departments[department]": "GROCERY",
+        "[Sales]": 2314207.679999849,
+        "[Baskets]": 120901,
+        "[Households]": 2458
+      },
+      {
+        "Departments[department]": "MEAT",
+        "[Sales]": 308575.3299999981,
+        "[Baskets]": 30035,
+        "[Households]": 2175
+      },
+      {
+        "Departments[department]": "MEAT-PCKGD",
+        "[Sales]": 232282.5300000042,
+        "[Baskets]": 32894,
+        "[Households]": 2228
+      },
+      {
+        "Departments[department]": "NUTRITION",
+        "[Sales]": 57261.22000000037,
+        "[Baskets]": 9829,
+        "[Households]": 1415
+      },
+      {
+        "Departments[department]": "PASTRY",
+        "[Sales]": 69116.67999999861,
+        "[Baskets]": 17075,
+        "[Households]": 2049
+      },
+      {
+        "Departments[department]": "PHOTO & VIDEO",
+        "[Sales]": 51.7,
+        "[Baskets]": 17,
+        "[Households]": 17
+      },
+      {
+        "Departments[department]": "POSTAL CENTER",
+        "[Sales]": 6.57,
+        "[Baskets]": 5,
+        "[Households]": 5
+      },
+      {
+        "Departments[department]": "PROD-WHS SALES",
+        "[Sales]": 2.52,
+        "[Baskets]": 3,
+        "[Households]": 1
+      },
+      {
+        "Departments[department]": "PRODUCE",
+        "[Sales]": 322858.8200000101,
+        "[Baskets]": 50696,
+        "[Households]": 2350
+      },
+      {
+        "Departments[department]": "RESTAURANT",
+        "[Sales]": 1260.9700000000003,
+        "[Baskets]": 250,
+        "[Households]": 92
+      },
+      {
+        "Departments[department]": "SALAD BAR",
+        "[Sales]": 17812.400000000052,
+        "[Baskets]": 4891,
+        "[Households]": 889
+      },
+      {
+        "Departments[department]": "SEAFOOD",
+        "[Sales]": 17081.36000000003,
+        "[Baskets]": 1989,
+        "[Households]": 608
+      },
+      {
+        "Departments[department]": "SEAFOOD-PCKGD",
+        "[Sales]": 35977.46000000055,
+        "[Baskets]": 5078,
+        "[Households]": 1336
+      },
+      {
+        "Departments[department]": "SPIRITS",
+        "[Sales]": 12299.519999999888,
+        "[Baskets]": 1081,
+        "[Households]": 395
+      },
+      {
+        "Departments[department]": "TOYS",
+        "[Sales]": 4.17,
+        "[Baskets]": 2,
+        "[Households]": 2
+      },
+      {
+        "Departments[department]": "TRAVEL & LEISURE",
+        "[Sales]": 1425.6799999999996,
+        "[Baskets]": 465,
+        "[Households]": 308
+      },
+      {
+        "Departments[department]": "UNKNOWN",
+        "[Sales]": 172.57,
+        "[Baskets]": 32,
+        "[Households]": 29
+      }
+    ],
+    "redemption_rate": [
+      {
+        "Campaigns[campaign_id]": "8",
+        "[Rate]": 0.14684014869888476
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "[Rate]": 0.18198700092850512
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "[Rate]": 0.18887908208296558
+      }
+    ],
+    "short_design": [
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design_short]": "1 Raw gap",
+        "[Lift]": 32.09888328126114
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design_short]": "1 Raw gap",
+        "[Lift]": 34.30835041938491
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design_short]": "1 Raw gap",
+        "[Lift]": 34.768280289838785
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design_short]": "2 Unmatched",
+        "[Lift]": -2.2431815317655737
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design_short]": "2 Unmatched",
+        "[Lift]": -0.20438314544737124
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design_short]": "2 Unmatched",
+        "[Lift]": 1.6841382938108707
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design_short]": "3 Recent match",
+        "[Lift]": 3.099813064152177
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design_short]": "3 Recent match",
+        "[Lift]": 6.633948374857306
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design_short]": "3 Recent match",
+        "[Lift]": 6.272616405403071
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design_short]": "4 Earlier match",
+        "[Lift]": 0.8030545240636583
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design_short]": "4 Earlier match",
+        "[Lift]": 0.39453290443676203
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design_short]": "4 Earlier match",
+        "[Lift]": 2.9502393447472057
+      }
+    ],
+    "weekly_baskets": [
+      {
+        "Weeks[week]": 44,
+        "[Baskets]": 2631,
+        "[AOV]": 29.80654503990862
+      },
+      {
+        "Weeks[week]": 6,
+        "[Baskets]": 2851,
+        "[AOV]": 31.576362679761587
+      },
+      {
+        "Weeks[week]": 11,
+        "[Baskets]": 2696,
+        "[AOV]": 28.852310830860585
+      },
+      {
+        "Weeks[week]": 39,
+        "[Baskets]": 2642,
+        "[AOV]": 28.354458743376178
+      },
+      {
+        "Weeks[week]": 16,
+        "[Baskets]": 2716,
+        "[AOV]": 30.20388438880715
+      },
+      {
+        "Weeks[week]": 26,
+        "[Baskets]": 2674,
+        "[AOV]": 26.032408376963296
+      },
+      {
+        "Weeks[week]": 49,
+        "[Baskets]": 2609,
+        "[AOV]": 31.77274434649293
+      },
+      {
+        "Weeks[week]": 21,
+        "[Baskets]": 2838,
+        "[AOV]": 28.61738548273431
+      },
+      {
+        "Weeks[week]": 31,
+        "[Baskets]": 2668,
+        "[AOV]": 27.63475262368812
+      },
+      {
+        "Weeks[week]": 36,
+        "[Baskets]": 2651,
+        "[AOV]": 29.861795548849386
+      },
+      {
+        "Weeks[week]": 8,
+        "[Baskets]": 2656,
+        "[AOV]": 28.163738704819046
+      },
+      {
+        "Weeks[week]": 3,
+        "[Baskets]": 2588,
+        "[AOV]": 29.928446676970733
+      },
+      {
+        "Weeks[week]": 41,
+        "[Baskets]": 2708,
+        "[AOV]": 30.74711964549483
+      },
+      {
+        "Weeks[week]": 46,
+        "[Baskets]": 2642,
+        "[AOV]": 29.914250567751775
+      },
+      {
+        "Weeks[week]": 18,
+        "[Baskets]": 2528,
+        "[AOV]": 29.36390031645556
+      },
+      {
+        "Weeks[week]": 51,
+        "[Baskets]": 2658,
+        "[AOV]": 29.8700940556809
+      },
+      {
+        "Weeks[week]": 23,
+        "[Baskets]": 2818,
+        "[AOV]": 29.968612491128415
+      },
+      {
+        "Weeks[week]": 13,
+        "[Baskets]": 2593,
+        "[AOV]": 29.464647126879974
+      },
+      {
+        "Weeks[week]": 33,
+        "[Baskets]": 2755,
+        "[AOV]": 28.257176043557138
+      },
+      {
+        "Weeks[week]": 28,
+        "[Baskets]": 2994,
+        "[AOV]": 29.902538410153674
+      },
+      {
+        "Weeks[week]": 38,
+        "[Baskets]": 2546,
+        "[AOV]": 29.07888059701483
+      },
+      {
+        "Weeks[week]": 5,
+        "[Baskets]": 2588,
+        "[AOV]": 28.073102782071143
+      },
+      {
+        "Weeks[week]": 43,
+        "[Baskets]": 2638,
+        "[AOV]": 28.854112964367005
+      },
+      {
+        "Weeks[week]": 48,
+        "[Baskets]": 2810,
+        "[AOV]": 30.212992882562343
+      },
+      {
+        "Weeks[week]": 10,
+        "[Baskets]": 2685,
+        "[AOV]": 31.209608938547547
+      },
+      {
+        "Weeks[week]": 15,
+        "[Baskets]": 2734,
+        "[AOV]": 29.081869056327825
+      },
+      {
+        "Weeks[week]": 53,
+        "[Baskets]": 2328,
+        "[AOV]": 32.16874140893469
+      },
+      {
+        "Weeks[week]": 20,
+        "[Baskets]": 2855,
+        "[AOV]": 28.895103327495633
+      },
+      {
+        "Weeks[week]": 30,
+        "[Baskets]": 2716,
+        "[AOV]": 27.95763622974962
+      },
+      {
+        "Weeks[week]": 25,
+        "[Baskets]": 2765,
+        "[AOV]": 28.358907775768575
+      },
+      {
+        "Weeks[week]": 35,
+        "[Baskets]": 2662,
+        "[AOV]": 27.93174305033804
+      },
+      {
+        "Weeks[week]": 7,
+        "[Baskets]": 2644,
+        "[AOV]": 31.415219364599146
+      },
+      {
+        "Weeks[week]": 2,
+        "[Baskets]": 2676,
+        "[AOV]": 32.57929372197326
+      },
+      {
+        "Weeks[week]": 40,
+        "[Baskets]": 2717,
+        "[AOV]": 27.983481781376387
+      },
+      {
+        "Weeks[week]": 12,
+        "[Baskets]": 2685,
+        "[AOV]": 29.187791433891938
+      },
+      {
+        "Weeks[week]": 45,
+        "[Baskets]": 2864,
+        "[AOV]": 31.61445530726264
+      },
+      {
+        "Weeks[week]": 17,
+        "[Baskets]": 2652,
+        "[AOV]": 27.77374434389133
+      },
+      {
+        "Weeks[week]": 50,
+        "[Baskets]": 2625,
+        "[AOV]": 32.59790095238092
+      },
+      {
+        "Weeks[week]": 32,
+        "[Baskets]": 2906,
+        "[AOV]": 29.97717136958018
+      },
+      {
+        "Weeks[week]": 27,
+        "[Baskets]": 2768,
+        "[AOV]": 29.49682442196525
+      },
+      {
+        "Weeks[week]": 22,
+        "[Baskets]": 2729,
+        "[AOV]": 29.045866617808773
+      },
+      {
+        "Weeks[week]": 37,
+        "[Baskets]": 2728,
+        "[AOV]": 31.02937683284457
+      },
+      {
+        "Weeks[week]": 4,
+        "[Baskets]": 2738,
+        "[AOV]": 27.901577794010166
+      },
+      {
+        "Weeks[week]": 47,
+        "[Baskets]": 2626,
+        "[AOV]": 31.878964204112698
+      },
+      {
+        "Weeks[week]": 9,
+        "[Baskets]": 2683,
+        "[AOV]": 29.323850167722775
+      },
+      {
+        "Weeks[week]": 42,
+        "[Baskets]": 2700,
+        "[AOV]": 29.24808148148154
+      },
+      {
+        "Weeks[week]": 52,
+        "[Baskets]": 3070,
+        "[AOV]": 33.60529967426732
+      },
+      {
+        "Weeks[week]": 19,
+        "[Baskets]": 2824,
+        "[AOV]": 31.338714589235256
+      },
+      {
+        "Weeks[week]": 14,
+        "[Baskets]": 2641,
+        "[AOV]": 30.29224536160547
+      },
+      {
+        "Weeks[week]": 24,
+        "[Baskets]": 2772,
+        "[AOV]": 29.910901875901892
+      },
+      {
+        "Weeks[week]": 29,
+        "[Baskets]": 2719,
+        "[AOV]": 28.029205590290474
+      },
+      {
+        "Weeks[week]": 34,
+        "[Baskets]": 2684,
+        "[AOV]": 28.320353949329345
+      }
+    ],
+    "cohort_display": [
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.8890569843671206
+      },
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.9006555723651034
+      },
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.8951084215834594
+      },
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.902672718103883
+      },
+      {
+        "Cohorts[cohort]": "2017-01-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.8850226928895613
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.6864864864864865
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.6378378378378379
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.7135135135135136
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.6810810810810811
+      },
+      {
+        "Cohorts[cohort]": "2017-02-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.7351351351351352
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5892857142857143
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.6428571428571429
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.5892857142857143
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.6875
+      },
+      {
+        "Cohorts[cohort]": "2017-03-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.6071428571428571
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.7446808510638298
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.6808510638297872
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.6595744680851063
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.6170212765957447
+      },
+      {
+        "Cohorts[cohort]": "2017-04-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.6595744680851063
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5869565217391305
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.5869565217391305
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.43478260869565216
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.5217391304347826
+      },
+      {
+        "Cohorts[cohort]": "2017-05-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.6
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.6
+      },
+      {
+        "Cohorts[cohort]": "2017-06-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.65
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5714285714285714
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.6666666666666666
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.6190476190476191
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.6190476190476191
+      },
+      {
+        "Cohorts[cohort]": "2017-07-01T00:00:00",
+        "Cohorts[months_since_first]": 5,
+        "[Activity]": 0.38095238095238093
+      },
+      {
+        "Cohorts[cohort]": "2017-08-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-08-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5625
+      },
+      {
+        "Cohorts[cohort]": "2017-08-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-08-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-08-01T00:00:00",
+        "Cohorts[months_since_first]": 4,
+        "[Activity]": 0.5625
+      },
+      {
+        "Cohorts[cohort]": "2017-09-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-09-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5625
+      },
+      {
+        "Cohorts[cohort]": "2017-09-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.4375
+      },
+      {
+        "Cohorts[cohort]": "2017-09-01T00:00:00",
+        "Cohorts[months_since_first]": 3,
+        "[Activity]": 0.4375
+      },
+      {
+        "Cohorts[cohort]": "2017-10-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-10-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.6666666666666666
+      },
+      {
+        "Cohorts[cohort]": "2017-10-01T00:00:00",
+        "Cohorts[months_since_first]": 2,
+        "[Activity]": 0.5
+      },
+      {
+        "Cohorts[cohort]": "2017-11-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      },
+      {
+        "Cohorts[cohort]": "2017-11-01T00:00:00",
+        "Cohorts[months_since_first]": 1,
+        "[Activity]": 0.5454545454545454
+      },
+      {
+        "Cohorts[cohort]": "2017-12-01T00:00:00",
+        "Cohorts[months_since_first]": 0,
+        "[Activity]": 1
+      }
+    ],
+    "exploration_weeks": [
+      {
+        "Weeks[week]": 2,
+        "[Shelf]": 102474.16999999965,
+        "[Discounts]": 15291.97999999995
+      },
+      {
+        "Weeks[week]": 3,
+        "[Shelf]": 91726.49000000156,
+        "[Discounts]": 14271.669999999895
+      },
+      {
+        "Weeks[week]": 4,
+        "[Shelf]": 91991.71000000101,
+        "[Discounts]": 15597.189999999946
+      },
+      {
+        "Weeks[week]": 5,
+        "[Shelf]": 87042.61000000052,
+        "[Discounts]": 14389.419999999956
+      },
+      {
+        "Weeks[week]": 6,
+        "[Shelf]": 105413.38000000076,
+        "[Discounts]": 15389.169999999984
+      },
+      {
+        "Weeks[week]": 7,
+        "[Shelf]": 96740.5900000009,
+        "[Discounts]": 13678.749999999984
+      },
+      {
+        "Weeks[week]": 8,
+        "[Shelf]": 88190.14000000019,
+        "[Discounts]": 13387.249999999987
+      },
+      {
+        "Weeks[week]": 9,
+        "[Shelf]": 93225.69,
+        "[Discounts]": 14549.800000000028
+      },
+      {
+        "Weeks[week]": 10,
+        "[Shelf]": 99284.65000000008,
+        "[Discounts]": 15486.850000000142
+      },
+      {
+        "Weeks[week]": 11,
+        "[Shelf]": 92794.31999999889,
+        "[Discounts]": 15008.490000000149
+      },
+      {
+        "Weeks[week]": 12,
+        "[Shelf]": 93835.43999999987,
+        "[Discounts]": 15466.220000000096
+      },
+      {
+        "Weeks[week]": 13,
+        "[Shelf]": 91151.0299999991,
+        "[Discounts]": 14749.200000000048
+      },
+      {
+        "Weeks[week]": 14,
+        "[Shelf]": 95459.68999999897,
+        "[Discounts]": 15457.870000000077
+      },
+      {
+        "Weeks[week]": 15,
+        "[Shelf]": 96129.09000000065,
+        "[Discounts]": 16619.260000000133
+      },
+      {
+        "Weeks[week]": 16,
+        "[Shelf]": 97104.16999999956,
+        "[Discounts]": 15070.420000000222
+      },
+      {
+        "Weeks[week]": 17,
+        "[Shelf]": 87056.35999999904,
+        "[Discounts]": 13400.390000000076
+      },
+      {
+        "Weeks[week]": 18,
+        "[Shelf]": 87631.49999999975,
+        "[Discounts]": 13399.560000000029
+      },
+      {
+        "Weeks[week]": 19,
+        "[Shelf]": 104410.72999999946,
+        "[Discounts]": 15910.199999999997
+      },
+      {
+        "Weeks[week]": 20,
+        "[Shelf]": 98061.35999999903,
+        "[Discounts]": 15565.84000000003
+      },
+      {
+        "Weeks[week]": 21,
+        "[Shelf]": 97630.34000000021,
+        "[Discounts]": 16414.200000000063
+      },
+      {
+        "Weeks[week]": 22,
+        "[Shelf]": 96363.92000000038,
+        "[Discounts]": 17097.750000000087
+      },
+      {
+        "Weeks[week]": 23,
+        "[Shelf]": 100772.9499999994,
+        "[Discounts]": 16321.39999999998
+      },
+      {
+        "Weeks[week]": 24,
+        "[Shelf]": 98611.47999999959,
+        "[Discounts]": 15698.460000000046
+      },
+      {
+        "Weeks[week]": 25,
+        "[Shelf]": 92115.22000000018,
+        "[Discounts]": 13702.840000000044
+      },
+      {
+        "Weeks[week]": 26,
+        "[Shelf]": 84518.37000000001,
+        "[Discounts]": 14907.709999999975
+      },
+      {
+        "Weeks[week]": 27,
+        "[Shelf]": 101502.75999999951,
+        "[Discounts]": 19855.550000000076
+      },
+      {
+        "Weeks[week]": 28,
+        "[Shelf]": 107740.90999999993,
+        "[Discounts]": 18212.710000000145
+      },
+      {
+        "Weeks[week]": 29,
+        "[Shelf]": 89938.34000000087,
+        "[Discounts]": 13726.929999999991
+      },
+      {
+        "Weeks[week]": 30,
+        "[Shelf]": 89725.71999999948,
+        "[Discounts]": 13792.780000000052
+      },
+      {
+        "Weeks[week]": 31,
+        "[Shelf]": 87690.05999999944,
+        "[Discounts]": 13960.540000000023
+      },
+      {
+        "Weeks[week]": 32,
+        "[Shelf]": 104406.2600000009,
+        "[Discounts]": 17292.600000000155
+      },
+      {
+        "Weeks[week]": 33,
+        "[Shelf]": 93020.81999999945,
+        "[Discounts]": 15172.300000000045
+      },
+      {
+        "Weeks[week]": 34,
+        "[Shelf]": 89856.86999999952,
+        "[Discounts]": 13845.040000000095
+      },
+      {
+        "Weeks[week]": 35,
+        "[Shelf]": 88157.1899999991,
+        "[Discounts]": 13802.890000000107
+      },
+      {
+        "Weeks[week]": 36,
+        "[Shelf]": 95691.89999999922,
+        "[Discounts]": 16528.28
+      },
+      {
+        "Weeks[week]": 37,
+        "[Shelf]": 100086.55999999958,
+        "[Discounts]": 15438.420000000098
+      },
+      {
+        "Weeks[week]": 38,
+        "[Shelf]": 86544.40999999942,
+        "[Discounts]": 12509.580000000018
+      },
+      {
+        "Weeks[week]": 39,
+        "[Shelf]": 89964.14000000014,
+        "[Discounts]": 15051.660000000038
+      },
+      {
+        "Weeks[week]": 40,
+        "[Shelf]": 88984.2899999999,
+        "[Discounts]": 12953.169999999955
+      },
+      {
+        "Weeks[week]": 41,
+        "[Shelf]": 97516.74,
+        "[Discounts]": 14253.540000000035
+      },
+      {
+        "Weeks[week]": 42,
+        "[Shelf]": 91702.32999999986,
+        "[Discounts]": 12732.50999999998
+      },
+      {
+        "Weeks[week]": 43,
+        "[Shelf]": 88968.57999999962,
+        "[Discounts]": 12851.430000000026
+      },
+      {
+        "Weeks[week]": 44,
+        "[Shelf]": 92136.15999999986,
+        "[Discounts]": 13715.140000000049
+      },
+      {
+        "Weeks[week]": 45,
+        "[Shelf]": 108325.43999999967,
+        "[Discounts]": 17781.640000000076
+      },
+      {
+        "Weeks[week]": 46,
+        "[Shelf]": 93147.36000000087,
+        "[Discounts]": 14113.909999999867
+      },
+      {
+        "Weeks[week]": 47,
+        "[Shelf]": 99088.79999999894,
+        "[Discounts]": 15374.63999999997
+      },
+      {
+        "Weeks[week]": 48,
+        "[Shelf]": 100449.99999999879,
+        "[Discounts]": 15551.490000000009
+      },
+      {
+        "Weeks[week]": 49,
+        "[Shelf]": 97499.35000000005,
+        "[Discounts]": 14604.260000000022
+      },
+      {
+        "Weeks[week]": 50,
+        "[Shelf]": 101024.75000000003,
+        "[Discounts]": 15455.25999999993
+      },
+      {
+        "Weeks[week]": 51,
+        "[Shelf]": 93703.09999999923,
+        "[Discounts]": 14308.390000000092
+      },
+      {
+        "Weeks[week]": 52,
+        "[Shelf]": 120984.37000000096,
+        "[Discounts]": 17816.10000000015
+      },
+      {
+        "Weeks[week]": 53,
+        "[Shelf]": 89279.99999999956,
+        "[Discounts]": 14391.169999999964
+      }
+    ],
+    "exploration_categories": [
+      {
+        "Products[category_label]": "GROCERY / CHEESE",
+        "[Sales]": 107011.61000000087
+      },
+      {
+        "Products[category_label]": "GROCERY / FLUID MILK PRODUCTS",
+        "[Sales]": 116360.67999999515
+      },
+      {
+        "Products[category_label]": "GROCERY / BAG SNACKS",
+        "[Sales]": 84943.85000000024
+      },
+      {
+        "Products[category_label]": "GROCERY / SOFT DRINKS",
+        "[Sales]": 182126.30000000328
+      },
+      {
+        "Products[category_label]": "GROCERY / FRZN MEAT/MEAT DINNERS",
+        "[Sales]": 93023.73999999945
+      },
+      {
+        "Products[category_label]": "MEAT / BEEF",
+        "[Sales]": 176614.53999999928
+      }
+    ],
+    "native_engine": "Power BI Desktop Analysis Services",
+    "passed": true,
+    "brand_share": [
+      {
+        "Products[brand]": "National",
+        "[Share]": 0.7858120011941638,
+        "[Sales]": 3288531.34000028
+      },
+      {
+        "Products[brand]": "Private",
+        "[Share]": 0.2141879988058826,
+        "[Sales]": 896351.7299999194
+      },
+      {
+        "Products[brand]": "",
+        "[Share]": null,
+        "[Sales]": 172.57
+      }
+    ],
+    "exploration_departments": [
+      {
+        "Departments[department]": "DELI",
+        "[Sales]": 148344.05999999793,
+        "[Depth]": 0.08498422112847775
+      },
+      {
+        "Departments[department]": "DRUG GM",
+        "[Sales]": 596783.0299999343,
+        "[Depth]": 0.09009450356932965
+      },
+      {
+        "Departments[department]": "GROCERY",
+        "[Sales]": 2314207.679999849,
+        "[Depth]": 0.1650629677604851
+      },
+      {
+        "Departments[department]": "MEAT",
+        "[Sales]": 308575.3299999981,
+        "[Depth]": 0.25001351955062695
+      },
+      {
+        "Departments[department]": "MEAT-PCKGD",
+        "[Sales]": 232282.5300000042,
+        "[Depth]": 0.22957992795649765
+      },
+      {
+        "Departments[department]": "PRODUCE",
+        "[Sales]": 322858.8200000101,
+        "[Depth]": 0.11526217243089497
+      }
+    ],
+    "exploration_designs": [
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design]": "1 \u00b7 Targeted vs untargeted",
+        "[Lift]": 32.09888328126114
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design]": "1 \u00b7 Targeted vs untargeted",
+        "[Lift]": 34.30835041938491
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design]": "1 \u00b7 Targeted vs untargeted",
+        "[Lift]": 34.768280289838785
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design]": "2 \u00b7 Unmatched DiD",
+        "[Lift]": -2.2431815317655737
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design]": "2 \u00b7 Unmatched DiD",
+        "[Lift]": -0.20438314544737124
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design]": "2 \u00b7 Unmatched DiD",
+        "[Lift]": 1.6841382938108707
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design]": "3 \u00b7 Match on recent pre-period",
+        "[Lift]": 3.099813064152177
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design]": "3 \u00b7 Match on recent pre-period",
+        "[Lift]": 6.633948374857306
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design]": "3 \u00b7 Match on recent pre-period",
+        "[Lift]": 6.272616405403071
+      },
+      {
+        "Campaigns[campaign_id]": "8",
+        "Campaign estimates[design]": "4 \u00b7 Match on earlier weeks",
+        "[Lift]": 0.8030545240636583
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "Campaign estimates[design]": "4 \u00b7 Match on earlier weeks",
+        "[Lift]": 0.39453290443676203
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "Campaign estimates[design]": "4 \u00b7 Match on earlier weeks",
+        "[Lift]": 2.9502393447472057
+      }
+    ],
+    "email": [
+      {
+        "Email experiment[arm]": "Mens E-Mail",
+        "[Lift]": 0.7698271558945367,
+        "[Interval]": "$0.48 to $1.04"
+      },
+      {
+        "Email experiment[arm]": "Womens E-Mail",
+        "[Lift]": 0.4244122159365966,
+        "[Interval]": "$0.18 to $0.70"
+      }
+    ],
+    "exploration_campaigns": [
+      {
+        "Campaigns[campaign_id]": "8",
+        "[Earlier]": 0.8030545240636583,
+        "[Interval]": "($2.71) to $4.31",
+        "[Audience]": 1076,
+        "[Redemptions]": 372
+      },
+      {
+        "Campaigns[campaign_id]": "13",
+        "[Earlier]": 0.39453290443676203,
+        "[Interval]": "($3.25) to $4.04",
+        "[Audience]": 1077,
+        "[Redemptions]": 629
+      },
+      {
+        "Campaigns[campaign_id]": "18",
+        "[Earlier]": 2.9502393447472057,
+        "[Interval]": "($0.74) to $6.64",
+        "[Audience]": 1133,
+        "[Redemptions]": 653
+      }
+    ],
+    "interval_evidence": [
+      {
+        "[ExcludesZero]": 0
+      }
+    ]
+  },
+  "native_pbix_save": true,
+  "desktop_reopened": false,
+  "limits": [
+    "Grocery campaign estimates are observational.",
+    "Opening the PBIX uses embedded data; refresh uses the local dashboard/data exports."
+  ],
+  "native_pdf_export": true,
+  "pdf": {
+    "file": "Grocery Marketing Final.pdf",
+    "pages": 4,
+    "bytes": 420953,
+    "sha256": "1e073aa364a53de4b1f2621b41ef988873750ae5f4b7272926acf728d8cc08e8",
+    "visual_review": "All four pages reviewed. Email row wrapping, selector height and note clipping corrected in source and re-exported."
+  }
+}

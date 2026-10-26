@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Months 0-5 since first purchase. Darker = higher activity. Blank = unobserved; 2,469 households.",
+                    "value": "Months 0-5; 2,469 households. Darker = more active; blank = unobserved.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11pt",
+                      "fontSize": "10pt",
                       "fontWeight": "normal",
                       "color": "#415771"
                     }

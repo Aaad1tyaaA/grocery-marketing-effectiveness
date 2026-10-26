@@ -4,7 +4,9 @@
 
 **Recommend a randomized retention test before scaling grocery campaigns.** Campaign 18's raw $34.77 weekly household spend gap falls to an uncertain $2.95 after earlier-window matching (95% CI -$0.74 to $6.64). The analysis identifies customer concentration and discount dependence without presenting association as proven profit.
 
-[Executive memo](docs/crm_recommendation_memo.pdf) · [Dashboard source and status](POWER_BI_START_HERE.md) · [Methods and definitions](docs/metric_glossary.md) · [Experiment readout](docs/experiment_readout.md) · [AI audit trail](docs/ai_log.md)
+[Executive memo](docs/crm_recommendation_memo.pdf) · [Dashboard PDF](dashboard/Grocery%20Marketing%20Final.pdf) · [Dashboard source and controls](POWER_BI_START_HERE.md) · [Methods and definitions](docs/metric_glossary.md) · [Experiment readout](docs/experiment_readout.md) · [AI audit trail](docs/ai_log.md)
+
+![Business health dashboard](charts/dashboard_business_health.png)
 
 ![How campaign estimates change after adjustment](charts/campaign_estimate_path.png)
 ![Promotion associations, not causal treatment effects](charts/promotion_lift.png)
@@ -35,7 +37,7 @@ Raw RDS/RDA, CSV and Parquet files and local DuckDB databases are excluded from 
 
 ## Open the dashboard and workbook
 
-- Review the static analytical charts in this README, or open the editable four-page dashboard source in Power BI Desktop. The final native PDF export is pending.
+- Review the [four-page dashboard PDF](dashboard/Grocery%20Marketing%20Final.pdf) or the editable Power BI project. The original local handoff also contains `dashboard/Grocery Marketing Final.pbix`, with imported data for immediate viewing.
 - To build the editable Power BI report: run the analysis, then `python scripts/export_dashboard_data.py`. Open `dashboard/final/Grocery Marketing Final.pbip` in Power BI Desktop and refresh. Set the `DataFolder` Power Query parameter to the absolute generated `dashboard/data` folder before refreshing. The public source uses the placeholder `C:\GroceryMarketing\dashboard\data`. Save as PBIX after refresh. Use **Ctrl+click** on the report's navigation buttons in Desktop edit mode.
 - The embedded-data PBIX stays in the local handoff and is not uploaded. The Git repository contains editable report/model definitions and aggregated previews, not cached raw rows.
 - The complete Excel ROI model is in the original local handoff (`excel/campaign_roi_model_v3.xlsx`); [its public specification](excel/README.md) documents the model. The workbook contains household lookup data and is kept out of the public repository. Blue cells are editable assumptions. Its positive point scenario is not a causal profit conclusion; compare uncertainty and test feasibility. The workbook was checked in desktop Excel, including sensitivity tables, Goal Seek, lookup/pivot features and edge cases.
@@ -70,6 +72,6 @@ The [Hillstrom experiment description](https://blog.minethatdata.com/2008/03/min
 
 ## Verification and limits
 
-`docs/module_verification.json` records the source, database, export and notebook checks. Dashboard-specific validation is in `dashboard/verification_source_final.json` (saved source and captured native DAX; final PBIX/PDF save pending); Excel native validation is in `docs/excel/verification_v3.json`. CI runs synthetic and summary-data tests; tests requiring excluded raw files are skipped there, rather than pretending to rebuild the full dataset. Public deployment does not imply that a fresh computer has completed the full-data rebuild.
+`docs/module_verification.json` records the source, database, export and notebook checks. Dashboard-specific validation is in `dashboard/verification_final.json` (660 native DAX, saved-container and presentation checks; all four native PDF pages visually reviewed); Excel native validation is in `docs/excel/verification_v3.json`. CI runs synthetic and summary-data tests; tests requiring excluded raw files are skipped there, rather than pretending to rebuild the full dataset. Public deployment does not imply that a fresh computer has completed the full-data rebuild.
 
 See [the resume and interview walkthrough](docs/resume_and_walkthrough.md), [design review](docs/dashboard_design_review.md), and [publication manifest](docs/publication_manifest.json).

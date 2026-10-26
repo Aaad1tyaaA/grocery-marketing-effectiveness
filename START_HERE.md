@@ -3,7 +3,7 @@
 Start with [README.md](README.md) for findings, reproduction and the public repository map. Analysis modules 1-6, the corrected local Excel ROI workbook and the one-page recommendation memo are complete.
 
 - [Executive memo](docs/crm_recommendation_memo.pdf) and [evidence links](docs/memo.md).
-- [Dashboard controls and current save status](POWER_BI_START_HERE.md): the latest four-page source is saved in `dashboard/final/Grocery Marketing Final.pbip`. The earlier `dashboard/Grocery Marketing Polished.pbix` remains the last saved embedded-data report. Saving the latest source as a new PBIX and exporting its PDF remain pending because desktop control was disabled at the user's request.
+- [Dashboard controls and current save status](POWER_BI_START_HERE.md): the latest four-page source is saved in `dashboard/final/Grocery Marketing Final.pbip`. The original local handoff now contains the final embedded-data `dashboard/Grocery Marketing Final.pbix` and native four-page `dashboard/Grocery Marketing Final.pdf`. The final report passed 660 checks; the PDF was visually reviewed and corrected before delivery.
 - [Excel specification](excel/README.md) and `excel/campaign_roi_model_v3.xlsx` in the original local handoff; the workbook is excluded from GitHub because it contains household lookups.
 - [Resume and interview walkthrough](docs/resume_and_walkthrough.md).
 

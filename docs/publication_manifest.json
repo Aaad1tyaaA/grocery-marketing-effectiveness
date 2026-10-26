@@ -1,9 +1,9 @@
 {
-  "prepared_at_utc": "2026-10-26T06:20:10.395915+00:00",
+  "prepared_at_utc": "2026-10-26T15:44:59.317371+00:00",
   "publication_scope": "Code, report definitions, documentation, charts, aggregate previews; no raw or embedded data.",
   "notebook_outputs_cleared": true,
   "assistant_coauthor": false,
-  "latest_native_pbix_pdf_export": "pending: desktop control disabled by user",
+  "latest_native_pbix_pdf_export": "complete; PBIX stays local, aggregate PDF published",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -164,6 +164,26 @@
       "path": "charts/customer_trajectories.png",
       "bytes": 46601,
       "sha256": "439e079be594a7db4c00c35a31553ed1fe230013be6586ac9207dbeb856bb2db"
+    },
+    {
+      "path": "charts/dashboard_business_health.png",
+      "bytes": 167859,
+      "sha256": "107b35112ad58f4e7d0347cc7f9de1460dad777c18a50f72794b49bf9df59163"
+    },
+    {
+      "path": "charts/dashboard_campaigns_email.png",
+      "bytes": 185078,
+      "sha256": "026a9893afd07de2b49604c761527a3d720d95ffe125dfd712cf19cb38561b1d"
+    },
+    {
+      "path": "charts/dashboard_customers_marketing.png",
+      "bytes": 270960,
+      "sha256": "cfcbaf6d22a1413517e9f935ed5796ebae988373df291a7a43ba5c5f6a4f0804"
+    },
+    {
+      "path": "charts/dashboard_products_discounts.png",
+      "bytes": 189715,
+      "sha256": "a4b04187dfc6ae7355baf5a01f55d07793627a39b35d1e39b20fe18e6f5f179f"
     },
     {
       "path": "charts/demographic_selection.png",
@@ -407,8 +427,8 @@
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_business_health/visuals/weekly_basket_note/visual.json",
-      "bytes": 4189,
-      "sha256": "bc8940f1244663264a63a2d92327212f611def53915a57ca8b6a72c32c0640e9"
+      "bytes": 4161,
+      "sha256": "226610f8f61613b502885c22d062b5675c5ae2e6d2f23caf90959ce6e95f366d"
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_business_health/visuals/weekly_basket_volume/visual.json",
@@ -512,8 +532,8 @@
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/33b2b1e91cf656cf97cc/visual.json",
-      "bytes": 4272,
-      "sha256": "1ddc48aed7f1ec713271235d58b062027004aebd2c1c7312a0d0e451b1c95b63"
+      "bytes": 4238,
+      "sha256": "6b2722a7b750c05d91ea48219c0b71f42f9a006ac190853b8670f86e3a4b57fa"
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/6dda30fa78f95076887f/visual.json",
@@ -552,8 +572,8 @@
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/bd47aed923f95c64a0f3/visual.json",
-      "bytes": 10753,
-      "sha256": "7f20b55e1ea5f19c3e3bc45a2815ebc6303f901e85d63fcc38b8b60deaf43ab2"
+      "bytes": 10755,
+      "sha256": "48d00b1bcc9ede412affd9599e5804676ffae68672c1e3eca5411be45402ad14"
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/c5b92c5ce5cf513090d4/visual.json",
@@ -572,13 +592,13 @@
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/d9dda3b5c548509ea7c3/visual.json",
-      "bytes": 10634,
-      "sha256": "e3b5f19720083ff87b0ee9deeabeb295ca61d8f6b63451d97e05637b0d4b0437"
+      "bytes": 10637,
+      "sha256": "641debc6fb56ae623122489bd4b5a3c5c8dce9a706cd2f01d9b9e491846e9d70"
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/ed841ed3386f5c23ac42/visual.json",
-      "bytes": 4261,
-      "sha256": "531fd45d75e033121e25513eacf5d5b9add51e5cb3340fe904e428b0126eb4a6"
+      "bytes": 4238,
+      "sha256": "0a44e41521177fa0719e6f681fec7641d8c3b16cfbfab85fc2e29f254b2e2943"
     },
     {
       "path": "dashboard/final/R/definition/pages/grocery_customers_marketing/visuals/fd88eca02a2d5d508fdc/visual.json",
@@ -687,8 +707,8 @@
     },
     {
       "path": "dashboard/final/R/definition/pages/pages.json",
-      "bytes": 337,
-      "sha256": "6e2fb07003a6a44254ca9fc42284b12d59e93200031c33c160a3c552d9ec3a6a"
+      "bytes": 335,
+      "sha256": "ad792a04bc13876898c46f56fd4bf4f92865e86fead3f2d7176b69b4c0a2cbeb"
     },
     {
       "path": "dashboard/final/R/definition/report.json",
@@ -711,14 +731,24 @@
       "sha256": "abeab987b87ef5646823770a0d1408c6df0cf5ab8413e67ede624a6eda923320"
     },
     {
+      "path": "dashboard/Grocery Marketing Final.pdf",
+      "bytes": 420953,
+      "sha256": "1e073aa364a53de4b1f2621b41ef988873750ae5f4b7272926acf728d8cc08e8"
+    },
+    {
+      "path": "dashboard/verification_final.json",
+      "bytes": 64358,
+      "sha256": "829e4c90984185fb34118b6de57dba05c7d39cbe7984d41e70aa6dab28e29e95"
+    },
+    {
       "path": "dashboard/verification_source_final.json",
-      "bytes": 15334,
-      "sha256": "bc45099948cc9befa5555c28a2858ac147faf00c33956a3abe82aced36e1cdbe"
+      "bytes": 15226,
+      "sha256": "2b3295ed60c0a3aa9a51a3edafc7af3aa798d4c0b33f5faa1f5547db441b523d"
     },
     {
       "path": "docs/ai_log.md",
-      "bytes": 3961,
-      "sha256": "989819ac7e8d5b866243955b38d8ded687cc9a4a991fbb0c40e83f067f485225"
+      "bytes": 4597,
+      "sha256": "02d00a1ed1de649ff3f26a24769dc02c22e3737e959188ca33dbde20974e59c7"
     },
     {
       "path": "docs/business_health/findings.md",
@@ -762,8 +792,8 @@
     },
     {
       "path": "docs/dashboard_design_review.md",
-      "bytes": 2640,
-      "sha256": "20c562711b2a3c2c162ba3dab33ed25974d68805f24fefcd2b287316246ff42c"
+      "bytes": 2909,
+      "sha256": "110f9028e3234f32011c3a85622931e0d1b4558ae6ba607fbe44a3b8a4819948"
     },
     {
       "path": "docs/data_dictionary.csv",
@@ -782,13 +812,13 @@
     },
     {
       "path": "docs/experiment_readout.md",
-      "bytes": 12800,
-      "sha256": "8ca213a902d635c837ded39579e8bbd3e3a4736a53e7e56ca8768bb032e86160"
+      "bytes": 12805,
+      "sha256": "a045bcc07ab040d48636cb6a222285135ea8861f4924121a848f878adca688bd"
     },
     {
       "path": "docs/hillstrom/findings.md",
-      "bytes": 12809,
-      "sha256": "f15f2ca759dabba13ca389404d180a456aee5d1d6e9648b116c15a01c2cf3fce"
+      "bytes": 12814,
+      "sha256": "95d3325841ed284c1d61100e3ed0c324e3bdd0e6c50414efef4b91d3e9aff82d"
     },
     {
       "path": "docs/hillstrom/verification.json",
@@ -912,13 +942,13 @@
     },
     {
       "path": "POWER_BI_START_HERE.md",
-      "bytes": 2567,
-      "sha256": "6754435205f90c5387bf73988c3688dc94dd6994673044f798cb51319b187f3d"
+      "bytes": 2653,
+      "sha256": "848528d818bf232da8d80e27563a4323e43d7a2111758e831d378762365a7d6f"
     },
     {
       "path": "README.md",
-      "bytes": 7779,
-      "sha256": "4ccadd54178de23d5a8fa24a6bcef70f65da504fabab8bf7d69ced0200567ed0"
+      "bytes": 8019,
+      "sha256": "fe6c3c31ae9739249fed75ab2646a873e5ca8b770c18b78a1ad5c7d7eefd1488"
     },
     {
       "path": "requirements-business-health.txt",
@@ -1027,8 +1057,8 @@
     },
     {
       "path": "scripts/write_hillstrom_deliverables.py",
-      "bytes": 33133,
-      "sha256": "8be13c99a1e667166f85c3ef23e9a1fc3dc48f1df2a88931a338983305a442de"
+      "bytes": 33143,
+      "sha256": "6960447d4545d4c1d9e76c0cb8525a6fbbb6ab131761d229b54e708ecec25b73"
     },
     {
       "path": "scripts/write_notebooks.py",
@@ -1142,8 +1172,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 1698,
-      "sha256": "0d47000692d83a21e1e7546dfdf97c0b5c2f993809db1bdd68c36c552102f3bc"
+      "bytes": 1725,
+      "sha256": "55e51229c6f9bbeb1d13e80fb78a5e75787e2ab4a8448b3d61393f7727e02cf1"
     },
     {
       "path": "tests/test_app.py",
@@ -1209,5 +1239,6 @@
   "startup_regression_tests": {
     "passed": 2,
     "scope": "Missing and existing raw database cases; source contract tests also passed."
-  }
+  },
+  "dashboard_native_checks": 660
 }
