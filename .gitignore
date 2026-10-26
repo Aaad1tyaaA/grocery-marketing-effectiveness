@@ -1,0 +1,17 @@
+# Data and embedded-data artifacts remain local
+/data/
+/dashboard/data/
+*.duckdb
+*.duckdb.wal
+*.pbix
+*.xlsx
+*.docx
+*.abf
+**/.pbi/
+**/__pycache__/
+.pytest_cache/
+.venv/
+.env
+.env.*
+*.log
+.ipynb_checkpoints/

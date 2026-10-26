@@ -1,0 +1,257 @@
+{
+  "guide": "Two_Analytics_Projects_Complete_Guide.docx",
+  "guide_steps": "1.3.1\u20131.3.5",
+  "source": "Verified Parquet and reused phase-1 model SQL; open databases not changed",
+  "clean_sales_rows": 1460487,
+  "clean_sales_usd": 4596039.58,
+  "grocery_households": 2467,
+  "grocery_sales_usd": 4185055.64,
+  "segments": [
+    {
+      "segment": "1 Champions",
+      "households": 416,
+      "spend": 1870445.1099999992,
+      "value_share": 0.446934347090305,
+      "avg_baskets": 144.8125
+    },
+    {
+      "segment": "2 Loyal regulars",
+      "households": 804,
+      "spend": 1683639.31,
+      "value_share": 0.40229795128840856,
+      "avg_baskets": 62.04601990049751
+    },
+    {
+      "segment": "3 Light regulars",
+      "households": 800,
+      "spend": 504643.04000000027,
+      "value_share": 0.12058215789933921,
+      "avg_baskets": 32.8175
+    },
+    {
+      "segment": "4 Occasional",
+      "households": 225,
+      "spend": 48106.18000000001,
+      "value_share": 0.011494752791387019,
+      "avg_baskets": 6.9911111111111115
+    },
+    {
+      "segment": "5 Lapsed",
+      "households": 222,
+      "spend": 78222.00000000003,
+      "value_share": 0.018690790930559767,
+      "avg_baskets": 14.004504504504505
+    }
+  ],
+  "trajectories": [
+    {
+      "trajectory": "Growing",
+      "households": 866,
+      "household_share": 0.3510336441021484,
+      "spend_h1": 476545.4599999991,
+      "spend_h2": 818773.3000000003,
+      "spend_change": 342227.8400000012
+    },
+    {
+      "trajectory": "Declining",
+      "households": 755,
+      "household_share": 0.3060397243615728,
+      "spend_h1": 699334.1000000013,
+      "spend_h2": 379860.6099999996,
+      "spend_change": -319473.4900000017
+    },
+    {
+      "trajectory": "Stable",
+      "households": 709,
+      "household_share": 0.287393595460073,
+      "spend_h1": 892462.1400000002,
+      "spend_h2": 882928.8800000001,
+      "spend_change": -9533.260000000126
+    },
+    {
+      "trajectory": "New in H2",
+      "households": 78,
+      "household_share": 0.03161734900689096,
+      "spend_h1": 0.0,
+      "spend_h2": 18835.27999999999,
+      "spend_change": 18835.27999999999
+    },
+    {
+      "trajectory": "Gone in H2",
+      "households": 59,
+      "household_share": 0.023915687069314958,
+      "spend_h1": 6209.020000000003,
+      "spend_h2": 0.0,
+      "spend_change": -6209.020000000003
+    }
+  ],
+  "concentration": {
+    "households": 2467,
+    "top_20pct_households": 494,
+    "top_20pct_spend": 2243258.1100000013,
+    "top_20pct_value_share": 0.5360163168583341
+  },
+  "demographic_coverage": [
+    {
+      "has_demographics": false,
+      "households": 1666,
+      "median_spend": 682.535,
+      "mean_spend": 1091.5997478991587
+    },
+    {
+      "has_demographics": true,
+      "households": 801,
+      "median_spend": 2407.66,
+      "mean_spend": 2954.3701123595483
+    }
+  ],
+  "deal_driven": [
+    {
+      "deal_driven": false,
+      "households": 1843,
+      "mean_spend": 1801.9492457948986,
+      "median_spend": 1227.64
+    },
+    {
+      "deal_driven": true,
+      "households": 624,
+      "mean_spend": 1384.716634615385,
+      "median_spend": 933.22
+    }
+  ],
+  "cohort_sizes": [
+    {
+      "cohort": "2017-01-01 00:00:00",
+      "cohort_size": 1983
+    },
+    {
+      "cohort": "2017-02-01 00:00:00",
+      "cohort_size": 185
+    },
+    {
+      "cohort": "2017-03-01 00:00:00",
+      "cohort_size": 112
+    },
+    {
+      "cohort": "2017-04-01 00:00:00",
+      "cohort_size": 47
+    },
+    {
+      "cohort": "2017-05-01 00:00:00",
+      "cohort_size": 46
+    },
+    {
+      "cohort": "2017-06-01 00:00:00",
+      "cohort_size": 20
+    },
+    {
+      "cohort": "2017-07-01 00:00:00",
+      "cohort_size": 21
+    },
+    {
+      "cohort": "2017-08-01 00:00:00",
+      "cohort_size": 16
+    },
+    {
+      "cohort": "2017-09-01 00:00:00",
+      "cohort_size": 16
+    },
+    {
+      "cohort": "2017-10-01 00:00:00",
+      "cohort_size": 6
+    },
+    {
+      "cohort": "2017-11-01 00:00:00",
+      "cohort_size": 11
+    },
+    {
+      "cohort": "2017-12-01 00:00:00",
+      "cohort_size": 6
+    }
+  ],
+  "january_followup_retention": {
+    "min": 0.8709026727181038,
+    "max": 0.902672718103883
+  },
+  "checks": [
+    {
+      "name": "cohort_elapsed_months_complete",
+      "passed": true
+    },
+    {
+      "name": "cohort_households_reconcile",
+      "passed": true
+    },
+    {
+      "name": "cohort_keys_unique",
+      "passed": true
+    },
+    {
+      "name": "cohort_month_zero_is_one",
+      "passed": true
+    },
+    {
+      "name": "cohort_rates_valid",
+      "passed": true
+    },
+    {
+      "name": "deal_driven_counts_reconcile",
+      "passed": true
+    },
+    {
+      "name": "demographic_coverage_reconciles",
+      "passed": true
+    },
+    {
+      "name": "grocery_households_reconcile",
+      "passed": true
+    },
+    {
+      "name": "grocery_spend_reconciles",
+      "passed": true
+    },
+    {
+      "name": "half_year_spend_reconciles",
+      "passed": true
+    },
+    {
+      "name": "household_keys_unique",
+      "passed": true
+    },
+    {
+      "name": "income_sample_reconciles",
+      "passed": true
+    },
+    {
+      "name": "lapsed_precedence",
+      "passed": true
+    },
+    {
+      "name": "no_future_cohort_cells",
+      "passed": true
+    },
+    {
+      "name": "recency_not_negative",
+      "passed": true
+    },
+    {
+      "name": "segment_counts_reconcile",
+      "passed": true
+    },
+    {
+      "name": "segment_value_shares_sum_to_one",
+      "passed": true
+    },
+    {
+      "name": "trajectory_counts_reconcile",
+      "passed": true
+    }
+  ],
+  "build_inputs_sha256": {
+    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
+    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "scripts/run_customers.py": "3868f2d7b1931bddb928d2aad23e888eac5f34071d30b99f7ae43e3cfaf08a58",
+    "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
+    "sql/03_customers.sql": "eec72b204f9d73c7e048ba0994d66f60f3c4a55309bafb41fd380bdd4744012e"
+  }
+}

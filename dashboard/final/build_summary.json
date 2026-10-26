@@ -1,0 +1,15 @@
+{
+  "source_sha256": "8d5c1f3a36ae8e62097237010e3c3f05b6b3c95cf471460cdd6bdcf654ae8744",
+  "visuals": {
+    "grocery_business_health": 17,
+    "grocery_campaigns_email": 16,
+    "grocery_customers_marketing": 19,
+    "grocery_products_discounts": 16
+  },
+  "removed_flagged_days_block": true,
+  "new_business_question": "Are weekly sales changes associated with shopping-trip volume?",
+  "design_sources": [
+    "https://learn.microsoft.com/en-us/power-bi/create-reports/service-dashboards-design-tips",
+    "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-accessibility-creating-reports"
+  ]
+}

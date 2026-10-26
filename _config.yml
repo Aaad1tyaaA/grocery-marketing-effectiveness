@@ -1,0 +1,14 @@
+title: Grocery Marketing Effectiveness
+description: Aditya Patil | SQL, DuckDB, Python and Power BI portfolio
+theme: jekyll-theme-cayman
+show_downloads: false
+exclude:
+  - scripts
+  - tests
+  - app
+  - sql
+  - dashboard/final
+  - "*.ipynb"
+  - "requirements*.txt"
+plugins:
+  - jekyll-relative-links

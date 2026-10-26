@@ -1,0 +1,1024 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "products.category_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Products",
+			          "ConceptualProperty": "category_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "category_label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "products.brand": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Products",
+			          "ConceptualProperty": "brand"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "brand": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Sales ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.discount_depth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Discount depth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Discount depth": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.top_category_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Top category share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Top category share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.sales_change_wow": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Sales change WoW"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales change WoW": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_weekly_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable weekly sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Paid sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Sales ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_weekly_depth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable weekly depth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Discount depth": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.customer_households": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Customer households"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Households": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.annual_customer_spend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Annual customer spend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Annual customer spend": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.segment_spend_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Segment spend share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Share of spend": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.estimated_campaign_lift": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Estimated campaign lift"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lift ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.campaign_interval": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Campaign interval"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "95% interval": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.promotion_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Promotion index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Units / baseline": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.email_spend_lift": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Email spend lift"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lift ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.email_interval": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Email interval"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "95% CI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "95% interval": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.top_ten_category_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Top ten category sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.top_department_discount_depth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Top department discount depth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Discount depth": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.top_department_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Top department sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.share_sold_on_discount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Share sold on discount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Share sold on discount": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.retailer_discounts": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Retailer discounts"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Retailer discounts": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.products_purchased": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Products purchased"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Products purchased": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_shelf_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable shelf value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Shelf value": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_retailer_discounts": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable retailer discounts"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Discounts": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.analysed_campaign_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Analysed campaign count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Analysed campaign count": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.observed_campaign_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Observed campaign count"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.earliermatch_lift": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Earlier-match lift"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lift ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.earliermatch_interval": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Earlier-match interval"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "95% interval": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.analysed_campaign_audience": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Analysed campaign audience"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Audience households": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.analysed_campaign_redemptions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Analysed campaign redemptions"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.email_assigned_customers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Email assigned customers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Email assigned customers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.emailarm_mean_spend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Email-arm mean spend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Email group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.noemail_mean_spend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "No-email mean spend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "No email": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "weeks.week_start": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Weeks",
+			          "ConceptualProperty": "week_start"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week_start": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "households.segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Households",
+			          "ConceptualProperty": "segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "segment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "households.trajectory": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Households",
+			          "ConceptualProperty": "trajectory"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trajectory": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "campaign_estimates.design": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Campaign estimates",
+			          "ConceptualProperty": "design"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Comparison design": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "promotion_associations.condition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Promotion associations",
+			          "ConceptualProperty": "condition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "condition": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "email_experiment.arm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Email experiment",
+			          "ConceptualProperty": "arm"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Arm": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Email group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "departments.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Departments",
+			          "ConceptualProperty": "department"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "campaigns.campaign_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Campaigns",
+			          "ConceptualProperty": "campaign_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Campaign": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "campaign_id": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_weekly_baskets": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable weekly baskets"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Shopping trips": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.comparable_weekly_basket_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Comparable weekly basket value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Average basket ($)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.brand_sales_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Brand sales share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.earlier_intervals_excluding_zero": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Earlier intervals excluding zero"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Earlier intervals excluding zero": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.campaign_redeeming_household_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Campaign redeeming household rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Households redeeming": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "campaign_estimates.design_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Campaign estimates",
+			          "ConceptualProperty": "design_short"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Design": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

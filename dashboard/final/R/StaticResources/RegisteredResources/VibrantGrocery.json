@@ -1,0 +1,33 @@
+{
+  "name": "Vibrant Grocery",
+  "dataColors": [
+    "#347FE5",
+    "#E65B97",
+    "#00A591",
+    "#8054ED",
+    "#F39B2D",
+    "#05BBD3",
+    "#8BC550",
+    "#F05A64"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#172B48",
+  "tableAccent": "#8054ED",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#172B48"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 11,
+      "color": "#596E88"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#172B48"
+    }
+  }
+}

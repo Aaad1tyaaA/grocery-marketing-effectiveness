@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Sales", "Products", "Departments", "Households", "Weeks", "Cohorts", "Promotion associations", "Campaigns", "Campaign estimates", "Email experiment", "Daily anomalies", "Metrics"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Sales
+ref table Products
+ref table Departments
+ref table Households
+ref table Weeks
+ref table Cohorts
+ref table 'Promotion associations'
+ref table Campaigns
+ref table 'Campaign estimates'
+ref table 'Email experiment'
+ref table 'Daily anomalies'
+ref table Metrics
+
+ref cultureInfo en-US
+

@@ -1,0 +1,420 @@
+{
+  "duckdb_version": "1.5.5",
+  "tables": {
+    "transactions": {
+      "rows": 1469307,
+      "content_fingerprint": "3521637059540356924",
+      "schema": [
+        [
+          "household_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "store_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "basket_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "product_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "quantity",
+          "DOUBLE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "sales_value",
+          "DOUBLE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "retail_disc",
+          "DOUBLE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "coupon_disc",
+          "DOUBLE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "coupon_match_disc",
+          "DOUBLE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "week",
+          "INTEGER",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "transaction_timestamp",
+          "TIMESTAMP_NS",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "promotions": {
+      "rows": 20940529,
+      "content_fingerprint": "8141358508343740109",
+      "schema": [
+        [
+          "product_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "store_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "display_location",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "mailer_location",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "week",
+          "INTEGER",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "campaigns": {
+      "rows": 6589,
+      "content_fingerprint": "16268706118626638579",
+      "schema": [
+        [
+          "campaign_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "household_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "campaign_descriptions": {
+      "rows": 27,
+      "content_fingerprint": "10323709046098866934",
+      "schema": [
+        [
+          "campaign_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "campaign_type",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "start_date",
+          "DATE",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "end_date",
+          "DATE",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "coupons": {
+      "rows": 116204,
+      "content_fingerprint": "6318145253494544212",
+      "schema": [
+        [
+          "coupon_upc",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "product_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "campaign_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "coupon_redemptions": {
+      "rows": 2102,
+      "content_fingerprint": "5361726181871424777",
+      "schema": [
+        [
+          "household_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "coupon_upc",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "campaign_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "redemption_date",
+          "DATE",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "demographics": {
+      "rows": 801,
+      "content_fingerprint": "684987516233141135",
+      "schema": [
+        [
+          "household_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "age",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "income",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "home_ownership",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "marital_status",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "household_size",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "household_comp",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "kids_count",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "products": {
+      "rows": 92331,
+      "content_fingerprint": "17741537348202109812",
+      "schema": [
+        [
+          "product_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "manufacturer_id",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "department",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "brand",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "product_category",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "product_type",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ],
+        [
+          "package_size",
+          "VARCHAR",
+          "YES",
+          null,
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "households": 2469,
+    "transaction_profile": [
+      "2017-01-01 11:53:26",
+      "2018-01-01 04:01:20",
+      1,
+      53,
+      155848,
+      4596039.58,
+      8820
+    ],
+    "source_parquet_fingerprints_match": true,
+    "dimension_keys_unique_and_not_null": true
+  },
+  "database": "grocery.duckdb"
+}

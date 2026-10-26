@@ -1,0 +1,83 @@
+table 'Campaign estimates'
+	lineageTag: f9e2436c-5090-49d1-af92-7378a69e9a27
+
+	column campaign_id
+		dataType: string
+		lineageTag: b2d70fd9-1645-4d3c-b80c-3ba77ebe986d
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column method
+		dataType: string
+		lineageTag: b03ad44d-eb52-4447-bc14-1b7ac9cf0ef9
+		summarizeBy: none
+		sourceColumn: method
+
+	column design
+		dataType: string
+		lineageTag: 3f809bf6-47b9-4850-9692-95b33e2064f4
+		summarizeBy: none
+		sourceColumn: design
+		sortByColumn: design_order
+
+	column design_order
+		dataType: int64
+		lineageTag: a1f18bbc-af7f-42b6-81dc-b43155faa531
+		summarizeBy: none
+		sourceColumn: design_order
+
+	column estimate
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 64eeacf9-425c-477a-beca-50a1d6d71b07
+		summarizeBy: none
+		sourceColumn: estimate
+
+	column ci_low
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 6017e426-8930-46a8-a7fe-ae93f348edcd
+		summarizeBy: none
+		sourceColumn: ci_low
+
+	column ci_high
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 77c767a0-08f3-40c2-83b1-b20925b059c6
+		summarizeBy: none
+		sourceColumn: ci_high
+
+	column n_treated
+		dataType: int64
+		lineageTag: bd2e2507-c40b-4110-93e6-863eebd90863
+		summarizeBy: none
+		sourceColumn: n_treated
+
+	column n_control
+		dataType: int64
+		lineageTag: 59f14f7b-198c-48fd-8e1a-3fb0be7730fb
+		summarizeBy: none
+		sourceColumn: n_control
+
+	column control_ess
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 1cc49531-b0d7-4184-b66d-6c033cf6cc18
+		summarizeBy: none
+		sourceColumn: control_ess
+
+	column design_short = SWITCH('Campaign estimates'[method],"naive","1 Raw gap","unmatched","2 Unmatched","matched_pre","3 Recent match","matched_earlier","4 Earlier match","Unknown")
+		dataType: string
+		lineageTag: ba638f56-d8ca-4771-bbf3-3167c187f25b
+		sortByColumn: design_order
+
+	partition 'Campaign estimates' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Campaign estimates.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"campaign_id", type text},{"method", type text},{"design", type text},{"design_order", Int64.Type},{"estimate", type number},{"ci_low", type number},{"ci_high", type number},{"n_treated", Int64.Type},{"n_control", Int64.Type},{"control_ess", type number}},"en-US")
+				in
+				    Typed
+

@@ -1,0 +1,44 @@
+table 'Promotion associations'
+	lineageTag: d63fb1e0-fa68-44fc-ae8c-33381e56d674
+
+	column condition
+		dataType: string
+		lineageTag: 51807236-69e4-407b-b475-2dac2be07a77
+		summarizeBy: none
+		sourceColumn: condition
+
+	column pair_weeks
+		dataType: int64
+		lineageTag: fcb899b4-e8d6-4116-aa3c-d2692152db71
+		summarizeBy: none
+		sourceColumn: pair_weeks
+
+	column observed_units
+		dataType: double
+		lineageTag: aaed1f97-59db-4734-a6ca-d54860feb05f
+		summarizeBy: none
+		sourceColumn: observed_units
+
+	column expected_baseline_units
+		dataType: double
+		lineageTag: 701bf304-4434-4cd1-a3ab-bad60de043c4
+		summarizeBy: none
+		sourceColumn: expected_baseline_units
+
+	column lift_index
+		dataType: double
+		formatString: 0.00"×"
+		lineageTag: 0fe2cb50-f8d0-459b-85fe-f3bea271b8d1
+		summarizeBy: none
+		sourceColumn: lift_index
+
+	partition 'Promotion associations' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Promotion associations.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"condition", type text},{"pair_weeks", Int64.Type},{"observed_units", type number},{"expected_baseline_units", type number},{"lift_index", type number}},"en-US")
+				in
+				    Typed
+

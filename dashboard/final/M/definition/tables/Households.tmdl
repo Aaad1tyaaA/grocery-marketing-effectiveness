@@ -1,0 +1,74 @@
+table Households
+	lineageTag: 01ab6132-e8d1-404f-908d-f06dd689b4ca
+
+	column household_id
+		dataType: string
+		lineageTag: 4a83d220-2080-4657-b346-727cf18fd688
+		summarizeBy: none
+		sourceColumn: household_id
+
+	column age
+		dataType: string
+		lineageTag: fd9a745c-8df4-4f57-989e-33ba36819b10
+		summarizeBy: none
+		sourceColumn: age
+
+	column income
+		dataType: string
+		lineageTag: fda17bb9-5ee9-465f-b9fb-9fc26b65f126
+		summarizeBy: none
+		sourceColumn: income
+
+	column has_demographics
+		dataType: boolean
+		lineageTag: 3dc138a8-bac0-4b69-af1e-bca2da00f66d
+		summarizeBy: none
+		sourceColumn: has_demographics
+
+	column segment
+		dataType: string
+		lineageTag: 2a330455-77bd-456d-a17f-a0dd509542c6
+		summarizeBy: none
+		sourceColumn: segment
+
+	column trajectory
+		dataType: string
+		lineageTag: 13766523-56f8-43d9-9408-0b8874366571
+		summarizeBy: none
+		sourceColumn: trajectory
+
+	column deal_driven
+		dataType: boolean
+		lineageTag: 25b67ed5-9baa-4560-89b3-71e9bc5cafe3
+		summarizeBy: none
+		sourceColumn: deal_driven
+
+	column spend
+		dataType: double
+		formatString: $#,0;($#,0);$0
+		lineageTag: 7cc7c687-0206-434c-bf63-25f1f173da2c
+		summarizeBy: none
+		sourceColumn: spend
+
+	column baskets
+		dataType: int64
+		lineageTag: dc65c2cb-ddaa-40f2-8451-4537bb06cc53
+		summarizeBy: none
+		sourceColumn: baskets
+
+	column recency_days
+		dataType: int64
+		lineageTag: 8163b696-5736-43bb-bfb0-9696f0dcf587
+		summarizeBy: none
+		sourceColumn: recency_days
+
+	partition Households = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Households.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"household_id", type text},{"age", type text},{"income", type text},{"has_demographics", type logical},{"segment", type text},{"trajectory", type text},{"deal_driven", type logical},{"spend", type number},{"baskets", Int64.Type},{"recency_days", Int64.Type}},"en-US")
+				in
+				    Typed
+

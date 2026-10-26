@@ -1,0 +1,260 @@
+table Metrics
+	lineageTag: f2bb9a1a-d98c-4553-9f1e-f91594baa89d
+
+	measure Sales = SUM(Sales[sales_value])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Business health
+		lineageTag: 36cb9654-9262-48e9-a479-d5fbb8871139
+
+	measure Baskets = DISTINCTCOUNT(Sales[basket_id])
+		formatString: #,0
+		displayFolder: Business health
+		lineageTag: 6479eb03-d495-4e58-9b67-819658b76914
+
+	measure 'Active households' = DISTINCTCOUNT(Sales[household_id])
+		formatString: #,0
+		displayFolder: Business health
+		lineageTag: 2b2cd80e-b8d7-4fb5-b379-f1f7dc038f08
+
+	measure 'Average basket' = DIVIDE([Sales],[Baskets])
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Business health
+		lineageTag: a73f7cb6-1f8f-43c6-8c50-a5c3e677f974
+
+	measure 'Shelf value' = SUM(Sales[shelf_value])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Business health
+		lineageTag: 6ccc4f5c-4bc9-4c0f-ad37-94d6248be557
+
+	measure 'Discount depth' = DIVIDE(SUM(Sales[retailer_funded_disc]),[Shelf value])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: d7250a60-c09b-4b9e-a933-64276b2da45d
+
+	measure 'Share sold on discount' = DIVIDE(SUM(Sales[discounted_shelf_value]),[Shelf value])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: edc49392-a4a6-4924-8190-77c9ff3db4ea
+
+	measure 'Comparable weekly sales' = IF(SELECTEDVALUE(Weeks[week]) >= 2,[Sales])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Business health
+		lineageTag: e161d52e-f1f1-46ad-b59e-b9e74b02ee39
+
+	measure 'Comparable weekly depth' = IF(SELECTEDVALUE(Weeks[week]) >= 2,[Discount depth])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: 02c1eaef-4d3f-497d-a440-cc4983cf5811
+
+	measure 'Sales previous week' = VAR w=SELECTEDVALUE(Weeks[week]) RETURN IF(w>2,CALCULATE([Sales],REMOVEFILTERS(Weeks),Weeks[week]=w-1))
+		formatString: $#,0;($#,0);$0
+		displayFolder: Business health
+		lineageTag: 3119a996-593c-4042-b43b-478a1c038ff6
+
+	measure 'Sales change WoW' = DIVIDE([Sales]-[Sales previous week],[Sales previous week])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: a15f11a0-1306-483f-b056-78d16d3698a8
+
+	measure 'Category discount share' = IF([Sales]>=10000,[Share sold on discount])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: 3e8833c3-bf33-490a-a959-764741cfc694
+
+	measure 'Category rank' = IF(NOT ISBLANK([Category discount share]),RANKX(FILTER(ALLSELECTED(Products[category_label]),NOT ISBLANK(CALCULATE([Category discount share]))),[Category discount share],,DESC,DENSE))
+		formatString: 0
+		displayFolder: Business health
+		lineageTag: a9a1e96c-5588-4995-945a-a7c6ca4c1750
+
+	measure 'Top category share' = IF([Category rank]<=6,[Category discount share])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Business health
+		lineageTag: 841803ce-4513-4582-a506-c15b02bca245
+
+	measure 'Customer households' = COUNT(Households[spend])
+		formatString: #,0
+		displayFolder: Customers
+		lineageTag: a61d9daa-f5f0-4f4c-a697-025b01c17053
+
+	measure 'Annual customer spend' = SUM(Households[spend])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Customers
+		lineageTag: 3e7583d0-0043-40de-8b25-15a2ad446db4
+
+	measure 'Segment spend share' = DIVIDE([Annual customer spend],CALCULATE([Annual customer spend],ALLSELECTED(Households[segment])))
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Customers
+		lineageTag: bd734f75-489e-4d7a-90a0-adcc571889a0
+
+	measure 'Cohort retention' = IF(HASONEVALUE(Cohorts[cohort]) && HASONEVALUE(Cohorts[months_since_first]) && SELECTEDVALUE(Cohorts[months_since_first])<=5,MAX(Cohorts[retention]))
+		formatString: 0%
+		displayFolder: Customers
+		lineageTag: b93be316-1417-4125-95ee-71a31c702c33
+
+	measure 'Retention colour' = VAR r=[Cohort retention] RETURN SWITCH(TRUE(),ISBLANK(r),"#FFFFFF",r>=0.9,"#8CB7C5",r>=0.7,"#BAD5DF",r>=0.5,"#DCEAF0","#F1F6F8")
+		displayFolder: Customers
+		lineageTag: 08eb0145-8adf-4de0-a2e2-57b65af2a588
+
+	measure 'Promotion index' = DIVIDE(SUM('Promotion associations'[observed_units]),SUM('Promotion associations'[expected_baseline_units]))
+		formatString: 0.00"×"
+		displayFolder: Marketing
+		lineageTag: 00d4d449-f61b-404d-8a48-17b2cb594b17
+
+	measure 'Estimated campaign lift' = IF(HASONEVALUE('Campaign estimates'[campaign_id]) && HASONEVALUE('Campaign estimates'[method]),MAX('Campaign estimates'[estimate]))
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Marketing
+		lineageTag: ea9e263a-dd78-4023-bbb2-32c0fb40787a
+
+	measure 'Campaign interval' = IF(HASONEVALUE('Campaign estimates'[campaign_id]) && HASONEVALUE('Campaign estimates'[method]),FORMAT(MAX('Campaign estimates'[ci_low]),"$0.00;($0.00)") & " to " & FORMAT(MAX('Campaign estimates'[ci_high]),"$0.00;($0.00)"))
+		displayFolder: Marketing
+		lineageTag: b2b7afa8-3e9c-44d9-863a-305f85ca7dd9
+
+	measure 'Campaign row colour' = IF(SELECTEDVALUE('Campaign estimates'[method])="matched_earlier","#DFEAF5","#FFFFFF")
+		displayFolder: Marketing
+		lineageTag: 3024daa9-b3b1-4245-a879-fd50ba20b2e7
+
+	measure 'Email spend lift' = IF(HASONEVALUE('Email experiment'[arm]),MAX('Email experiment'[estimate]))
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Marketing
+		lineageTag: 86bd06d1-4e96-4007-8c20-d499e2871c31
+
+	measure 'Email interval' = IF(HASONEVALUE('Email experiment'[arm]),FORMAT(MAX('Email experiment'[ci_low]),"$0.00") & " to " & FORMAT(MAX('Email experiment'[ci_high]),"$0.00"))
+		displayFolder: Marketing
+		lineageTag: 27f9c8c5-a640-4ef6-8037-09ca2b974bf1
+
+	measure 'Email Holm p' = IF(HASONEVALUE('Email experiment'[arm]),FORMAT(MAX('Email experiment'[p_holm]),"0.0000"))
+		displayFolder: Marketing
+		lineageTag: 782ab67e-e408-462f-8d18-906923d6bba6
+
+	measure 'Anomaly count' = COUNTROWS('Daily anomalies')
+		formatString: 0
+		displayFolder: Business health
+		lineageTag: d54248c5-f20c-4ce8-a617-2df8d347e413
+
+	measure 'Campaign interval colour' = IF(AND(MAX('Campaign estimates'[ci_low])<=0,MAX('Campaign estimates'[ci_high])>=0),"#FFF1CD","#E9F0F6")
+		lineageTag: 8da596cb-9071-41ad-89ce-c075765f0076
+
+	measure 'Retailer discounts' = SUM(Sales[retailer_funded_disc])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Exploration
+		lineageTag: 0daea4f0-1141-426a-8914-63c1f380d257
+
+	measure 'Products purchased' = DISTINCTCOUNT(Sales[product_id])
+		formatString: #,0
+		displayFolder: Exploration
+		lineageTag: d8e6a19e-e31c-467f-ac21-3595cd48d255
+
+	measure 'Department sales rank' = IF(NOT ISBLANK([Sales]),RANKX(ALLSELECTED(Departments[department]),[Sales],,DESC,DENSE))
+		formatString: 0
+		displayFolder: Exploration
+		lineageTag: 538dbbf6-7ffb-480b-a670-a4129373f898
+
+	measure 'Top department sales' = IF([Department sales rank]<=6,[Sales])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Exploration
+		lineageTag: c04e1731-9b4a-4fef-9a26-5ebfbf6a3ed4
+
+	measure 'Top department discount depth' = IF([Department sales rank]<=6,[Discount depth])
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Exploration
+		lineageTag: 9069a1e7-52fb-4fbd-9183-ea12dfb8c257
+
+	measure 'Category sales rank' = IF(NOT ISBLANK([Sales]),RANKX(ALLSELECTED(Products[category_label]),[Sales],,DESC,DENSE))
+		formatString: 0
+		displayFolder: Exploration
+		lineageTag: 0d33ef2a-9289-4c9e-bfb6-b8b187acb20a
+
+	measure 'Top ten category sales' = IF([Category sales rank]<=6,[Sales])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Exploration
+		lineageTag: 8a33976a-fd33-4d29-b4ad-b0252498fdc4
+
+	measure 'Comparable shelf value' = IF(SELECTEDVALUE(Weeks[week])>=2,[Shelf value])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Exploration
+		lineageTag: c750736c-e84c-43d1-b449-4610669d4b7d
+
+	measure 'Comparable retailer discounts' = IF(SELECTEDVALUE(Weeks[week])>=2,[Retailer discounts])
+		formatString: $#,0;($#,0);$0
+		displayFolder: Exploration
+		lineageTag: df949551-60f5-45cc-acb5-34125dbdfb19
+
+	measure 'Analysed campaign count' = DISTINCTCOUNT('Campaign estimates'[campaign_id])
+		formatString: 0
+		displayFolder: Exploration
+		lineageTag: ebd8f244-0413-4652-ba4d-03c2648ca8a1
+
+	measure 'Observed campaign count' = COUNTROWS(Campaigns)
+		formatString: 0
+		displayFolder: Exploration
+		lineageTag: bde1ae12-6bd2-4130-a01d-1c34ada34306
+
+	measure 'Email assigned customers' = SUM('Email experiment'[n_treatment])+MAX('Email experiment'[n_control])
+		formatString: #,0
+		displayFolder: Exploration
+		lineageTag: f1c81c5b-3f4b-472e-8bb0-de2a052db54b
+
+	measure 'Earlier-match lift' = IF(HASONEVALUE(Campaigns[campaign_id]),CALCULATE(MAX('Campaign estimates'[estimate]),'Campaign estimates'[method]="matched_earlier"))
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Exploration
+		lineageTag: c95673e3-809e-4984-8a98-4bdf4eab00a1
+
+	measure 'Earlier-match interval' = IF(NOT ISBLANK([Earlier-match lift]),FORMAT(CALCULATE(MAX('Campaign estimates'[ci_low]),'Campaign estimates'[method]="matched_earlier"),"$0.00;($0.00)") & " to " & FORMAT(CALCULATE(MAX('Campaign estimates'[ci_high]),'Campaign estimates'[method]="matched_earlier"),"$0.00;($0.00)"))
+		displayFolder: Exploration
+		lineageTag: bd4359e2-6f22-41dd-a531-0e2348370bd3
+
+	measure 'Analysed campaign audience' = IF(SELECTEDVALUE(Campaigns[campaign_id]) IN {"8","13","18"},MAX(Campaigns[households]))
+		formatString: #,0
+		displayFolder: Exploration
+		lineageTag: 9d6e2805-818e-4f3d-bee5-f87b32bb8811
+
+	measure 'Analysed campaign redemptions' = IF(SELECTEDVALUE(Campaigns[campaign_id]) IN {"8","13","18"},MAX(Campaigns[redemptions]))
+		formatString: #,0
+		displayFolder: Exploration
+		lineageTag: 1736ae71-7a3a-4d8f-b787-8597d62ad934
+
+	measure 'Email-arm mean spend' = IF(HASONEVALUE('Email experiment'[arm]),MAX('Email experiment'[treatment_mean]))
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Exploration
+		lineageTag: 36bd6b1e-753d-471a-adcc-df3a84517718
+
+	measure 'No-email mean spend' = IF(HASONEVALUE('Email experiment'[arm]),MAX('Email experiment'[control_mean]))
+		formatString: $0.00;($0.00);$0.00
+		displayFolder: Exploration
+		lineageTag: d0183c47-c415-4ce8-8002-bc2f2c4e667b
+
+	measure 'Comparable weekly baskets' = IF(SELECTEDVALUE(Weeks[week])>=2,[Baskets])
+		formatString: #,0
+		displayFolder: Decision views
+		lineageTag: 20b48388-decc-4717-85b1-b30e44053421
+
+	measure 'Comparable weekly basket value' = IF(SELECTEDVALUE(Weeks[week])>=2,[Average basket])
+		formatString: $0.00
+		displayFolder: Decision views
+		lineageTag: 5e65ea4a-c8b8-4177-8531-4a1f869c4675
+
+	measure 'Brand sales share' = IF(LEN(TRIM(SELECTEDVALUE(Products[brand],"")))>0,DIVIDE([Sales],CALCULATE([Sales],FILTER(ALLSELECTED(Products[brand]),LEN(TRIM(Products[brand]))>0))))
+		formatString: 0.0%
+		displayFolder: Decision views
+		lineageTag: bffc4fcf-4a0a-424f-917e-c05e2c44df2b
+
+	measure 'Campaign redeeming household rate' = IF(SELECTEDVALUE(Campaigns[campaign_id]) IN {"8","13","18"},DIVIDE(MAX(Campaigns[redeeming_households]),MAX(Campaigns[households])))
+		formatString: 0.0%
+		displayFolder: Decision views
+		lineageTag: 39f24681-1474-4044-ac9f-9033f9d46d3f
+
+	measure 'Earlier intervals excluding zero' = COUNTROWS(FILTER('Campaign estimates','Campaign estimates'[method]="matched_earlier" && ('Campaign estimates'[ci_low]>0 || 'Campaign estimates'[ci_high]<0)))+0
+		formatString: 0
+		displayFolder: Decision views
+		lineageTag: 4a026f94-ae0a-44c4-b2f8-434bb4cfc287
+
+	column _
+		dataType: int64
+		isHidden
+		lineageTag: ab117727-ec61-4e8a-9e67-78eee0a3aab2
+		sourceColumn: _
+
+	partition Metrics = m
+		mode: import
+		source = #table(type table [_=Int64.Type], {{1}})
+

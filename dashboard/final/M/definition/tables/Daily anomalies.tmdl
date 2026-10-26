@@ -1,0 +1,34 @@
+table 'Daily anomalies'
+	lineageTag: 01d7b677-ffee-499d-a161-1353e048ab7c
+
+	column day
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: e3f32805-ecc0-4bd0-9827-23c0c15f535c
+		summarizeBy: none
+		sourceColumn: day
+
+	column sales
+		dataType: double
+		formatString: $#,0;($#,0);$0
+		lineageTag: 9a459664-87e4-4ec5-b60c-3ae7bb8f4b99
+		summarizeBy: none
+		sourceColumn: sales
+
+	column robust_z
+		dataType: double
+		formatString: 0.0
+		lineageTag: 16786c3e-c764-4845-bf64-8cd78e2dcce6
+		summarizeBy: none
+		sourceColumn: robust_z
+
+	partition 'Daily anomalies' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Daily anomalies.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"day", type date},{"sales", type number},{"robust_z", type number}},"en-US")
+				in
+				    Typed
+

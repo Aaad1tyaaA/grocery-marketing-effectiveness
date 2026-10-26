@@ -1,0 +1,385 @@
+{
+  "guide": "Two_Analytics_Projects_Complete_Guide.docx",
+  "guide_steps": "1.4.1\u20131.4.4",
+  "source": "Verified Parquet and saved phase-1 sales transformation; open databases unchanged",
+  "coverage": {
+    "pair_weeks": 1184352.0,
+    "observed_metadata_pair_weeks": 230509.0,
+    "missing_metadata_pair_weeks": 953843.0,
+    "conflicting_metadata_pair_weeks": 587.0,
+    "promoted_pair_weeks": 230509.0,
+    "promoted_share": 0.1946287927913323,
+    "eligible_pairs": 22776.0,
+    "baseline_pairs": 22183.0,
+    "zero_unit_baseline_pairs": 534.0,
+    "observed_only_baseline_pairs": 0.0
+  },
+  "primary_lift": [
+    {
+      "condition": "Display + mailer",
+      "pair_weeks": 39165,
+      "observed_units": 37674.0,
+      "expected_baseline_units": 12016.365920512259,
+      "lift_index": 3.1352240976358314
+    },
+    {
+      "condition": "Mailer only",
+      "pair_weeks": 108992,
+      "observed_units": 94231.0,
+      "expected_baseline_units": 40734.015769847276,
+      "lift_index": 2.3133245819027017
+    },
+    {
+      "condition": "Display only",
+      "pair_weeks": 55369,
+      "observed_units": 29467.0,
+      "expected_baseline_units": 18477.590651307517,
+      "lift_index": 1.5947425482074336
+    },
+    {
+      "condition": "Week after a promotion",
+      "pair_weeks": 115419,
+      "observed_units": 48280.0,
+      "expected_baseline_units": 42659.25153560309,
+      "lift_index": 1.1317591908452935
+    },
+    {
+      "condition": "No promotion",
+      "pair_weeks": 834571,
+      "observed_units": 333341.0,
+      "expected_baseline_units": 333341.00000005245,
+      "lift_index": 0.9999999999998427
+    }
+  ],
+  "post_promotion": [
+    {
+      "condition": "Normal",
+      "pair_weeks": 834571,
+      "observed_units": 333341.0,
+      "expected_baseline_units": 333341.00000005245,
+      "lift_index": 0.9999999999998427,
+      "boundary_history_incomplete_rows": 34505
+    },
+    {
+      "condition": "Promoted",
+      "pair_weeks": 203526,
+      "observed_units": 161372.0,
+      "expected_baseline_units": 71227.97234165815,
+      "lift_index": 2.265570599510391,
+      "boundary_history_incomplete_rows": 7815
+    },
+    {
+      "condition": "Week after a multi-week promotion",
+      "pair_weeks": 34428,
+      "observed_units": 14008.0,
+      "expected_baseline_units": 11737.32332025851,
+      "lift_index": 1.1934577942334026,
+      "boundary_history_incomplete_rows": 0
+    },
+    {
+      "condition": "Week after a single-week promotion",
+      "pair_weeks": 80991,
+      "observed_units": 34272.0,
+      "expected_baseline_units": 30921.928215345553,
+      "lift_index": 1.1083396792504006,
+      "boundary_history_incomplete_rows": 2046
+    }
+  ],
+  "observed_only_sensitivity": [],
+  "observed_only_status": "not_estimable_no_observed_nonpromotion_baselines",
+  "positive_baseline_sensitivity": [
+    {
+      "condition": "Display + mailer",
+      "pair_weeks": 35089,
+      "observed_units": 34930.0,
+      "expected_baseline_units": 12016.365920512259,
+      "lift_index": 2.9068688679306574
+    },
+    {
+      "condition": "Mailer only",
+      "pair_weeks": 104683,
+      "observed_units": 91182.0,
+      "expected_baseline_units": 40734.015769847276,
+      "lift_index": 2.238473135454915
+    },
+    {
+      "condition": "Display only",
+      "pair_weeks": 47701,
+      "observed_units": 26260.0,
+      "expected_baseline_units": 18477.590651307517,
+      "lift_index": 1.4211809589007094
+    },
+    {
+      "condition": "Week after a promotion",
+      "pair_weeks": 110855,
+      "observed_units": 47109.0,
+      "expected_baseline_units": 42659.25153560309,
+      "lift_index": 1.1043091077367633
+    },
+    {
+      "condition": "No promotion",
+      "pair_weeks": 827420,
+      "observed_units": 333341.0,
+      "expected_baseline_units": 333341.00000005245,
+      "lift_index": 0.9999999999998427
+    }
+  ],
+  "placement_results": {
+    "display_lift": [
+      {
+        "placement_code": "1",
+        "pair_weeks": 3295,
+        "observed_units": 1852.0,
+        "expected_baseline_units": 912.1369136929038,
+        "lift_index": 2.03039694172878,
+        "small_group": false,
+        "placement_label": "Store front"
+      },
+      {
+        "placement_code": "A",
+        "pair_weeks": 3932,
+        "observed_units": 2363.0,
+        "expected_baseline_units": 1355.7703502119762,
+        "lift_index": 1.7429205467065587,
+        "small_group": false,
+        "placement_label": "In-shelf"
+      },
+      {
+        "placement_code": "5",
+        "pair_weeks": 6855,
+        "observed_units": 3750.0,
+        "expected_baseline_units": 2164.2468087440816,
+        "lift_index": 1.7327044146947987,
+        "small_group": false,
+        "placement_label": "Rear end cap"
+      },
+      {
+        "placement_code": "2",
+        "pair_weeks": 6101,
+        "observed_units": 2829.0,
+        "expected_baseline_units": 1767.117512941159,
+        "lift_index": 1.6009122083179759,
+        "small_group": false,
+        "placement_label": "Store rear"
+      },
+      {
+        "placement_code": "9",
+        "pair_weeks": 11501,
+        "observed_units": 6061.0,
+        "expected_baseline_units": 3873.6118198307513,
+        "lift_index": 1.5646895667167862,
+        "small_group": false,
+        "placement_label": "Secondary display"
+      },
+      {
+        "placement_code": "6",
+        "pair_weeks": 3985,
+        "observed_units": 1783.0,
+        "expected_baseline_units": 1153.3783874737808,
+        "lift_index": 1.5458933680084517,
+        "small_group": false,
+        "placement_label": "Side-aisle end cap"
+      },
+      {
+        "placement_code": "7",
+        "pair_weeks": 11315,
+        "observed_units": 6126.0,
+        "expected_baseline_units": 4081.559251914505,
+        "lift_index": 1.5008969910522616,
+        "small_group": false,
+        "placement_label": "In-aisle"
+      },
+      {
+        "placement_code": "4",
+        "pair_weeks": 1677,
+        "observed_units": 900.0,
+        "expected_baseline_units": 604.9868884501873,
+        "lift_index": 1.487635545797623,
+        "small_group": false,
+        "placement_label": "Mid-aisle end cap"
+      },
+      {
+        "placement_code": "3",
+        "pair_weeks": 6708,
+        "observed_units": 3803.0,
+        "expected_baseline_units": 2564.7827180475747,
+        "lift_index": 1.4827766786010672,
+        "small_group": false,
+        "placement_label": "Front end cap"
+      }
+    ],
+    "mailer_lift": [
+      {
+        "placement_code": "D",
+        "pair_weeks": 36466,
+        "observed_units": 48981.0,
+        "expected_baseline_units": 15749.860190332905,
+        "lift_index": 3.109932368165656,
+        "small_group": false,
+        "placement_label": "Front page feature"
+      },
+      {
+        "placement_code": "Z",
+        "pair_weeks": 50,
+        "observed_units": 55.0,
+        "expected_baseline_units": 20.775672493721274,
+        "lift_index": 2.647327060850706,
+        "small_group": true,
+        "placement_label": "Free front/back/wrap"
+      },
+      {
+        "placement_code": "H",
+        "pair_weeks": 6974,
+        "observed_units": 5929.0,
+        "expected_baseline_units": 2553.0078243657836,
+        "lift_index": 2.3223587266023666,
+        "small_group": false,
+        "placement_label": "Wrap front feature"
+      },
+      {
+        "placement_code": "L",
+        "pair_weeks": 1033,
+        "observed_units": 697.0,
+        "expected_baseline_units": 313.6433573862834,
+        "lift_index": 2.222269286390702,
+        "small_group": false,
+        "placement_label": "Wrap back feature"
+      },
+      {
+        "placement_code": "F",
+        "pair_weeks": 15343,
+        "observed_units": 12590.0,
+        "expected_baseline_units": 6051.21300952565,
+        "lift_index": 2.080574585654343,
+        "small_group": false,
+        "placement_label": "Back page feature"
+      },
+      {
+        "placement_code": "J",
+        "pair_weeks": 1167,
+        "observed_units": 691.0,
+        "expected_baseline_units": 410.62200712979916,
+        "lift_index": 1.6828128741321269,
+        "small_group": false,
+        "placement_label": "Wrap interior coupon"
+      },
+      {
+        "placement_code": "A",
+        "pair_weeks": 45252,
+        "observed_units": 23857.0,
+        "expected_baseline_units": 14245.818373862674,
+        "lift_index": 1.674666865314759,
+        "small_group": false,
+        "placement_label": "Interior page feature"
+      },
+      {
+        "placement_code": "C",
+        "pair_weeks": 1270,
+        "observed_units": 836.0,
+        "expected_baseline_units": 600.0583078684089,
+        "lift_index": 1.3931979426628196,
+        "small_group": false,
+        "placement_label": "Interior line item"
+      },
+      {
+        "placement_code": "X",
+        "pair_weeks": 1436,
+        "observed_units": 595.0,
+        "expected_baseline_units": 788.9300703613446,
+        "lift_index": 0.7541859821967224,
+        "small_group": false,
+        "placement_label": "Free on interior page"
+      },
+      {
+        "placement_code": "P",
+        "pair_weeks": 1,
+        "observed_units": 0.0,
+        "expected_baseline_units": 0.08695652173913043,
+        "lift_index": 0.0,
+        "small_group": true,
+        "placement_label": "Interior coupon"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "52_rows_per_pair",
+      "passed": true
+    },
+    {
+      "name": "after_promo_excludes_current_promos",
+      "passed": true
+    },
+    {
+      "name": "baseline_no_promo_index_one",
+      "passed": true
+    },
+    {
+      "name": "condition_counts_reconcile",
+      "passed": true
+    },
+    {
+      "name": "coverage_reconciles",
+      "passed": true
+    },
+    {
+      "name": "display_condition_reconciles",
+      "passed": true
+    },
+    {
+      "name": "eligible_pair_history",
+      "passed": true
+    },
+    {
+      "name": "mailer_condition_reconciles",
+      "passed": true
+    },
+    {
+      "name": "no_future_week_leakage",
+      "passed": true
+    },
+    {
+      "name": "observed_baselines_have_four_weeks",
+      "passed": true
+    },
+    {
+      "name": "observed_ratios_finite",
+      "passed": true
+    },
+    {
+      "name": "panel_grain_unique",
+      "passed": true
+    },
+    {
+      "name": "panel_size_reconciles",
+      "passed": true
+    },
+    {
+      "name": "post_condition_counts_reconcile",
+      "passed": true
+    },
+    {
+      "name": "primary_baselines_have_four_weeks",
+      "passed": true
+    },
+    {
+      "name": "primary_ratios_finite",
+      "passed": true
+    },
+    {
+      "name": "promotion_aggregation_unique",
+      "passed": true
+    },
+    {
+      "name": "zero_fill_preserves_units",
+      "passed": true
+    }
+  ],
+  "build_inputs_sha256": {
+    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
+    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "scripts/run_promotions.py": "3866256032737e236c7110359e4caeb21044df54532003706ea6dbb4832809a6",
+    "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
+    "sql/04_promo.sql": "a11322530f9235efc1fcf17ba4c92656d79db1f0f0e98bb130a20615f05a7bc0"
+  }
+}

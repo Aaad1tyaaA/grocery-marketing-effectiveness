@@ -1,0 +1,106 @@
+{
+  "guide": "Two_Analytics_Projects_Complete_Guide.docx",
+  "guide_steps": "1.2.1\u20131.2.4",
+  "source": "Verified Parquet; reused first two statements of sql/01_model.sql because DBeaver holds the phase-1 file",
+  "clean_sales_rows": 1460487,
+  "all_department_sales": 4596039.58,
+  "comparable_weeks": 52,
+  "eligible_categories": 122,
+  "summary": {
+    "annual_grocery_sales": 4185055.64,
+    "annual_grocery_baskets": 141063.0,
+    "annual_grocery_households": 2467.0,
+    "annual_grocery_shelf_value": 4968887.27,
+    "annual_grocery_discount_depth": 0.15774791968495117,
+    "partial_week_1_sales": 10106.85,
+    "comparable_week_sales": 4174948.79,
+    "unclassified_product_sales": 172.57
+  },
+  "weekly_sales_discount_correlation": -0.12523667615835096,
+  "average_week": {
+    "households": 1302.5192307692307,
+    "sales": 80287.47673076924,
+    "aov": 29.666346153846145,
+    "visits_per_hh": 2.076346153846153,
+    "discount_depth": 0.1577096153846154
+  },
+  "largest_week": {
+    "week": 52,
+    "week_start": "2017-12-18 00:00:00",
+    "first_observed_purchase_date": "2017-12-18 00:00:00",
+    "households": 1397,
+    "baskets": 3070,
+    "sales": 103168.27,
+    "aov": 33.61,
+    "visits_per_hh": 2.2,
+    "discount_depth": 0.1473,
+    "retailer_funded_discount_usd": 17816.10000000036,
+    "shelf_value_usd": 120984.37000000596
+  },
+  "smallest_week": {
+    "week": 26,
+    "week_start": "2017-06-19 00:00:00",
+    "first_observed_purchase_date": "2017-06-19 00:00:00",
+    "households": 1251,
+    "baskets": 2674,
+    "sales": 69610.66,
+    "aov": 26.03,
+    "visits_per_hh": 2.14,
+    "discount_depth": 0.1764,
+    "retailer_funded_discount_usd": 14907.710000000026,
+    "shelf_value_usd": 84518.37000000094
+  },
+  "checks": [
+    {
+      "name": "52_comparable_weeks",
+      "passed": true
+    },
+    {
+      "name": "annual_sales_window_reconciles",
+      "passed": true
+    },
+    {
+      "name": "calendar_weeks_not_first_purchase_dates",
+      "passed": true
+    },
+    {
+      "name": "category_ratios_valid",
+      "passed": true
+    },
+    {
+      "name": "category_sales_floor",
+      "passed": true
+    },
+    {
+      "name": "weekly_baskets_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekly_discount_amount_reconciles",
+      "passed": true
+    },
+    {
+      "name": "weekly_ratios_valid",
+      "passed": true
+    },
+    {
+      "name": "weekly_sales_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekly_shelf_value_reconciles",
+      "passed": true
+    },
+    {
+      "name": "weeks_2_to_53",
+      "passed": true
+    }
+  ],
+  "build_inputs_sha256": {
+    "docs/source_manifest.json": "3ccde8d717b527111f16792e76c01f9d8448cad9563bab80ec67febae63796c8",
+    "docs/verification.json": "bd56afc727c3c431878391cacab9c0f38db37ad345f32ccd9e60c64991bad6df",
+    "scripts/run_business_health.py": "ae98a9c83cff3e229b524453d19344697e3162e811c8b11d500812aeb45a0a44",
+    "sql/01_model.sql": "71d24e54fe88ac9b42830ec60b5f12311ca6c32f18cde3ad3d063471d58ca02e",
+    "sql/02_health.sql": "79eaea406ebeec94d6736ffa4a073761789a7595118e86cc83f150e22ac56242"
+  }
+}

@@ -1,0 +1,32 @@
+table Weeks
+	lineageTag: 66f1b373-850a-4c35-9a71-e236ba496144
+
+	column week
+		dataType: int64
+		lineageTag: 519c6004-1144-4a81-85a6-c83b9bd03eb9
+		summarizeBy: none
+		sourceColumn: week
+
+	column week_start
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: c8fc46b7-d3a1-4e67-b6ad-36608c9b2910
+		summarizeBy: none
+		sourceColumn: week_start
+
+	column comparable_week
+		dataType: boolean
+		lineageTag: 6e925f27-5b74-483b-a2f3-e2507ecad77c
+		summarizeBy: none
+		sourceColumn: comparable_week
+
+	partition Weeks = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Weeks.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"week", Int64.Type},{"week_start", type date},{"comparable_week", type logical}},"en-US")
+				in
+				    Typed
+

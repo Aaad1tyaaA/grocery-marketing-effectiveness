@@ -1,0 +1,72 @@
+table 'Email experiment'
+	lineageTag: 4774eec8-b112-4f9b-8916-1a162cf9ee59
+
+	column arm
+		dataType: string
+		lineageTag: a48939d2-3543-4b11-b952-d3fb3ae35f29
+		summarizeBy: none
+		sourceColumn: arm
+
+	column n_treatment
+		dataType: int64
+		lineageTag: cc7b9c33-c0f7-4872-8214-c2f94c1d125d
+		summarizeBy: none
+		sourceColumn: n_treatment
+
+	column n_control
+		dataType: int64
+		lineageTag: 0bd194b8-fef5-41a7-8b1f-479498a32cd6
+		summarizeBy: none
+		sourceColumn: n_control
+
+	column treatment_mean
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 11ef5300-c0c7-4cfa-9b2f-4105f6d5825d
+		summarizeBy: none
+		sourceColumn: treatment_mean
+
+	column control_mean
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 698dba5d-2c4c-4588-a238-6597488e196b
+		summarizeBy: none
+		sourceColumn: control_mean
+
+	column estimate
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: 22f7c7fc-e282-44b2-8fa2-2652a0ad2424
+		summarizeBy: none
+		sourceColumn: estimate
+
+	column ci_low
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: a3c71984-1b07-4b49-a104-1c314939aa95
+		summarizeBy: none
+		sourceColumn: ci_low
+
+	column ci_high
+		dataType: double
+		formatString: $0.00;($0.00);$0.00
+		lineageTag: f6dae37b-ba2c-48cd-ac30-046c6d798840
+		summarizeBy: none
+		sourceColumn: ci_high
+
+	column p_holm
+		dataType: double
+		lineageTag: ecdda427-c15d-4f77-8bf3-ed46bacaec0b
+		summarizeBy: none
+		sourceColumn: p_holm
+
+	partition 'Email experiment' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Email experiment.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"arm", type text},{"n_treatment", Int64.Type},{"n_control", Int64.Type},{"treatment_mean", type number},{"control_mean", type number},{"estimate", type number},{"ci_low", type number},{"ci_high", type number},{"p_holm", type number}},"en-US")
+				in
+				    Typed
+

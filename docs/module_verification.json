@@ -1,0 +1,214 @@
+{
+  "completed_modules_verified": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "source_commit": "5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+  "sources": [
+    {
+      "name": "campaign_descriptions",
+      "rows": 27,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "campaigns",
+      "rows": 6589,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "coupon_redemptions",
+      "rows": 2102,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "coupons",
+      "rows": 116204,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "demographics",
+      "rows": 801,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "products",
+      "rows": 92331,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "promotions",
+      "rows": 20940529,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "transactions",
+      "rows": 1469307,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true
+    },
+    {
+      "name": "hillstrom",
+      "rows": 64000,
+      "raw_sha256_verified": true,
+      "parquet_sha256_verified": true,
+      "reporting_rows_order_verified": true
+    }
+  ],
+  "modules": [
+    {
+      "module": 1,
+      "database": "grocery_phase1.duckdb",
+      "passing_checks": 24,
+      "exports_verified": {
+        "basket_anomalies.csv": 142,
+        "daily_anomalies.csv": 10,
+        "daily_sales.csv": 364,
+        "phase1_checks.csv": 24,
+        "profile_campaign_windows.csv": 27,
+        "profile_columns.csv": 44,
+        "profile_large_quantities.csv": 4,
+        "profile_missing_days.csv": 1,
+        "profile_missing_products.csv": 17,
+        "profile_promotion_quality.csv": 1,
+        "profile_relationships.csv": 7,
+        "profile_transaction_summary.csv": 1,
+        "profile_week_boundaries.csv": 53
+      },
+      "notebook": {
+        "file": "01_data_model.ipynb",
+        "executed_code_cells": 5,
+        "input_files_checked": 21
+      }
+    },
+    {
+      "module": 2,
+      "database": "grocery_business_health.duckdb",
+      "passing_checks": 11,
+      "exports_verified": {
+        "business_health_checks.csv": 11,
+        "business_health_summary.csv": 1,
+        "category_discount.csv": 122,
+        "weekly_kpis.csv": 52
+      },
+      "notebook": {
+        "file": "02_business_health.ipynb",
+        "executed_code_cells": 4,
+        "input_files_checked": 10
+      }
+    },
+    {
+      "module": 3,
+      "database": "grocery_customers.duckdb",
+      "passing_checks": 18,
+      "exports_verified": {
+        "cohort_retention.csv": 78,
+        "customer_checks.csv": 18,
+        "customer_cutoffs.csv": 1,
+        "customer_segment_summary.csv": 5,
+        "customer_trajectory_summary.csv": 5,
+        "deal_driven_spend.csv": 2,
+        "demographic_coverage_spend.csv": 2,
+        "hh_metrics.csv": 2467,
+        "hh_segments.csv": 2467,
+        "income_spend.csv": 12,
+        "spend_concentration.csv": 1
+      },
+      "notebook": {
+        "file": "03_customers.ipynb",
+        "executed_code_cells": 6,
+        "input_files_checked": 17
+      }
+    },
+    {
+      "module": 4,
+      "database": "grocery_promotions.duckdb",
+      "passing_checks": 18,
+      "exports_verified": {
+        "display_lift.csv": 9,
+        "mailer_lift.csv": 10,
+        "post_promo_lift.csv": 4,
+        "promo_lift.csv": 5,
+        "promo_lift_observed_only.csv": 0,
+        "promo_lift_positive_baseline.csv": 5,
+        "promotion_checks.csv": 18,
+        "promotion_coverage.csv": 1
+      },
+      "notebook": {
+        "file": "04_promotions.ipynb",
+        "executed_code_cells": 6,
+        "input_files_checked": 15
+      }
+    },
+    {
+      "module": 5,
+      "database": "grocery_campaigns.duckdb",
+      "passing_checks": 25,
+      "exports_verified": {
+        "campaign_checks.csv": 25,
+        "campaign_estimates.csv": 12,
+        "campaign_overlap_audit.csv": 3,
+        "campaign_overview.csv": 27,
+        "campaign_pretrends.csv": 46,
+        "campaign_roi_inputs.csv": 4,
+        "campaign_sensitivities.csv": 6,
+        "campaign_window_audit.csv": 4,
+        "coupon_amount_summary.csv": 1,
+        "guide_compatibility_estimates.csv": 12,
+        "hh_week.csv": 128284,
+        "matching_balance.csv": 36,
+        "matching_samples.csv": 66281,
+        "placebo_tests.csv": 6,
+        "pretrend_tests.csv": 3
+      },
+      "notebook": {
+        "file": "05_campaigns.ipynb",
+        "executed_code_cells": 7,
+        "input_files_checked": 22
+      }
+    },
+    {
+      "module": 6,
+      "database": "grocery_hillstrom.duckdb",
+      "passing_checks": 27,
+      "exports_verified": {
+        "email_head_to_head.csv": 3,
+        "heldout_effects.csv": 72,
+        "heldout_policy_value.csv": 18,
+        "hillstrom.csv": 64000,
+        "hillstrom_arm_summary.csv": 3,
+        "hillstrom_balance.csv": 22,
+        "hillstrom_checks.csv": 27,
+        "hillstrom_effects.csv": 6,
+        "hillstrom_profile.csv": 1,
+        "hillstrom_srm.csv": 1,
+        "policy_assignments.csv": 128000,
+        "policy_audience_counts.csv": 12,
+        "policy_rules.csv": 60,
+        "segment_effects.csv": 126
+      },
+      "notebook": {
+        "file": "06_hillstrom.ipynb",
+        "executed_code_cells": 6,
+        "input_files_checked": 28
+      }
+    }
+  ],
+  "cross_module_checks": [
+    "annual_grocery_customer_totals_reconcile",
+    "campaign_panel_and_health_sales_reconcile",
+    "six_matched_campaign_estimates_recomputed_from_weights",
+    "six_randomized_effects_recomputed_from_raw_rows",
+    "exact_candidate_exports_match_frozen_training_policy"
+  ]
+}

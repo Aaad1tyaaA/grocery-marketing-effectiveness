@@ -1,0 +1,219 @@
+{
+  "repository": "https://github.com/bradleyboehmke/completejourney",
+  "commit": "5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+  "files": [
+    {
+      "name": "campaign_descriptions.rda",
+      "path": "data/campaign_descriptions.rda",
+      "sha": "bf5b9d5a0d4076456dc39f921efce9f3d5d53764",
+      "size": 496,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/campaign_descriptions.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaign_descriptions.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/bf5b9d5a0d4076456dc39f921efce9f3d5d53764",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaign_descriptions.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/campaign_descriptions.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/bf5b9d5a0d4076456dc39f921efce9f3d5d53764",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaign_descriptions.rda"
+      },
+      "sha256": "601bd17ea1a6de92cc288f393164813fbaf293b997d44054dcf1f3ebbe8dacee",
+      "rows": 27,
+      "columns": [
+        "campaign_id",
+        "campaign_type",
+        "start_date",
+        "end_date"
+      ],
+      "parquet_sha256": "36bf7084176af6f0508985b238d10fd4ccca6b97dc73a786a85035b4568bf64c"
+    },
+    {
+      "name": "campaigns.rda",
+      "path": "data/campaigns.rda",
+      "sha": "8e0d493ec3c22cdb93cc3d7ddeeccac971672779",
+      "size": 8264,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/campaigns.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaigns.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/8e0d493ec3c22cdb93cc3d7ddeeccac971672779",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaigns.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/campaigns.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/8e0d493ec3c22cdb93cc3d7ddeeccac971672779",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/campaigns.rda"
+      },
+      "sha256": "33c7b3dc1bc722d465f97416fb1327c6a9a640190e464c73e354bce8c001a772",
+      "rows": 6589,
+      "columns": [
+        "campaign_id",
+        "household_id"
+      ],
+      "parquet_sha256": "d6640723b728229094209e0b8c0c717d701d84b094a9e5ecdafe04edf1661715"
+    },
+    {
+      "name": "coupon_redemptions.rda",
+      "path": "data/coupon_redemptions.rda",
+      "sha": "a6ffd471e8f6d2de2f434a9156bfe9384cfa8451",
+      "size": 8370,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/coupon_redemptions.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupon_redemptions.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/a6ffd471e8f6d2de2f434a9156bfe9384cfa8451",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupon_redemptions.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/coupon_redemptions.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/a6ffd471e8f6d2de2f434a9156bfe9384cfa8451",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupon_redemptions.rda"
+      },
+      "sha256": "4b68148175ed19300bb2615d68d1a0300a5f971db3240819ab5d92e5919e1598",
+      "rows": 2102,
+      "columns": [
+        "household_id",
+        "coupon_upc",
+        "campaign_id",
+        "redemption_date"
+      ],
+      "parquet_sha256": "7d406a1b737ccbd369a8b6ed6c1bf458150f1e4cd1d8909d638b2c5adcff7a47"
+    },
+    {
+      "name": "coupons.rda",
+      "path": "data/coupons.rda",
+      "sha": "92043752a031bbb58b66a555a2fc09c3cd331963",
+      "size": 324969,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/coupons.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupons.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/92043752a031bbb58b66a555a2fc09c3cd331963",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupons.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/coupons.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/92043752a031bbb58b66a555a2fc09c3cd331963",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/coupons.rda"
+      },
+      "sha256": "4d87effce5b8813c0934b581a83292707347577743320ca746878de89cc16f34",
+      "rows": 116204,
+      "columns": [
+        "coupon_upc",
+        "product_id",
+        "campaign_id"
+      ],
+      "parquet_sha256": "8caedb330e0b50f7a3393d6c0f17997751847e5bc01ca8a0d7d89f26b74321eb"
+    },
+    {
+      "name": "demographics.rda",
+      "path": "data/demographics.rda",
+      "sha": "b97decf7a9b4e50300bb2abb66badb58f013faee",
+      "size": 4237,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/demographics.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/demographics.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/b97decf7a9b4e50300bb2abb66badb58f013faee",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/demographics.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/demographics.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/b97decf7a9b4e50300bb2abb66badb58f013faee",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/demographics.rda"
+      },
+      "sha256": "8b80455bc841003b64e47f5e5c2221f6093b995e923d59e72a1f852c7e268980",
+      "rows": 801,
+      "columns": [
+        "household_id",
+        "age",
+        "income",
+        "home_ownership",
+        "marital_status",
+        "household_size",
+        "household_comp",
+        "kids_count"
+      ],
+      "parquet_sha256": "ea9cde28084cc2c850d02aa4b7332b0f89308957da395429a9c5656c07944fb7"
+    },
+    {
+      "name": "products.rda",
+      "path": "data/products.rda",
+      "sha": "1b784b82546e9b8ad858ec91fc880f6309d367ac",
+      "size": 869019,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/products.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/products.rda",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/1b784b82546e9b8ad858ec91fc880f6309d367ac",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/products.rda",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/products.rda?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/1b784b82546e9b8ad858ec91fc880f6309d367ac",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/products.rda"
+      },
+      "sha256": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5",
+      "rows": 92331,
+      "columns": [
+        "product_id",
+        "manufacturer_id",
+        "department",
+        "brand",
+        "product_category",
+        "product_type",
+        "package_size"
+      ],
+      "parquet_sha256": "4c51bf178068613c1a46e840d54470a0889a7ff0c7ea3f9bdf2b06bbbfbf4fec"
+    },
+    {
+      "name": "promotions.rds",
+      "path": "data/promotions.rds",
+      "sha": "9f3ff8a03b9432db13b6b7ff581415c6a48bc687",
+      "size": 24976951,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/promotions.rds?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/promotions.rds",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/9f3ff8a03b9432db13b6b7ff581415c6a48bc687",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/promotions.rds",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/promotions.rds?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/9f3ff8a03b9432db13b6b7ff581415c6a48bc687",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/promotions.rds"
+      },
+      "sha256": "15a729fdad31b10d3afedb058da31bcd6e9e68cb0207a43b3121264cd80198ba",
+      "rows": 20940529,
+      "columns": [
+        "product_id",
+        "store_id",
+        "display_location",
+        "mailer_location",
+        "week"
+      ],
+      "parquet_sha256": "04cb09c341ed76968cd018e18f6cbce0e329160df0543f5795c3f9e7e2bcfd06"
+    },
+    {
+      "name": "transactions.rds",
+      "path": "data/transactions.rds",
+      "sha": "f40e337238311130c1684cdf94d4128e4c6965f6",
+      "size": 12775661,
+      "url": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/transactions.rds?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+      "html_url": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/transactions.rds",
+      "git_url": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/f40e337238311130c1684cdf94d4128e4c6965f6",
+      "download_url": "https://raw.githubusercontent.com/bradleyboehmke/completejourney/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/transactions.rds",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/bradleyboehmke/completejourney/contents/data/transactions.rds?ref=5b5d06192b9856edd04e4d405787af2f2e4a1fef",
+        "git": "https://api.github.com/repos/bradleyboehmke/completejourney/git/blobs/f40e337238311130c1684cdf94d4128e4c6965f6",
+        "html": "https://github.com/bradleyboehmke/completejourney/blob/5b5d06192b9856edd04e4d405787af2f2e4a1fef/data/transactions.rds"
+      },
+      "sha256": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+      "rows": 1469307,
+      "columns": [
+        "household_id",
+        "store_id",
+        "basket_id",
+        "product_id",
+        "quantity",
+        "sales_value",
+        "retail_disc",
+        "coupon_disc",
+        "coupon_match_disc",
+        "week",
+        "transaction_timestamp"
+      ],
+      "parquet_sha256": "c7a4015eac08b65c4c337483d0f137aab1c38e26af2bd63bba1cfc2e57535b2b"
+    }
+  ],
+  "pyreadr_version": "0.5.8"
+}

@@ -1,0 +1,19 @@
+table Departments
+	lineageTag: 222cc4e1-7502-4132-82ab-ac0bbe35fc9b
+
+	column department
+		dataType: string
+		lineageTag: ded2af2f-3ae7-40be-9f02-fd73c73a8c27
+		summarizeBy: none
+		sourceColumn: department
+
+	partition Departments = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Departments.csv"),[Delimiter=",", Columns=1, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"department", type text}},"en-US")
+				in
+				    Typed
+

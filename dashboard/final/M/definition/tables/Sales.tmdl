@@ -1,0 +1,62 @@
+table Sales
+	isHidden
+	lineageTag: 0646c89d-6046-4c44-9288-3ad0bc32190c
+
+	column household_id
+		dataType: string
+		lineageTag: 0851374a-0015-498c-a25c-cc6c4873f0b1
+		summarizeBy: none
+		sourceColumn: household_id
+
+	column basket_id
+		dataType: string
+		lineageTag: ab59ba2a-dcd6-4d0f-a0b7-5f4c2e3dc7a7
+		summarizeBy: none
+		sourceColumn: basket_id
+
+	column product_id
+		dataType: string
+		lineageTag: 338b14a5-3772-42de-af22-07b7233b3064
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column week
+		dataType: int64
+		lineageTag: 516290d8-15b6-4db5-966a-18810a3f51c7
+		summarizeBy: none
+		sourceColumn: week
+
+	column sales_value
+		dataType: double
+		lineageTag: 592871c5-ed8e-44db-8054-8beb4be0f9eb
+		summarizeBy: none
+		sourceColumn: sales_value
+
+	column shelf_value
+		dataType: double
+		lineageTag: 63eda6df-74c3-402e-a5fb-d20e53889fae
+		summarizeBy: none
+		sourceColumn: shelf_value
+
+	column retailer_funded_disc
+		dataType: double
+		lineageTag: a7b9adb0-115f-4d3b-ad06-480e7af49631
+		summarizeBy: none
+		sourceColumn: retailer_funded_disc
+
+	column discounted_shelf_value
+		dataType: double
+		lineageTag: eb0cb81d-f095-4224-90e5-032519dad7b3
+		summarizeBy: none
+		sourceColumn: discounted_shelf_value
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Sales.csv"),[Delimiter=",", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"household_id", type text},{"basket_id", type text},{"product_id", type text},{"week", Int64.Type},{"sales_value", type number},{"shelf_value", type number},{"retailer_funded_disc", type number},{"discounted_shelf_value", type number}},"en-US")
+				in
+				    Typed
+

@@ -1,0 +1,3 @@
+expression DataFolder = "C:\GroceryMarketing\dashboard\data" meta [IsParameterQuery=true,Type="Text",IsParameterQueryRequired=true]
+	lineageTag: cc56dc24-fc45-4116-a9b3-71abde4f7ccc
+

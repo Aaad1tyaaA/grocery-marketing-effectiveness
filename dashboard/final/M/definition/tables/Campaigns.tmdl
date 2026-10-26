@@ -1,0 +1,63 @@
+table Campaigns
+	lineageTag: d254994d-5679-4c60-a934-acd8003c7e39
+
+	column campaign_id
+		dataType: string
+		lineageTag: beb55d66-7f6f-4c7d-a548-9b3638772267
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column campaign_type
+		dataType: string
+		lineageTag: 4db451b2-6964-4805-be2a-31d0f79b3576
+		summarizeBy: none
+		sourceColumn: campaign_type
+
+	column start_date
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: eeeecf47-1809-495f-a7ee-16ea6eccbbc6
+		summarizeBy: none
+		sourceColumn: start_date
+
+	column end_date
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: ed82f741-2d2e-4017-b44f-ab4710dbb5d0
+		summarizeBy: none
+		sourceColumn: end_date
+
+	column partially_observed
+		dataType: boolean
+		lineageTag: 05f32c1f-f3c6-43e8-bce4-807b65c0d2e0
+		summarizeBy: none
+		sourceColumn: partially_observed
+
+	column households
+		dataType: int64
+		lineageTag: 5ce151b7-5c3f-4058-9337-748caf5fe77c
+		summarizeBy: none
+		sourceColumn: households
+
+	column redemptions
+		dataType: int64
+		lineageTag: e84c8131-4955-4bb4-8ef2-728860dacdeb
+		summarizeBy: none
+		sourceColumn: redemptions
+
+	column redeeming_households
+		dataType: int64
+		lineageTag: c1e5fc8b-e397-48cf-816a-0ee7ff38112e
+		summarizeBy: none
+		sourceColumn: redeeming_households
+
+	partition Campaigns = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\Campaigns.csv"),[Delimiter=",", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers,{{"campaign_id", type text},{"campaign_type", type text},{"start_date", type date},{"end_date", type date},{"partially_observed", type logical},{"households", Int64.Type},{"redemptions", Int64.Type},{"redeeming_households", Int64.Type}},"en-US")
+				in
+				    Typed
+

@@ -1,0 +1,26 @@
+{
+  "original_url": "http://www.minethatdata.com/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv",
+  "download_url": "https://hillstorm1.s3.us-east-2.amazonaws.com/hillstorm_no_indices.csv.gz",
+  "mirror_md5": "a68a81291f53a14f4e29002629803ba3",
+  "mirror_documentation": "https://github.com/maks-sh/scikit-uplift/blob/master/sklift/datasets/datasets.py",
+  "experiment_description": "https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html",
+  "csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "parquet_sha256": "8e561b8c1c9a412bc21a492cc1c33ac735a901fad42b68b9b826c86e50c74d2e",
+  "rows": 64000,
+  "columns": [
+    "recency",
+    "history_segment",
+    "history",
+    "mens",
+    "womens",
+    "zip_code",
+    "newbie",
+    "channel",
+    "segment",
+    "visit",
+    "conversion",
+    "spend"
+  ],
+  "row_order": "preserved; source_row assigned as one-based CSV position",
+  "download_note": "Original HTTPS endpoint failed certificate validation; used scientific package mirror with published MD5."
+}

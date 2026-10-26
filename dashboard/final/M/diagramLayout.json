@@ -1,0 +1,166 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1434.4275217812969,
+            "y": 235.41712274098586
+          },
+          "nodeIndex": "Metrics",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1200.4275217812969,
+            "y": 185.41712274098586
+          },
+          "nodeIndex": "Campaign estimates",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 916.427521781297,
+            "y": 199.41712274098586
+          },
+          "nodeIndex": "Campaigns",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1718.4275217812969,
+            "y": 285.41712274098586
+          },
+          "nodeIndex": "Cohorts",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2002.4275217812969,
+            "y": 309.41712274098586
+          },
+          "nodeIndex": "Daily anomalies",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 202.08172446888523
+          },
+          "nodeIndex": "Departments",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2286.4275217812969,
+            "y": 237.41712274098586
+          },
+          "nodeIndex": "Email experiment",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 632.42752178129683,
+            "y": 274.1587713661462
+          },
+          "nodeIndex": "Households",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 55.717857519007026,
+            "y": -50
+          },
+          "nodeIndex": "Products",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2570.4275217812969,
+            "y": 285.41712274098586
+          },
+          "nodeIndex": "Promotion associations",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 345.61143638731289,
+            "y": 159.00164821292276
+          },
+          "nodeIndex": "Sales",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 346.58031803824224,
+            "y": 568.83424548197172
+          },
+          "nodeIndex": "Weeks",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

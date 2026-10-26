@@ -1,0 +1,4 @@
+-r requirements-setup.txt
+nbformat==5.11.0
+pytest==9.1.1
+scipy==1.15.2
