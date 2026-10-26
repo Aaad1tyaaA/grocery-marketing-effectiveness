@@ -32,7 +32,7 @@ def main():
     if (not source_files or any(not (ROOT/'data/parquet'/f'{name}.parquet').exists() for name in required)
         or any(not (ROOT/'data/raw'/s['name']).exists() or 'parquet_sha256' not in s for s in source_files)):
         run('scripts/get_data.py')
-    if not (ROOT/'docs/verification.json').exists():
+    if not (ROOT/'grocery.duckdb').exists() or not (ROOT/'docs/verification.json').exists():
         run('scripts/setup_db.py')
     if args.through>=6 and any(not (ROOT/p).exists() for p in
         ['docs/hillstrom_source.json','data/raw/hillstrom.csv','data/parquet/hillstrom.parquet']):

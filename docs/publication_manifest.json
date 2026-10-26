@@ -982,8 +982,8 @@
     },
     {
       "path": "scripts/run_all.py",
-      "bytes": 2807,
-      "sha256": "583ad5d4ca265d6cfcadf0a675fd8060f445bc4a17bf40e8e4f14183b03e92f7"
+      "bytes": 2847,
+      "sha256": "d1fd6290fae04e44de99883e29c9331446d372e910430ce8922440768fa06215"
     },
     {
       "path": "scripts/run_business_health.py",
@@ -1194,11 +1194,20 @@
       "path": "tests/test_promotions.py",
       "bytes": 3671,
       "sha256": "1b13134376a0863b3263c1ab93d741fba994a71009deb154f2b0b2c64f4333e8"
+    },
+    {
+      "path": "tests/test_runner.py",
+      "bytes": 1285,
+      "sha256": "6d8fbd65ac2ffed268986948812f85d2d8c33154ef860f6c60522788f21100c8"
     }
   ],
   "public_copy_tests": {
     "passed": 25,
     "skipped_raw_data_checks": 13
   },
-  "dashboard_source_checks": 608
+  "dashboard_source_checks": 608,
+  "startup_regression_tests": {
+    "passed": 2,
+    "scope": "Missing and existing raw database cases; source contract tests also passed."
+  }
 }
